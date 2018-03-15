@@ -9,7 +9,7 @@ public class MazoKartak {
 		this.mazoa = new Stack<Karta>();
 	}
 	
-	public gehituKarta(){
-		
+	public gehituKarta(Karta pKarta){
+		this.mazoa.push(pKarta);
 	}
 }

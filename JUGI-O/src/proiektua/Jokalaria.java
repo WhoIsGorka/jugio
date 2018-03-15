@@ -5,15 +5,15 @@ import java.util.Scanner;
 public class Jokalaria {
 	private int id;
 	private String izena;
-	private ListaKartak eskuKartak;
-	private PilaKartak mazoa;
+	private EskuKartak eskuKartak;
+	private MazoKartak mazoa;
 	private int puntuazioa;
 	
 	public Jokalaria() {
 		this.id = -1;
 		this.izena = null;
-		this.eskuKartak = new ListaKartak();
-		this.mazoa = new PilaKartak();
+		this.eskuKartak = new EskuKartak();
+		this.mazoa = new MazoKartak();
 		this.puntuazioa = 0;
 	}
 
