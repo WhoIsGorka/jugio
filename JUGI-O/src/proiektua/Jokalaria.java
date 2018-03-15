@@ -31,7 +31,17 @@ public class Jokalaria {
 		this.izena = "Ordenagailua";
 		this.id = 0;
 	}
-	public void hartuLehenegoKartak(){
+	public void hartuLehenegoLauKartak(){
+		for(int i=0;i<4;i++){
+			this.eskuKartak.gehituKarta(this.mazoa.kenduKarta());
+			
+		}
+	}	
+	public void hartuKartaBat(){
+		if(!this.mazoa.hutsaDa()){
+			this.eskuKartak.gehituKarta(this.mazoa.kenduKarta());
+		}
 		
+	
 	}
 }

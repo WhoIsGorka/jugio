@@ -4,12 +4,12 @@ import java.util.Scanner;
 
 public class Tableroa {
 	
-	private IlaraKartak ilara = new IlaraKartak();
+	private MahaiKartak ilara = new MahaiKartak();
 	private Jokalaria j1;
 	private Jokalaria pc;
 	
 	public Tableroa() {
-		this.ilara = new IlaraKartak();
+		this.ilara = new MahaiKartak();
 		this.j1 =  new Jokalaria();
 		this.pc = new Jokalaria();
 		

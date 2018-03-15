@@ -9,7 +9,14 @@ public class MazoKartak {
 		this.mazoa = new Stack<Karta>();
 	}
 	
-	public gehituKarta(Karta pKarta){
+	public void gehituKarta(Karta pKarta){
 		this.mazoa.push(pKarta);
+	}
+	public Karta kenduKarta(){
+		Karta k1=this.mazoa.pop();
+		return k1;
+	}
+	public boolean hutsaDa(){
+		return this.mazoa.isEmpty();
 	}
 }
