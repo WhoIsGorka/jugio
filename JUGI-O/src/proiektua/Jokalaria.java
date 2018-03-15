@@ -31,5 +31,7 @@ public class Jokalaria {
 		this.izena = "Ordenagailua";
 		this.id = 0;
 	}
-	
+	public void hartuLehenegoKartak(){
+		
+	}
 }
