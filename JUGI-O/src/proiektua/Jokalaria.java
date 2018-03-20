@@ -16,6 +16,12 @@ public class Jokalaria {
 		this.mazoa = new MazoKartak();
 		this.puntuazioa = 0;
 	}
+	public EskuKartak getEskuKartak() {
+		return eskuKartak;
+	}
+	public MazoKartak getMazoa() {
+		return mazoa;
+	}
 
 	public void setJokalariarenIzena(){
 		Scanner sc = new Scanner(System.in);

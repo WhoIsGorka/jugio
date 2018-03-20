@@ -16,4 +16,7 @@ public class Karta {
 		this.puntuak = pPuntuak;
 		this.kolorea = pKolorea;
 	}
+	public String getIzena() {
+		return izena;
+	}
 }

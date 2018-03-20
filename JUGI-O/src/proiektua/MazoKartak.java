@@ -9,11 +9,11 @@ public class MazoKartak {
 	public MazoKartak() {
 		this.mazoa = new Stack<Karta>();
 	}
-	public void mazoaSortu(ArrayList<Karta> kartak){
-		while(!kartak.isEmpty()){
-			int randomNum = ThreadLocalRandom.current().nextInt(0, 12);
-			this.gehituKarta(kartak.get(randomNum));
-			kartak.remove(randomNum);
+	public void mazoaSortu(EskuKartak kartak){
+		while(!kartak.hutsaDa()){
+			int randomNum = ThreadLocalRandom.current().nextInt(0,kartak.luzera());
+			this.gehituKarta(kartak.getKarta(randomNum));
+			kartak.kenduKarta(randomNum);
 		}
 	}
 	public void gehituKarta(Karta pKarta){

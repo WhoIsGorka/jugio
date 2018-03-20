@@ -7,7 +7,9 @@ public class Tableroa {
 	private MahaiKartak ilara = new MahaiKartak();
 	private Jokalaria j1;
 	private Jokalaria pc;
-	private EskuKartak kartaGuztiak;
+	private EskuKartak m1;
+	private EskuKartak m2;
+	
 	
 	
 	public Tableroa() {
@@ -24,7 +26,7 @@ public class Tableroa {
 		Karta loroa2 = new Karta(2,"Loroa"," ",false,4,"berdea");
 		
 		Karta kanguru1 = new Karta(3,"Kangurua"," ",false,4,"urdina");
-		Karta Kanguru2 = new Karta(3,"Kangurua"," ",false,4,"berdea");
+		Karta kanguru2 = new Karta(3,"Kangurua"," ",false,4,"berdea");
 		
 		Karta tximinoa1 = new Karta(4,"Tximinoa"," ",false,3,"urdina");
 		Karta tximinoa2 = new Karta(4,"Tximinoa"," ",false,3,"berdea");
@@ -52,6 +54,38 @@ public class Tableroa {
 		
 		Karta lehoia1 = new Karta(12,"Lehoia"," ",false,2,"urdina");
 		Karta lehoia2 = new Karta(12,"Lehoia"," ",false,2,"berdea");
+		
+		this.m1 = new EskuKartak();
+		
+		this.m1.gehituKarta(mofeta1);
+		this.m1.gehituKarta(loroa1);
+		this.m1.gehituKarta(kanguru1);
+		this.m1.gehituKarta(tximinoa1);
+		this.m1.gehituKarta(kamalehoia1);
+		this.m1.gehituKarta(itsaslehoia1);
+		this.m1.gehituKarta(zebra1);
+		this.m1.gehituKarta(jirafa1);
+		this.m1.gehituKarta(sugea1);
+		this.m1.gehituKarta(kokodriloa1);
+		this.m1.gehituKarta(hipopotamoa1);
+		this.m1.gehituKarta(lehoia1);
+		
+		this.m2 = new EskuKartak();
+		
+		this.m2.gehituKarta(mofeta2);
+		this.m2.gehituKarta(loroa2);
+		this.m2.gehituKarta(kanguru2);
+		this.m2.gehituKarta(tximinoa2);
+		this.m2.gehituKarta(kamalehoia2);
+		this.m2.gehituKarta(itsaslehoia2);
+		this.m2.gehituKarta(zebra2);
+		this.m2.gehituKarta(jirafa2);
+		this.m2.gehituKarta(sugea2);
+		this.m2.gehituKarta(kokodriloa2);
+		this.m2.gehituKarta(hipopotamoa2);
+		this.m2.gehituKarta(lehoia2);
+		
+		
 	}
 	public void partidaJolastu(){
 		System.out.println("Sartu jokalariaren izena: ");
@@ -61,5 +95,14 @@ public class Tableroa {
 
 		pc.setPcIzenaId();
 		
+		this.KartakSortu();
+		j1.getMazoa().mazoaSortu(m1);
+		pc.getMazoa().mazoaSortu(m2);
+		
+		j1.hartuLehenegoLauKartak();
+		pc.hartuLehenegoLauKartak();
+		
+		j1.getEskuKartak().erakutsiKartak();
+		pc.getEskuKartak().erakutsiKartak();
 	}
 }
