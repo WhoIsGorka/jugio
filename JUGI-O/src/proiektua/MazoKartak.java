@@ -1,5 +1,6 @@
 package proiektua;
-
+import java.util.concurrent.ThreadLocalRandom;
+import java.util.ArrayList;
 import java.util.Stack;
 
 public class MazoKartak {
@@ -8,7 +9,13 @@ public class MazoKartak {
 	public MazoKartak() {
 		this.mazoa = new Stack<Karta>();
 	}
-	
+	public void mazoaSortu(ArrayList<Karta> kartak){
+		while(!kartak.isEmpty()){
+			int randomNum = ThreadLocalRandom.current().nextInt(0, 12);
+			this.gehituKarta(kartak.get(randomNum));
+			kartak.remove(randomNum);
+		}
+	}
 	public void gehituKarta(Karta pKarta){
 		this.mazoa.push(pKarta);
 	}
