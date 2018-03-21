@@ -26,4 +26,7 @@ public class MazoKartak {
 	public boolean hutsaDa(){
 		return this.mazoa.isEmpty();
 	}
+	public int tamaina(){
+		return this.mazoa.size();
+	}
 }
