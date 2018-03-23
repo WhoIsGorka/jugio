@@ -16,27 +16,41 @@ public class Jokalaria {
 		this.mazoa = new MazoKartak();
 		this.puntuazioa = 0;
 	}
+	
+	public int getId() {
+		return id;
+	}
+	
+	public String getIzena() {
+		return izena;
+	}
+
 	public EskuKartak getEskuKartak() {
 		return eskuKartak;
 	}
 	public MazoKartak getMazoa() {
 		return mazoa;
 	}
-
-	public void setJokalariarenIzena(){
-		Scanner sc = new Scanner(System.in);
-		String hitza = sc.nextLine();
-		this.izena = hitza;
+	
+	public int getPuntuazioa() {
+		return puntuazioa;
 	}
-	public void setJokalariarenId(){
-		Scanner sc = new Scanner(System.in);
-		int zenb = sc.nextInt();
-		this.id = zenb;
+	
+	public void setPuntuazioa(int pPunt) {
+		this.puntuazioa = pPunt;
+	}
+
+	public void setJokalariarenIzena(String pIzena){
+		this.izena = pIzena;
+	}
+	public void setJokalariarenId(int pId){
+		this.id = pId;
 	}
 	public void setPcIzenaId(){
 		this.izena = "Ordenagailua";
 		this.id = 0;
 	}
+	
 	public void hartuLehenegoLauKartak(){
 		for(int i=0;i<4;i++){
 			this.eskuKartak.gehituKarta(this.mazoa.kenduKarta());

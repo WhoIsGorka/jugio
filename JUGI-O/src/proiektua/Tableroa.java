@@ -88,13 +88,7 @@ public class Tableroa {
 		
 	}
 	public void partidaJolastu(){
-		System.out.println("Sartu jokalariaren izena: ");
-		j1.setJokalariarenIzena();
-		System.out.println("Sartu jokalariaren zenbakia: ");
-		j1.setJokalariarenId();
-
-		pc.setPcIzenaId();
-		
+		sartuJokalariak();
 		this.KartakSortu();
 		j1.getMazoa().mazoaSortu(m1);
 		pc.getMazoa().mazoaSortu(m2);
@@ -104,5 +98,20 @@ public class Tableroa {
 		
 		j1.getEskuKartak().erakutsiKartak();
 		pc.getEskuKartak().erakutsiKartak();
+	}
+	
+	public void sartuJokalariak() {
+		Scanner sc = new Scanner(System.in);
+		
+		System.out.println("Sartu jokalariaren izena: ");
+		String hitza = sc.nextLine();
+		j1.setJokalariarenIzena(hitza);
+		
+		System.out.println("Sartu jokalariaren zenbakia: ");
+		int zenb = sc.nextInt();
+		j1.setJokalariarenId(zenb);
+		
+		pc.setPcIzenaId();
+		
 	}
 }

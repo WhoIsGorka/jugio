@@ -14,6 +14,13 @@ public class EskuKartak {
 	public void kenduKarta(int num){
 		this.eskua.remove(num);
 	}
+	public void kenduKartaGuztiak() {
+		int kont=0;
+		while(!eskua.isEmpty()) {
+			eskua.remove(kont);
+			kont++;
+		}
+	}
 	public boolean hutsaDa(){
 		return this.eskua.isEmpty();
 	}
