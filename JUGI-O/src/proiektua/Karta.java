@@ -6,15 +6,15 @@ public class Karta {
 	private String deskr;
 	private boolean errekurtsiboa;
 	private int puntuak;
-	private String kolorea;
+	private String irudia;
 	
-	public Karta(int pId,String pIzena,String pDeskr,boolean pErre,int pPuntuak,String pKolorea){
+	public Karta(int pId,String pIzena,String pDeskr,boolean pErre,int pPuntuak,String pIrudia){
 		this.id = pId;
 		this.izena = pIzena;
 		this.deskr = pDeskr;
 		this.errekurtsiboa = pErre;
 		this.puntuak = pPuntuak;
-		this.kolorea = pKolorea;
+		this.irudia = pIrudia;
 	}
 	public String getIzena() {
 		return izena;

@@ -27,7 +27,7 @@ public class TableroProba {
 	@Test
 	public void testKartakSortu() {
 		t.KartakSortu();
-		
+		assertNotNull(t);
 	}
 	
 	@Test
@@ -36,9 +36,6 @@ public class TableroProba {
 		assertEquals(ek.luzera(),12);
 	}
 	
-	@Test
-	public void testSartuJokalariak() {
-		t.sartuJokalariak();
-	}
+	
 
 }

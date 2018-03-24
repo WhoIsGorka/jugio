@@ -19,41 +19,41 @@ public class Tableroa {
 		
 	}
 	public void KartakSortu(){
-		Karta mofeta1 = new Karta(1,"Mofeta"," ",false,4,"urdina");
-		Karta mofeta2 = new Karta(1,"Mofeta"," ",false,4,"berdea");
+		Karta mofeta1 = new Karta(1,"Mofeta"," ",false,4,"1mofetaAzul.PNG");
+		Karta mofeta2 = new Karta(1,"Mofeta"," ",false,4,"mofeta1Berde.png");
 		
-		Karta loroa1 = new Karta(2,"Loroa"," ",false,4,"urdina");
-		Karta loroa2 = new Karta(2,"Loroa"," ",false,4,"berdea");
+		Karta loroa1 = new Karta(2,"Loroa"," ",false,4,"2loroAzul.PNG");
+		Karta loroa2 = new Karta(2,"Loroa"," ",false,4,"loro2Berde.png");
 		
-		Karta kanguru1 = new Karta(3,"Kangurua"," ",false,4,"urdina");
-		Karta kanguru2 = new Karta(3,"Kangurua"," ",false,4,"berdea");
+		Karta kanguru1 = new Karta(3,"Kangurua"," ",false,4,"3canguroAzul.PNG");
+		Karta kanguru2 = new Karta(3,"Kangurua"," ",false,4,"kanguro3Berde.png");
 		
-		Karta tximinoa1 = new Karta(4,"Tximinoa"," ",false,3,"urdina");
-		Karta tximinoa2 = new Karta(4,"Tximinoa"," ",false,3,"berdea");
+		Karta tximinoa1 = new Karta(4,"Tximinoa"," ",false,3,"4monoAzul.PNG");
+		Karta tximinoa2 = new Karta(4,"Tximinoa"," ",false,3,"mono4Berde.png");
 		
-		Karta kamalehoia1 = new Karta(5,"Kamalehoia"," ",false,3,"urdina");
-		Karta kamalehoia2 = new Karta(5,"Kamalehoia"," ",false,3,"berdea");
+		Karta kamalehoia1 = new Karta(5,"Kamalehoia"," ",false,3,"5camaleonAzul.PNG");
+		Karta kamalehoia2 = new Karta(5,"Kamalehoia"," ",false,3,"camaleon5Berde.png");
 		
-		Karta itsaslehoia1 = new Karta(6,"Itsaslehoia"," ",false,2,"urdina");
-		Karta itsaslehoia2 = new Karta(6,"Itsaslehoia"," ",false,2,"berdea");
+		Karta itsaslehoia1 = new Karta(6,"Itsaslehoia"," ",false,2,"6focaAzul.PNG");
+		Karta itsaslehoia2 = new Karta(6,"Itsaslehoia"," ",false,2,"foca6Berde.png");
 		
-		Karta zebra1 = new Karta(7,"Zebra"," ",true,4,"urdina");
-		Karta zebra2 = new Karta(7,"Zebra"," ",true,4,"berdea");
+		Karta zebra1 = new Karta(7,"Zebra"," ",true,4,"7zebraAzul.PNG");
+		Karta zebra2 = new Karta(7,"Zebra"," ",true,4,"zebra7Berde.png");
 		
-		Karta jirafa1 = new Karta(8,"Jirafa"," ",true,3,"urdina");
-		Karta jirafa2 = new Karta(8,"Jirafa"," ",true,3,"berdea");
+		Karta jirafa1 = new Karta(8,"Jirafa"," ",true,3,"8jirafaAzul.PNG");
+		Karta jirafa2 = new Karta(8,"Jirafa"," ",true,3,"jirafa8Berde.PNG");
 		
-		Karta sugea1 = new Karta(9,"Sugea"," ",false,2,"urdina");
-		Karta sugea2 = new Karta(9,"Sugea"," ",false,2,"berdea");
+		Karta sugea1 = new Karta(9,"Sugea"," ",false,2,"9serpienteAzul.PNG");
+		Karta sugea2 = new Karta(9,"Sugea"," ",false,2,"serpiente9Berde.PNG");
 		
-		Karta kokodriloa1 = new Karta(10,"Kokodriloa"," ",true,3,"urdina");
-		Karta kokodriloa2 = new Karta(10,"Kokodriloa"," ",true,3,"berdea");
+		Karta kokodriloa1 = new Karta(10,"Kokodriloa"," ",true,3,"10cocodriloAzul.PNG");
+		Karta kokodriloa2 = new Karta(10,"Kokodriloa"," ",true,3,"cocodrilo10Berde.PNG");
 		
-		Karta hipopotamoa1 = new Karta(11,"Hipopotamoa"," ",true,2,"urdina");
-		Karta hipopotamoa2 = new Karta(11,"Hipopotamoa"," ",true,2,"berdea");
+		Karta hipopotamoa1 = new Karta(11,"Hipopotamoa"," ",true,2,"11hipopotamoAzul.PNG");
+		Karta hipopotamoa2 = new Karta(11,"Hipopotamoa"," ",true,2,"hipopotamo11Berde.PNG");
 		
-		Karta lehoia1 = new Karta(12,"Lehoia"," ",false,2,"urdina");
-		Karta lehoia2 = new Karta(12,"Lehoia"," ",false,2,"berdea");
+		Karta lehoia1 = new Karta(12,"Lehoia"," ",false,2,"12leonAzul.PNG");
+		Karta lehoia2 = new Karta(12,"Lehoia"," ",false,2,"leon12Berde.PNG");
 		
 		this.m1 = new EskuKartak();
 		
