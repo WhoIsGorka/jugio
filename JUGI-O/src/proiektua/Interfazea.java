@@ -1,5 +1,6 @@
 package proiektua;
 import javax.swing.*;
+
 import java.awt.*;
 import java.awt.event.*;
 public class Interfazea extends JFrame
@@ -22,7 +23,6 @@ public class Interfazea extends JFrame
 		panel.setBounds(0, 479, 1264, 212);
 		panel.setBackground(Color.ORANGE);
 		getContentPane().add(panel);
-		
 		JButton karta4 = new JButton("");
 		karta4.setBounds(1007, 0, 127, 218);
 		karta4.setIcon(resizeIcon(new ImageIcon(getClass().getResource("mono4Berde.png")),karta4.getWidth(),karta4.getHeight()));
