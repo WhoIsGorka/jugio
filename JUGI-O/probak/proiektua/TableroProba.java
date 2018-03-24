@@ -27,13 +27,11 @@ public class TableroProba {
 	@Test
 	public void testKartakSortu() {
 		t.KartakSortu();
-		assertNotNull(t);
 	}
 	
 	@Test
 	public void testPartidaJolastu() {
 		t.partidaJolastu();
-		assertEquals(ek.luzera(),12);
 	}
 	
 	

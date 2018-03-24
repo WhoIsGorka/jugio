@@ -20,7 +20,6 @@ public class JokalariaProba {
 		Karta k2 = new Karta(2,"Loroa"," ",false,4,"urdina");
 		Karta k3 = new Karta(3,"Kangurua"," ",false,4,"urdina");
 		Karta k4 = new Karta(4,"Tximinoa"," ",false,3,"urdina");
-		Karta k5 = new Karta(5,"Kamalehoia"," ",false,3,"urdina");
 				
 		//Esku kartak definitu
 		ek.gehituKarta(k1);
@@ -31,7 +30,6 @@ public class JokalariaProba {
 		m.gehituKarta(k2);
 		m.gehituKarta(k3);
 		m.gehituKarta(k4);
-		m.gehituKarta(k5);
 		
 		//Jokalariaren atributuak ezarri
 		j1.setJokalariarenIzena("floyd");
@@ -41,7 +39,11 @@ public class JokalariaProba {
 		j1.getEskuKartak().gehituKarta(k2);
 		j1.getEskuKartak().gehituKarta(k3);
 		j1.getEskuKartak().gehituKarta(k4);
-		j1.getMazoa().gehituKarta(k5);
+		j1.getMazoa().gehituKarta(k1);
+		j1.getMazoa().gehituKarta(k2);
+		j1.getMazoa().gehituKarta(k3);
+		j1.getMazoa().gehituKarta(k4);
+		
 	}
 
 	@After
@@ -72,7 +74,7 @@ public class JokalariaProba {
 	
 	@Test
 	public void testGetMazoa() {
-		assertEquals(j1.getMazoa().tamaina(),1);
+		assertEquals(j1.getMazoa().tamaina(),4);
 	}
 	
 	@Test
@@ -101,8 +103,7 @@ public class JokalariaProba {
 	@Test
 	public void testHartuLehenengoLauKartak() {
 		j1.hartuLehenegoLauKartak();
-		j1.getEskuKartak().luzera();
-		assertEquals(j1.getEskuKartak().luzera(),8);
+		assertEquals(j1.getEskuKartak().luzera(),8); //Eskuan jada gehitu diogu 4 karta, beraz beste 4 hartu behar ditu.
 	}
 	
 	@Test

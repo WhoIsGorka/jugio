@@ -52,11 +52,11 @@ public class Jokalaria {
 	}
 	
 	public void hartuLehenegoLauKartak(){
-		for(int i=0;i<4;i++){
-			this.eskuKartak.gehituKarta(this.mazoa.kenduKarta());
-			
+		for(int i=0;i<=4;i++){
+			hartuKartaBat();
 		}
 	}	
+	
 	public void hartuKartaBat(){
 		if(!this.mazoa.hutsaDa()){
 			this.eskuKartak.gehituKarta(this.mazoa.kenduKarta());
