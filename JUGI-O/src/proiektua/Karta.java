@@ -17,6 +17,9 @@ public class Karta {
 		this.irudia = pIrudia;
 	}
 	public String getIzena() {
-		return izena;
+		return this.izena;
+	}
+	public String getIrudia() {
+		return this.irudia;
 	}
 }

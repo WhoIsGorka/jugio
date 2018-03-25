@@ -1,6 +1,9 @@
 package proiektua;
 
+import java.awt.BorderLayout;
 import java.util.Scanner;
+
+import javax.swing.JFrame;
 
 public class Tableroa {
 	
@@ -93,11 +96,23 @@ public class Tableroa {
 		j1.getMazoa().mazoaSortu(m1);
 		pc.getMazoa().mazoaSortu(m2);
 		
+		Interfazea frame = new Interfazea();
+    	frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		frame.getContentPane().setLayout(new BorderLayout());
+		frame.setSize(1280, 720);
+		frame.setLocationRelativeTo(null);
+		frame.setVisible(true);
+		
 		j1.hartuLehenegoLauKartak();
 		pc.hartuLehenegoLauKartak();
 		
+		frame.kartakPantailaratu(j1.getEskuKartak());
+		
+		
 		j1.getEskuKartak().erakutsiKartak();
 		pc.getEskuKartak().erakutsiKartak();
+		
+		
 	}
 	
 	public void sartuJokalariak() {

@@ -3,8 +3,10 @@ import javax.swing.*;
 
 import java.awt.*;
 import java.awt.event.*;
-public class Interfazea extends JFrame
-{
+public class Interfazea extends JFrame{
+	
+	private JPanel panel;
+	
 	private static Icon resizeIcon(ImageIcon icon, int resizedWidth, int resizedHeight) {
 	    Image img = icon.getImage();
 	    Image resizedImage = img.getScaledInstance(resizedWidth, resizedHeight,  java.awt.Image.SCALE_DEFAULT);  
@@ -19,48 +21,18 @@ public class Interfazea extends JFrame
 		setTitle("BAR BESTIAL");
 		getContentPane().setLayout(null);
 		
-		JPanel panel = new JPanel();
+		this.panel = new JPanel();
+		
 		panel.setBounds(0, 479, 1264, 212);
 		panel.setBackground(Color.ORANGE);
-		getContentPane().add(panel);
-		JButton karta4 = new JButton("");
-		karta4.setBounds(1007, 0, 127, 218);
-		karta4.setIcon(resizeIcon(new ImageIcon(getClass().getResource("mono4Berde.png")),karta4.getWidth(),karta4.getHeight()));
-		karta4.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent arg0) {
-			}
-		});
+		getContentPane().add(this.panel);
 		
-		JButton karta2 = new JButton("");
-		karta2.setBounds(559, 0, 127, 218);
-		karta2.setIcon(resizeIcon(new ImageIcon(getClass().getResource("loro2Berde.png")),karta2.getWidth(),karta2.getHeight()));
-		karta2.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-			}
-		});
+		
+		JButton mazoa = new JButton("");
+		mazoa.setBounds(53, 0, 127, 218);
+		mazoa.setIcon(resizeIcon(new ImageIcon(getClass().getResource("mazo.png")),mazoa.getWidth(),mazoa.getHeight()));
 		panel.setLayout(null);
-		panel.add(karta2);
-		
-		JButton karta3 = new JButton("");
-		karta3.setBounds(787, 0, 127, 218);
-		karta3.setIcon(resizeIcon(new ImageIcon(getClass().getResource("kanguro3Berde.png")),karta3.getWidth(),karta3.getHeight()));
-		panel.add(karta3);
-		panel.add(karta4);
-		
-		JButton karta1 = new JButton("");
-		karta1.setBounds(332, 0, 127, 218);
-		karta1.setIcon(resizeIcon(new ImageIcon(getClass().getResource("mofeta1Berde.png")),karta1.getWidth(),karta1.getHeight()));
-		panel.add(karta1);
-		
-		JButton mazo1 = new JButton("");
-		mazo1.setBounds(53, 11, 127, 196);
-		mazo1.setIcon(resizeIcon(new ImageIcon(getClass().getResource("reverso.png")),mazo1.getWidth(),mazo1.getHeight()));
-		panel.add(mazo1);
-		
-		JButton mazo2 = new JButton("");
-		mazo2.setBounds(91, 11, 127, 196);
-		mazo2.setIcon(resizeIcon(new ImageIcon(getClass().getResource("reverso.png")),mazo2.getWidth(),mazo2.getHeight()));
-		panel.add(mazo2);
+		panel.add(mazoa);
 		
 		JPanel panel_3 = new JPanel();
 		panel_3.setLayout(null);
@@ -90,7 +62,7 @@ public class Interfazea extends JFrame
 		
 		JButton mazoMakina = new JButton("");
 		mazoMakina.setBounds(23, 11, 127, 116);
-		mazoMakina.setIcon(resizeIcon(new ImageIcon(getClass().getResource("reverso.png")),mazoMakina.getWidth(),mazoMakina.getHeight()));
+		mazoMakina.setIcon(resizeIcon(new ImageIcon(getClass().getResource("mazo.png")),mazoMakina.getWidth(),mazoMakina.getHeight()));
 		panel_3.add(mazoMakina);
 		
 		JPanel tablero = new JPanel();
@@ -144,6 +116,42 @@ public class Interfazea extends JFrame
 		txtrhistoriala.setEditable(false);
 		txtrhistoriala.setBounds(0, 0, 180, 480);
 		getContentPane().add(txtrhistoriala);
+	}
+	public void kartakPantailaratu(EskuKartak kartak){
+		
+		Karta k1 = kartak.getKarta(0);
+		Karta k2 = kartak.getKarta(1);
+		Karta k3 = kartak.getKarta(2);
+		Karta k4 = kartak.getKarta(3);
+		
+		JButton karta4 = new JButton("");
+		karta4.setBounds(1007, 0, 127, 218);
+		karta4.setIcon(resizeIcon(new ImageIcon(getClass().getResource(k4.getIrudia())),karta4.getWidth(),karta4.getHeight()));
+		karta4.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+			}
+		});
+		
+		JButton karta2 = new JButton("");
+		karta2.setBounds(559, 0, 127, 218);
+		karta2.setIcon(resizeIcon(new ImageIcon(getClass().getResource(k2.getIrudia())),karta2.getWidth(),karta2.getHeight()));
+		karta2.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+			}
+		});
+		panel.setLayout(null);
+		panel.add(karta2);
+		
+		JButton karta3 = new JButton("");
+		karta3.setBounds(787, 0, 127, 218);
+		karta3.setIcon(resizeIcon(new ImageIcon(getClass().getResource(k3.getIrudia())),karta3.getWidth(),karta3.getHeight()));
+		panel.add(karta3);
+		panel.add(karta4);
+		
+		JButton karta1 = new JButton("");
+		karta1.setBounds(332, 0, 127, 218);
+		karta1.setIcon(resizeIcon(new ImageIcon(getClass().getResource(k1.getIrudia())),karta1.getWidth(),karta1.getHeight()));
+		panel.add(karta1); 
 	}
 
     public static void main(String args[])
