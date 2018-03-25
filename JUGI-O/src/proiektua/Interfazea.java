@@ -6,6 +6,7 @@ import java.awt.event.*;
 public class Interfazea extends JFrame{
 	
 	private JPanel panel;
+	private JButton mazoa;
 	
 	private static Icon resizeIcon(ImageIcon icon, int resizedWidth, int resizedHeight) {
 	    Image img = icon.getImage();
@@ -28,11 +29,12 @@ public class Interfazea extends JFrame{
 		getContentPane().add(this.panel);
 		
 		
-		JButton mazoa = new JButton("");
+		mazoa = new JButton("");
 		mazoa.setBounds(53, 0, 127, 218);
 		mazoa.setIcon(resizeIcon(new ImageIcon(getClass().getResource("mazo.png")),mazoa.getWidth(),mazoa.getHeight()));
 		panel.setLayout(null);
 		panel.add(mazoa);
+		
 		
 		JPanel panel_3 = new JPanel();
 		panel_3.setLayout(null);
@@ -113,9 +115,20 @@ public class Interfazea extends JFrame{
 		
 		JTextArea txtrhistoriala = new JTextArea();
 		txtrhistoriala.setText("***HISTORIALA***");
+		txtrhistoriala.append("\n\n -MAZOAN KLIK EGIN" );
+		
 		txtrhistoriala.setEditable(false);
 		txtrhistoriala.setBounds(0, 0, 180, 480);
+		
 		getContentPane().add(txtrhistoriala);
+	}
+	public void mazoaClickatu(final EskuKartak kartak){
+		mazoa.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				kartakPantailaratu(kartak);
+			}
+		});
+	
 	}
 	public void kartakPantailaratu(EskuKartak kartak){
 		
@@ -131,7 +144,7 @@ public class Interfazea extends JFrame{
 			public void actionPerformed(ActionEvent arg0) {
 			}
 		});
-		
+	
 		JButton karta2 = new JButton("");
 		karta2.setBounds(559, 0, 127, 218);
 		karta2.setIcon(resizeIcon(new ImageIcon(getClass().getResource(k2.getIrudia())),karta2.getWidth(),karta2.getHeight()));
@@ -139,6 +152,7 @@ public class Interfazea extends JFrame{
 			public void actionPerformed(ActionEvent e) {
 			}
 		});
+		
 		panel.setLayout(null);
 		panel.add(karta2);
 		
@@ -148,10 +162,13 @@ public class Interfazea extends JFrame{
 		panel.add(karta3);
 		panel.add(karta4);
 		
+
 		JButton karta1 = new JButton("");
 		karta1.setBounds(332, 0, 127, 218);
 		karta1.setIcon(resizeIcon(new ImageIcon(getClass().getResource(k1.getIrudia())),karta1.getWidth(),karta1.getHeight()));
 		panel.add(karta1); 
+		
+		this.repaint();
 	}
 
   
