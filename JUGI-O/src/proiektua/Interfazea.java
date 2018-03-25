@@ -154,14 +154,5 @@ public class Interfazea extends JFrame{
 		panel.add(karta1); 
 	}
 
-    public static void main(String args[])
-    {
-    	Interfazea frame = new Interfazea();
-    	frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		frame.getContentPane().setLayout(new BorderLayout());
-		frame.setSize(1280, 720);
-		frame.setLocationRelativeTo(null);
-		frame.setVisible(true);
-		
-}	
+  
  }

@@ -107,6 +107,7 @@ public class Tableroa {
 		pc.hartuLehenegoLauKartak();
 		
 		frame.kartakPantailaratu(j1.getEskuKartak());
+		frame.repaint();
 		
 		
 		j1.getEskuKartak().erakutsiKartak();
