@@ -25,7 +25,7 @@ public class Interfazea extends JFrame{
 		this.panel = new JPanel();
 		
 		panel.setBounds(0, 479, 1264, 212);
-		panel.setBackground(Color.ORANGE);
+		panel.setBackground(new Color(139, 69, 19));
 		getContentPane().add(this.panel);
 		
 		
@@ -38,7 +38,7 @@ public class Interfazea extends JFrame{
 		
 		JPanel panel_3 = new JPanel();
 		panel_3.setLayout(null);
-		panel_3.setBackground(Color.ORANGE);
+		panel_3.setBackground(new Color(139, 69, 19));
 		panel_3.setBounds(169, 0, 1095, 138);
 		getContentPane().add(panel_3);
 		
@@ -68,7 +68,7 @@ public class Interfazea extends JFrame{
 		panel_3.add(mazoMakina);
 		
 		JPanel tablero = new JPanel();
-		tablero.setBackground(Color.GRAY);
+		tablero.setBackground(new Color(139, 69, 19));
 		tablero.setBounds(169, 137, 1095, 343);
 		getContentPane().add(tablero);
 		tablero.setLayout(null);
@@ -114,6 +114,7 @@ public class Interfazea extends JFrame{
 		tablero.add(patadaGate);
 		
 		JTextArea txtrhistoriala = new JTextArea();
+		txtrhistoriala.setBackground(new Color(189, 183, 107));
 		txtrhistoriala.setText("***HISTORIALA***");
 		txtrhistoriala.append("\n\n -MAZOAN KLIK EGIN" );
 		
@@ -130,6 +131,7 @@ public class Interfazea extends JFrame{
 		});
 	
 	}
+
 	public void kartakPantailaratu(EskuKartak kartak){
 		
 		Karta k1 = kartak.getKarta(0);
