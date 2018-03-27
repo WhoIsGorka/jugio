@@ -44,22 +44,22 @@ public class Interfazea extends JFrame{
 		
 		JButton makinaKarta1 = new JButton("");
 		makinaKarta1.setBounds(205, -22, 127, 160);
-		makinaKarta1.setIcon(resizeIcon(new ImageIcon(getClass().getResource("reverso.png")),makinaKarta1.getWidth(),makinaKarta1.getHeight()));
+		makinaKarta1.setIcon(resizeIcon(new ImageIcon(getClass().getResource("yugioReverso.png")),makinaKarta1.getWidth(),makinaKarta1.getHeight()));
 		panel_3.add(makinaKarta1);
 		
 		JButton makinaKarta2 = new JButton("");
 		makinaKarta2.setBounds(426, -22, 127, 160);
-		makinaKarta2.setIcon(resizeIcon(new ImageIcon(getClass().getResource("reverso.png")),makinaKarta2.getWidth(),makinaKarta2.getHeight()));
+		makinaKarta2.setIcon(resizeIcon(new ImageIcon(getClass().getResource("yugioReverso.png")),makinaKarta2.getWidth(),makinaKarta2.getHeight()));
 		panel_3.add(makinaKarta2);
 		
 		JButton makinaKarta3 = new JButton("");
 		makinaKarta3.setBounds(638, -22, 127, 160);
-		makinaKarta3.setIcon(resizeIcon(new ImageIcon(getClass().getResource("reverso.png")),makinaKarta3.getWidth(),makinaKarta3.getHeight()));
+		makinaKarta3.setIcon(resizeIcon(new ImageIcon(getClass().getResource("yugioReverso.png")),makinaKarta3.getWidth(),makinaKarta3.getHeight()));
 		panel_3.add(makinaKarta3);
 		
 		JButton makinaKarta4 = new JButton("");
 		makinaKarta4.setBounds(856, -22, 127, 160);
-		makinaKarta4.setIcon(resizeIcon(new ImageIcon(getClass().getResource("reverso.png")),makinaKarta4.getWidth(),makinaKarta4.getHeight()));
+		makinaKarta4.setIcon(resizeIcon(new ImageIcon(getClass().getResource("yugioReverso.png")),makinaKarta4.getWidth(),makinaKarta4.getHeight()));
 		panel_3.add(makinaKarta4);
 		
 		JButton mazoMakina = new JButton("");
