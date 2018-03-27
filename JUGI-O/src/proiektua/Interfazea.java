@@ -94,22 +94,22 @@ public class Interfazea extends JFrame{
 		tablero.add(mahaiKarta5);
 		
 		JButton salidaBar = new JButton("");
-		salidaBar.setBounds(10, 11, 197, 123);
+		salidaBar.setBounds(878, 11, 207, 123);
 		salidaBar.setIcon(resizeIcon(new ImageIcon(getClass().getResource("salidaBar.png")),salidaBar.getWidth(),salidaBar.getHeight()));
 		tablero.add(salidaBar);
 		
 		JButton heavenGate = new JButton("");
-		heavenGate.setBounds(958, 145, 127, 192);
+		heavenGate.setBounds(10, 145, 127, 192);
 		heavenGate.setIcon(resizeIcon(new ImageIcon(getClass().getResource("heavenGate.png")),heavenGate.getWidth(),heavenGate.getHeight()));
 		tablero.add(heavenGate);
 		
 		JButton entradaBar = new JButton("");
-		entradaBar.setBounds(878, 11, 207, 123);
+		entradaBar.setBounds(10, 11, 207, 123);
 		entradaBar.setIcon(resizeIcon(new ImageIcon(getClass().getResource("entradaBar.png")),entradaBar.getWidth(),entradaBar.getHeight()));
 		tablero.add(entradaBar);
 		
 		JButton patadaGate = new JButton("");
-		patadaGate.setBounds(10, 145, 127, 192);
+		patadaGate.setBounds(958, 145, 127, 192);
 		patadaGate.setIcon(resizeIcon(new ImageIcon(getClass().getResource("patadaGate.png")),patadaGate.getWidth(),patadaGate.getHeight()));
 		tablero.add(patadaGate);
 		
@@ -131,7 +131,11 @@ public class Interfazea extends JFrame{
 		});
 	
 	}
-
+	public void kartaKlikatu(Karta karta){
+		
+				
+		}
+	
 	public void kartakPantailaratu(EskuKartak kartak){
 		
 		Karta k1 = kartak.getKarta(0);
@@ -152,6 +156,7 @@ public class Interfazea extends JFrame{
 		karta2.setIcon(resizeIcon(new ImageIcon(getClass().getResource(k2.getIrudia())),karta2.getWidth(),karta2.getHeight()));
 		karta2.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				
 			}
 		});
 		
