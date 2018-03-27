@@ -109,9 +109,10 @@ public class Tableroa {
 		frame.mazoaClickatu(j1.getEskuKartak());
 		
 		
-		
+		System.out.println("Zure kartak: \n ");
+	
 		j1.getEskuKartak().erakutsiKartak();
-		pc.getEskuKartak().erakutsiKartak();
+		
 		
 		
 	}
