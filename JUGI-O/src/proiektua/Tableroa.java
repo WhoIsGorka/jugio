@@ -7,7 +7,7 @@ import javax.swing.JFrame;
 
 public class Tableroa {
 	
-	private MahaiKartak ilara = new MahaiKartak();
+	private MahaiKartak ilara;
 	private Jokalaria j1;
 	private Jokalaria pc;
 	private EskuKartak m1;
@@ -20,6 +20,9 @@ public class Tableroa {
 		this.j1 =  new Jokalaria();
 		this.pc = new Jokalaria();
 		
+	}
+	public Jokalaria getJokalaria(){
+		return this.j1;
 	}
 	public void KartakSortu(){
 		Karta mofeta1 = new Karta(1,"Mofeta"," ",false,4,"1mofetaAzul.PNG");
@@ -90,30 +93,15 @@ public class Tableroa {
 		
 		
 	}
-	public void partidaJolastu(){
+	public void hasieraketak(){
 		sartuJokalariak();
 		this.KartakSortu();
 		j1.getMazoa().mazoaSortu(m1);
 		pc.getMazoa().mazoaSortu(m2);
-		
-		Interfazea frame = new Interfazea();
-    	frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		frame.getContentPane().setLayout(new BorderLayout());
-		frame.setSize(1280, 720);
-		frame.setLocationRelativeTo(null);
-		frame.setVisible(true);
-		
 		j1.hartuLehenegoLauKartak();
-		pc.hartuLehenegoLauKartak();
-		
-		frame.mazoaClickatu(j1.getEskuKartak());
-		
-		
+		pc.hartuLehenegoLauKartak();	
 		System.out.println("Zure kartak: \n ");
-	
-		j1.getEskuKartak().erakutsiKartak();
-		
-		
+		j1.getEskuKartak().erakutsiKartak();		
 		
 	}
 	

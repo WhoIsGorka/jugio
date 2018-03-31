@@ -7,14 +7,12 @@ public class Interfazea extends JFrame{
 	
 	private JPanel panel;
 	private JButton mazoa;
-	
 	private static Icon resizeIcon(ImageIcon icon, int resizedWidth, int resizedHeight) {
 	    Image img = icon.getImage();
 	    Image resizedImage = img.getScaledInstance(resizedWidth, resizedHeight,  java.awt.Image.SCALE_DEFAULT);  
 	    return new ImageIcon(resizedImage);
 	}
 	public Interfazea() {
-		
 		setResizable(false);
 		getContentPane().setBackground(Color.GRAY);
 		getContentPane().setForeground(Color.WHITE);
@@ -131,11 +129,37 @@ public class Interfazea extends JFrame{
 		});
 	
 	}
-	public void kartaKlikatu(Karta karta){
-		
-				
-		}
-	
+	/*public void kartaKlikatu(Karta karta){
+		karta1.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				EskukoKartak.kenduKarta(0);
+				MahaiKartak.addLast(karta);
+				repaint();
+			}
+			}
+		);
+		karta2.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				EskukoKartak.kenduKarta(1);
+				MahaiKartak.addLast(karta);
+				repaint();
+			}
+		});
+		karta3.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+			EskukoKartak.kenduKarta(2);
+			MahaiKartak.addLast(karta);
+			repaint();
+			}
+		});
+		karta4.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				EskukoKartak.kenduKarta(3);
+				MahaiKartak.addLast(karta);
+				repaint();
+			}
+		});
+}*/
 	public void kartakPantailaratu(EskuKartak kartak){
 		
 		Karta k1 = kartak.getKarta(0);
@@ -178,5 +202,18 @@ public class Interfazea extends JFrame{
 		this.repaint();
 	}
 
-  
- }
+		public static void main(String[] args) {
+			Tableroa tableroa=Jokoa.getJokoa().hasieratuJokoa();
+			tableroa.hasieraketak();
+			Jokalaria j1=tableroa.getJokalaria();
+			Interfazea frame = new Interfazea();
+	    	frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+			frame.getContentPane().setLayout(new BorderLayout());
+			frame.setSize(1280, 720);
+			frame.setLocationRelativeTo(null);
+			frame.setVisible(true);
+			frame.mazoaClickatu(j1.getEskuKartak());
+		}
+
+	}
+

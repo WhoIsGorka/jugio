@@ -16,7 +16,7 @@ public class Jokoa {
 		}
 		return nireJokoa;
 	}
-	public void jolastu(){
-		this.t1.partidaJolastu();
+	public Tableroa hasieratuJokoa(){
+		return this.t1;
 	}
 }
