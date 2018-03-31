@@ -11,8 +11,8 @@ public class EskuKartak {
 	public void gehituKarta(Karta pKarta){
 		this.eskua.add(pKarta);
 	}
-	public void kenduKarta(int num){
-		this.eskua.remove(num);
+	public Karta kenduKarta(int num){
+		return this.eskua.remove(num);
 	}
 	public boolean hutsaDa(){
 		return this.eskua.isEmpty();

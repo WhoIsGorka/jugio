@@ -30,8 +30,8 @@ public class TableroProba {
 	}
 	
 	@Test
-	public void testPartidaJolastu() {
-		t.partidaJolastu();
+	public void testHasieraketak() {
+		t.hasieraketak();
 	}
 	
 	

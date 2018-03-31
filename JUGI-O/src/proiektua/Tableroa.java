@@ -24,6 +24,9 @@ public class Tableroa {
 	public Jokalaria getJokalaria(){
 		return this.j1;
 	}
+	public MahaiKartak getMahaiKartak(){
+		return this.ilara;
+	}
 	public void KartakSortu(){
 		Karta mofeta1 = new Karta(1,"Mofeta"," ",false,4,"1mofetaAzul.PNG");
 		Karta mofeta2 = new Karta(1,"Mofeta"," ",false,4,"mofeta1Berde.png");
@@ -96,12 +99,13 @@ public class Tableroa {
 	public void hasieraketak(){
 		sartuJokalariak();
 		this.KartakSortu();
+		
 		j1.getMazoa().mazoaSortu(m1);
 		pc.getMazoa().mazoaSortu(m2);
-		j1.hartuLehenegoLauKartak();
+		//j1.hartuLehenegoLauKartak();   MAZOA KLIKATZEAN HAU EGINGO DA
 		pc.hartuLehenegoLauKartak();	
-		System.out.println("Zure kartak: \n ");
-		j1.getEskuKartak().erakutsiKartak();		
+		//System.out.println("Zure kartak: \n ");
+		//j1.getEskuKartak().erakutsiKartak();		
 		
 	}
 	
