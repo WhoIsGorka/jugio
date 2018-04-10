@@ -11,6 +11,7 @@ public class Interfazea extends JFrame{
 	private JButton karta2;
 	private JButton karta3;
 	private JButton karta4;
+	
 	private static Icon resizeIcon(ImageIcon icon, int resizedWidth, int resizedHeight) {
 	    Image img = icon.getImage();
 	    Image resizedImage = img.getScaledInstance(resizedWidth, resizedHeight,  java.awt.Image.SCALE_DEFAULT);  
@@ -168,35 +169,35 @@ public class Interfazea extends JFrame{
 		panel.add(karta4);
 		this.repaint();}
 	
-		public void kartaKlikatu(final Tableroa tableroa){
-			karta1.addActionListener(new ActionListener() {
-				public void actionPerformed(ActionEvent e) {
-					tableroa.getMahaiKartak().addLast(tableroa.getJokalaria().getEskuKartak().kenduKarta(0));
-					repaint();
-				}
-				}
-			);
-			karta2.addActionListener(new ActionListener() {
-				public void actionPerformed(ActionEvent e) {
-					tableroa.getMahaiKartak().addLast(tableroa.getJokalaria().getEskuKartak().kenduKarta(1));
-					repaint();
-				}
-				}
-			);
-			karta3.addActionListener(new ActionListener() {
-				public void actionPerformed(ActionEvent e) {
-					tableroa.getMahaiKartak().addLast(tableroa.getJokalaria().getEskuKartak().kenduKarta(2));
-					repaint();
-				}
-				}
-			);
-			karta4.addActionListener(new ActionListener() {
-				public void actionPerformed(ActionEvent e) {
-					tableroa.getMahaiKartak().addLast(tableroa.getJokalaria().getEskuKartak().kenduKarta(3));
-					repaint();
-				}
-				}
-				);
+	public void kartaKlikatu(final Tableroa tableroa){
+		karta1.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				tableroa.getMahaiKartak().addLast(tableroa.getJokalaria().getEskuKartak().kenduKarta(0));
+				repaint();
+			}
+			}
+		);
+		karta2.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				tableroa.getMahaiKartak().addLast(tableroa.getJokalaria().getEskuKartak().kenduKarta(1));
+				repaint();
+			}
+			}
+		);
+		karta3.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				tableroa.getMahaiKartak().addLast(tableroa.getJokalaria().getEskuKartak().kenduKarta(2));
+				repaint();
+			}
+			}
+		);
+		karta4.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				tableroa.getMahaiKartak().addLast(tableroa.getJokalaria().getEskuKartak().kenduKarta(3));
+				repaint();
+			}
+			}
+		);
 	}
 
 		public static void main(String[] args) {

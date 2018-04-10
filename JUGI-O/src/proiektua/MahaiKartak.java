@@ -7,11 +7,14 @@ public class MahaiKartak<Karta> {
     private Node first;
     private Node last;
     private int tamaina;
-    private Karta karta;
+ 
     
     public MahaiKartak() {
-        tamaina = 5;
+        tamaina = 0;
+        first=null;
+        last=null;
     }
+  
     private class Node {
         Karta karta;
         Node next;
@@ -22,6 +25,9 @@ public class MahaiKartak<Karta> {
             this.next = next;
             this.prev = prev;
         }
+    }
+    public Node getFirst(){
+    	return this.first;
     }
     public boolean isEmpty() { 
     	return tamaina == 0;
