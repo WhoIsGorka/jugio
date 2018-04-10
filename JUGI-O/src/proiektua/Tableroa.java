@@ -12,6 +12,7 @@ public class Tableroa {
 	private Jokalaria pc;
 	private EskuKartak m1;
 	private EskuKartak m2;
+	private Scanner sc;
 	
 	
 	
@@ -104,18 +105,16 @@ public class Tableroa {
 		pc.getMazoa().mazoaSortu(m2);
 		//j1.hartuLehenegoLauKartak();   MAZOA KLIKATZEAN HAU EGINGO DA
 		pc.hartuLehenegoLauKartak();	
-		//System.out.println("Zure kartak: \n ");
+		//System.out.println("Zure kartak: \n ");  
 		//j1.getEskuKartak().erakutsiKartak();		
 		
 	}
 	
 	public void sartuJokalariak() {
-		Scanner sc = new Scanner(System.in);
-		
+		sc = new Scanner(System.in);
 		System.out.println("Sartu jokalariaren izena: ");
 		String hitza = sc.nextLine();
 		j1.setJokalariarenIzena(hitza);
-		
 		System.out.println("Sartu jokalariaren zenbakia: ");
 		int zenb = sc.nextInt();
 		j1.setJokalariarenId(zenb);

@@ -168,7 +168,7 @@ public class Interfazea extends JFrame{
 		panel.add(karta4);
 		this.repaint();}
 	
-		/*public void kartaKlikatu(final Tableroa tableroa){
+		public void kartaKlikatu(final Tableroa tableroa){
 			karta1.addActionListener(new ActionListener() {
 				public void actionPerformed(ActionEvent e) {
 					tableroa.getMahaiKartak().addLast(tableroa.getJokalaria().getEskuKartak().kenduKarta(0));
@@ -198,7 +198,7 @@ public class Interfazea extends JFrame{
 				}
 				);
 	}
-*/
+
 		public static void main(String[] args) {
 			Tableroa tableroa=Jokoa.getJokoa().hasieratuJokoa();
 			tableroa.hasieraketak();
@@ -209,7 +209,7 @@ public class Interfazea extends JFrame{
 			frame.setLocationRelativeTo(null);
 			frame.setVisible(true);
 			frame.mazoaClickatu(tableroa);
-			//frame.kartaKlikatu(tableroa);
+			frame.kartaKlikatu(tableroa);
 			
 		}
 
