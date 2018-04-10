@@ -152,11 +152,7 @@ public class Interfazea extends JFrame{
 		JButton karta2 = new JButton("");
 		karta2.setBounds(559, 0, 127, 218);
 		karta2.setIcon(resizeIcon(new ImageIcon(getClass().getResource(k2.getIrudia())),karta2.getWidth(),karta2.getHeight()));
-		karta2.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				
-			}
-		});
+		
 		panel.add(karta2);
 		
 		JButton karta3 = new JButton("");
@@ -168,10 +164,7 @@ public class Interfazea extends JFrame{
 		JButton karta4 = new JButton("");
 		karta4.setBounds(1007, 0, 127, 218);
 		karta4.setIcon(resizeIcon(new ImageIcon(getClass().getResource(k4.getIrudia())),karta4.getWidth(),karta4.getHeight()));
-		karta4.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent arg0) {
-			}
-		});
+		
 		panel.add(karta4);
 		this.repaint();}
 	
