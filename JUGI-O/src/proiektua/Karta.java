@@ -7,7 +7,10 @@ public class Karta {
 	private boolean errekurtsiboa;
 	private int puntuak;
 	private String irudia;
+	
+	protected BotaPortaera bPortaera;
 	protected AurreratuPortaera aPortaera;
+	protected OrdenaPortaera oPortaera;
 	
 	public Karta(int pId,String pIzena,String pDeskr,boolean pErre,int pPuntuak,String pIrudia){
 		this.id = pId;
@@ -22,8 +25,5 @@ public class Karta {
 	}
 	public String getIrudia() {
 		return this.irudia;
-	}
-	public void aurreratu() {
-		aPortaera.aurreratu();
 	}
 }
