@@ -1,6 +1,7 @@
 package proiektua;
  
 import java.util.NoSuchElementException;
+
  
 public class MahaiKartak<Karta> {
  
@@ -47,4 +48,32 @@ public class MahaiKartak<Karta> {
         if(first == null) { first = tmp;}
         tamaina++;
     }
-    }
+    
+    public boolean contains(Karta pKarta) {
+		if(isEmpty()){
+			try {
+				throw new Exception("The list is empty, false will be returned");
+			} catch (Exception e) {
+				return false;
+			}
+		}else {
+			Node current=first;
+			Node last=first.prev;
+			int kont=0;
+			boolean aurkituta=false;
+			if(pKarta!=null){
+			    while (kont<tamaina && aurkituta==false){
+			    	 if (last.equals(pKarta)){ //azkenengo pElemententua da
+			 			aurkituta=true;
+			    	 }
+			    	 else if (current.equals(pKarta)){
+			    		 aurkituta=true;
+			    	 }
+			    	 current=current.next;
+			    	 kont++;
+			     }
+			   }
+			return aurkituta;
+		}
+	}
+}

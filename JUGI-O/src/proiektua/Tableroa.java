@@ -14,14 +14,23 @@ public class Tableroa {
 	private EskuKartak m2;
 	private Scanner sc;
 	
+	private static Tableroa nTableroa=null;
+	
 	
 	
 	public Tableroa() {
 		this.ilara = new MahaiKartak();
 		this.j1 =  new Ni();
 		this.pc = new Pc();
-		
 	}
+	
+	public static Tableroa getTableroa() {
+		if (nTableroa==null) {
+			nTableroa=new Tableroa();
+		}
+		return nTableroa;
+	}
+	
 	public Jokalaria getJokalaria(){
 		return this.j1;
 	}
@@ -94,8 +103,6 @@ public class Tableroa {
 		this.m2.gehituKarta(kokodriloa2);
 		this.m2.gehituKarta(hipopotamoa2);
 		this.m2.gehituKarta(lehoia2);
-		
-		
 	}
 	public void hasieraketak(){
 		sartuJokalariak();

@@ -2,9 +2,10 @@ package proiektua;
 
 public class AurreratuSinple implements AurreratuPortaera{
 
-	public AurreratuSinple() {
+	public AurreratuSinple(Karta pKarta) {
+		aurreratu(pKarta);
 	}
-	public void aurreratu() {
+	public void aurreratu(Karta pKarta) {
 		//aqui metodo
 	}
 }
