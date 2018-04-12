@@ -18,8 +18,8 @@ public class Tableroa {
 	
 	public Tableroa() {
 		this.ilara = new MahaiKartak();
-		this.j1 =  new Jokalaria();
-		this.pc = new Jokalaria();
+		this.j1 =  new Ni();
+		this.pc = new Pc();
 		
 	}
 	public Jokalaria getJokalaria(){
@@ -119,7 +119,6 @@ public class Tableroa {
 		int zenb = sc.nextInt();
 		j1.setJokalariarenId(zenb);
 		
-		pc.setPcIzenaId();
 		
 	}
 }

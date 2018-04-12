@@ -14,7 +14,7 @@ public class JokalariaProba {
 
 	@Before
 	public void setUp() throws Exception {
-		j1 = new Jokalaria();
+		j1 = new Ni();
 		//Kartak sortu
 		Karta k1 = new Karta(1,"Mofeta"," ",false,4,"urdina");
 		Karta k2 = new Karta(2,"Loroa"," ",false,4,"urdina");
