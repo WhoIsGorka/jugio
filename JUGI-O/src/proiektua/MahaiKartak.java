@@ -15,7 +15,7 @@ public class MahaiKartak<Karta> {
         last=null;
     }
   
-    private class Node {
+    public class Node {
         Karta karta;
         Node next;
         Node prev;
