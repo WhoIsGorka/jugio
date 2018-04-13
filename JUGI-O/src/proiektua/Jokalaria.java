@@ -46,6 +46,15 @@ public abstract class Jokalaria {
 	public void setJokalariarenId(int pId){
 		this.id = pId;
 	}
+	public void hartuKarta(){
+		if (this.eskuKartak.luzera()==0){
+			this.hartuLehenegoLauKartak();
+		}else if(this.eskuKartak.luzera()==3){
+			this.hartuKartaBat();	
+		}else{
+			//THROW EXCEPTION
+		}
+	}
 
 	public void hartuLehenegoLauKartak(){
 		for(int i=0;i<=4;i++){

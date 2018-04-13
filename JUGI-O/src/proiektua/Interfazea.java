@@ -38,6 +38,12 @@ public class Interfazea extends JFrame{
 		panel.setLayout(null);
 		panel.add(mazoa);
 		
+		mazoa.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				Tableroa.getTableroa().getJokalaria().hartuKarta();
+			}
+		});
+	
 		
 		JPanel panel_3 = new JPanel();
 		panel_3.setLayout(null);
@@ -119,100 +125,66 @@ public class Interfazea extends JFrame{
 		JTextArea txtrhistoriala = new JTextArea();
 		txtrhistoriala.setBackground(new Color(189, 183, 107));
 		txtrhistoriala.setText("***HISTORIALA***");
-		txtrhistoriala.append("\n\n -MAZOAN KLIK EGIN" );
+		
 		
 		txtrhistoriala.setEditable(false);
 		txtrhistoriala.setBounds(0, 0, 180, 480);
 		
 		getContentPane().add(txtrhistoriala);
 	}
-	public void mazoaClickatu(final Tableroa tableroa){
-		mazoa.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				tableroa.getJokalaria().hartuLehenegoLauKartak();
-				kartakPantailaratu(tableroa.getJokalaria());
+	
+	public void kartakPantailaratu(){
+		
+		if(Tableroa.getTableroa().getJokalaria().getEskuKartak().luzera()>0){
+			panel.setLayout(null);
+			this.karta1 = new JButton("");
+			karta1.setBounds(332, 0, 127, 218);
+			karta1.setIcon(resizeIcon(new ImageIcon(getClass().getResource(Tableroa.getTableroa().getJokalaria().getEskuKartak().getKarta(0).getIrudia())),karta1.getWidth(),karta1.getHeight()));
+			panel.add(karta1); 
+			
+			if(Tableroa.getTableroa().getJokalaria().getEskuKartak().luzera()>1){
+				this.karta2 = new JButton("");
+				karta2.setBounds(559, 0, 127, 218);
+				karta2.setIcon(resizeIcon(new ImageIcon(getClass().getResource(Tableroa.getTableroa().getJokalaria().getEskuKartak().getKarta(1).getIrudia())),karta2.getWidth(),karta2.getHeight()));
+				panel.add(karta2);
+				if(Tableroa.getTableroa().getJokalaria().getEskuKartak().luzera()>2){
+					this.karta3 = new JButton("");
+					karta3.setBounds(787, 0, 127, 218);
+					karta3.setIcon(resizeIcon(new ImageIcon(getClass().getResource(Tableroa.getTableroa().getJokalaria().getEskuKartak().getKarta(2).getIrudia())),karta3.getWidth(),karta3.getHeight()));
+					panel.add(karta3);
+					
+					if(Tableroa.getTableroa().getJokalaria().getEskuKartak().luzera()>3){
+						this.karta4 = new JButton("");
+						karta4.setBounds(1007, 0, 127, 218);
+						karta4.setIcon(resizeIcon(new ImageIcon(getClass().getResource(Tableroa.getTableroa().getJokalaria().getEskuKartak().getKarta(3).getIrudia())),karta4.getWidth(),karta4.getHeight()));
+						panel.add(karta4);	
+					}
+				}
 			}
-		});
-	
-	}
-	
-	public void kartakPantailaratu(Jokalaria j1){
-		
-		Karta k1 = j1.getEskuKartak().getKarta(0);
-		Karta k2 = j1.getEskuKartak().getKarta(1);
-		Karta k3 = j1.getEskuKartak().getKarta(2);
-		Karta k4 = j1.getEskuKartak().getKarta(3);
-		panel.setLayout(null);
-		
-		JButton karta1 = new JButton("");
-		karta1.setBounds(332, 0, 127, 218);
-		karta1.setIcon(resizeIcon(new ImageIcon(getClass().getResource(k1.getIrudia())),karta1.getWidth(),karta1.getHeight()));
-		panel.add(karta1); 
-		
+		}
 
-		JButton karta2 = new JButton("");
-		karta2.setBounds(559, 0, 127, 218);
-		karta2.setIcon(resizeIcon(new ImageIcon(getClass().getResource(k2.getIrudia())),karta2.getWidth(),karta2.getHeight()));
-		
-		panel.add(karta2);
-		
-		JButton karta3 = new JButton("");
-		karta3.setBounds(787, 0, 127, 218);
-		karta3.setIcon(resizeIcon(new ImageIcon(getClass().getResource(k3.getIrudia())),karta3.getWidth(),karta3.getHeight()));
-		panel.add(karta3);
-
-		
-		JButton karta4 = new JButton("");
-		karta4.setBounds(1007, 0, 127, 218);
-		karta4.setIcon(resizeIcon(new ImageIcon(getClass().getResource(k4.getIrudia())),karta4.getWidth(),karta4.getHeight()));
-		
-		panel.add(karta4);
-		this.repaint();}
-	
-	public void kartaKlikatu(final Tableroa tableroa){
-		karta1.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				tableroa.getMahaiKartak().addLast(tableroa.getJokalaria().getEskuKartak().kenduKarta(0));
-				repaint();
-			}
-			}
-		);
-		karta2.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				tableroa.getMahaiKartak().addLast(tableroa.getJokalaria().getEskuKartak().kenduKarta(1));
-				repaint();
-			}
-			}
-		);
-		karta3.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				tableroa.getMahaiKartak().addLast(tableroa.getJokalaria().getEskuKartak().kenduKarta(2));
-				repaint();
-			}
-			}
-		);
-		karta4.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				tableroa.getMahaiKartak().addLast(tableroa.getJokalaria().getEskuKartak().kenduKarta(3));
-				repaint();
-			}
-			}
-		);
+		this.repaint();
 	}
 
 		public static void main(String[] args) {
-			Tableroa tableroa=Jokoa.getJokoa().hasieratuJokoa();
-			tableroa.hasieraketak();
+			
+			Tableroa.getTableroa().hasieraketak();
+			
 			Interfazea frame = new Interfazea();
 	    	frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 			frame.getContentPane().setLayout(new BorderLayout());
 			frame.setSize(1280, 720);
 			frame.setLocationRelativeTo(null);
 			frame.setVisible(true);
-			frame.mazoaClickatu(tableroa);
-			frame.kartaKlikatu(tableroa);
 			
+			boolean amaitu = false;
+			
+			while(!amaitu){
+				frame.kartakPantailaratu();
+				
+				// TODO EL JUEGO HASTA QUE ACABE
+				
+			}
 		}
-
 	}
 

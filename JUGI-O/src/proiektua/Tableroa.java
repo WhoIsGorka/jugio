@@ -106,15 +106,14 @@ public class Tableroa {
 	}
 	public void hasieraketak(){
 		sartuJokalariak();
+		
 		this.KartakSortu();
 		
 		j1.getMazoa().mazoaSortu(m1);
 		pc.getMazoa().mazoaSortu(m2);
-		//j1.hartuLehenegoLauKartak();   MAZOA KLIKATZEAN HAU EGINGO DA
-		pc.hartuLehenegoLauKartak();	
-		//System.out.println("Zure kartak: \n ");  
-		//j1.getEskuKartak().erakutsiKartak();		
 		
+		pc.hartuLehenegoLauKartak();	
+			
 	}
 	
 	public void sartuJokalariak() {
