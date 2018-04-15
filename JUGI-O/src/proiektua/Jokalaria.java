@@ -49,15 +49,15 @@ public abstract class Jokalaria {
 	public void hartuKarta(){
 		if (this.eskuKartak.luzera()==0){
 			this.hartuLehenegoLauKartak();
-		}else if(this.eskuKartak.luzera()==3){
-			this.hartuKartaBat();	
-		}else{
-			//THROW EXCEPTION
+		}else if(this.eskuKartak.luzera()>0 && this.eskuKartak.luzera()<=3 ){
+			if(!this.mazoa.hutsaDa()){
+				this.hartuKartaBat();	
+			}
 		}
 	}
 
 	public void hartuLehenegoLauKartak(){
-		for(int i=0;i<=4;i++){
+		for(int i=0;i<=3;i++){
 			hartuKartaBat();
 		}
 	}	
@@ -66,7 +66,5 @@ public abstract class Jokalaria {
 		if(!this.mazoa.hutsaDa()){
 			this.eskuKartak.gehituKarta(this.mazoa.kenduKarta());
 		}
-		
-	
 	}
 }

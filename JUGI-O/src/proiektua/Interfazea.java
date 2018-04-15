@@ -133,7 +133,7 @@ public class Interfazea extends JFrame{
 		getContentPane().add(txtrhistoriala);
 	}
 	
-	public void kartakPantailaratu(){
+	public void eskuKartakPantailaratu(){
 		
 		if(Tableroa.getTableroa().getJokalaria().getEskuKartak().luzera()>0){
 			panel.setLayout(null);
@@ -142,22 +142,44 @@ public class Interfazea extends JFrame{
 			karta1.setIcon(resizeIcon(new ImageIcon(getClass().getResource(Tableroa.getTableroa().getJokalaria().getEskuKartak().getKarta(0).getIrudia())),karta1.getWidth(),karta1.getHeight()));
 			panel.add(karta1); 
 			
+			karta1.addActionListener(new ActionListener() {
+				public void actionPerformed(ActionEvent e) {
+					System.out.println("karta1");
+				}
+			});
 			if(Tableroa.getTableroa().getJokalaria().getEskuKartak().luzera()>1){
 				this.karta2 = new JButton("");
 				karta2.setBounds(559, 0, 127, 218);
 				karta2.setIcon(resizeIcon(new ImageIcon(getClass().getResource(Tableroa.getTableroa().getJokalaria().getEskuKartak().getKarta(1).getIrudia())),karta2.getWidth(),karta2.getHeight()));
 				panel.add(karta2);
+				
+				karta2.addActionListener(new ActionListener() {
+					public void actionPerformed(ActionEvent e) {
+						System.out.println("karta2");
+					}
+				});
 				if(Tableroa.getTableroa().getJokalaria().getEskuKartak().luzera()>2){
 					this.karta3 = new JButton("");
 					karta3.setBounds(787, 0, 127, 218);
 					karta3.setIcon(resizeIcon(new ImageIcon(getClass().getResource(Tableroa.getTableroa().getJokalaria().getEskuKartak().getKarta(2).getIrudia())),karta3.getWidth(),karta3.getHeight()));
 					panel.add(karta3);
 					
+					karta3.addActionListener(new ActionListener() {
+						public void actionPerformed(ActionEvent e) {
+							System.out.println("karta3");
+						}
+					});
 					if(Tableroa.getTableroa().getJokalaria().getEskuKartak().luzera()>3){
 						this.karta4 = new JButton("");
 						karta4.setBounds(1007, 0, 127, 218);
 						karta4.setIcon(resizeIcon(new ImageIcon(getClass().getResource(Tableroa.getTableroa().getJokalaria().getEskuKartak().getKarta(3).getIrudia())),karta4.getWidth(),karta4.getHeight()));
 						panel.add(karta4);	
+						
+						karta4.addActionListener(new ActionListener() {
+							public void actionPerformed(ActionEvent e) {
+								System.out.println("karta4");
+							}
+						});
 					}
 				}
 			}
@@ -165,8 +187,9 @@ public class Interfazea extends JFrame{
 
 		this.repaint();
 	}
-
-		public static void main(String[] args) {
+		
+	
+	public static void main(String[] args) {
 			
 			Tableroa.getTableroa().hasieraketak();
 			
@@ -180,7 +203,7 @@ public class Interfazea extends JFrame{
 			boolean amaitu = false;
 			
 			while(!amaitu){
-				frame.kartakPantailaratu();
+				frame.eskuKartakPantailaratu();
 				
 				// TODO EL JUEGO HASTA QUE ACABE
 				

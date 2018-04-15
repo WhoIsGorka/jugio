@@ -116,6 +116,7 @@ public class Tableroa {
 			
 	}
 	
+	
 	public void sartuJokalariak() {
 		sc = new Scanner(System.in);
 		System.out.println("Sartu jokalariaren izena: ");
