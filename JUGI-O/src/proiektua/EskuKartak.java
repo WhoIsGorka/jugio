@@ -23,10 +23,5 @@ public class EskuKartak {
 	public int luzera(){
 		return this.eskua.size();
 	}
-	public void erakutsiKartak(){
-		System.out.println(this.eskua.get(0).getIzena());
-		System.out.println(this.eskua.get(1).getIzena());
-		System.out.println(this.eskua.get(2).getIzena());
-		System.out.println(this.eskua.get(3).getIzena());
-	}
+
 }
