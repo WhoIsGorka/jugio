@@ -4,6 +4,7 @@ import java.awt.BorderLayout;
 import java.util.Scanner;
 
 import javax.swing.JFrame;
+import javax.swing.JOptionPane;
 
 public class Tableroa {
 	
@@ -118,14 +119,9 @@ public class Tableroa {
 	
 	
 	public void sartuJokalariak() {
-		sc = new Scanner(System.in);
-		System.out.println("Sartu jokalariaren izena: ");
-		String hitza = sc.nextLine();
+		String hitza = JOptionPane.showInputDialog(null, "Sartu jokalariaren izena ");
 		j1.setJokalariarenIzena(hitza);
-		System.out.println("Sartu jokalariaren zenbakia: ");
-		int zenb = sc.nextInt();
-		j1.setJokalariarenId(zenb);
-		
-		
+		int zenb =  Integer.parseInt(JOptionPane.showInputDialog(null, "Sartu jokalariaren ID-a"));
+		j1.setJokalariarenId(zenb);		
 	}
 }

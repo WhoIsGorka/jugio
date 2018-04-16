@@ -197,7 +197,6 @@ public class Interfazea extends JFrame{
 	public static void main(String[] args) {
 			
 			Tableroa.getTableroa().hasieraketak();
-			
 			Interfazea frame = new Interfazea();
 	    	frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 			frame.getContentPane().setLayout(new BorderLayout());
