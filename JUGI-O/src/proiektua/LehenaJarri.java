@@ -6,6 +6,6 @@ public class LehenaJarri implements AurreratuPortaera {
 	}
 	
 	public void aurreratu(Karta pKarta) {
-		Tableroa.getTableroa().getMahaiKartak().addFirst(pKarta);
+		Tableroa.getTableroa().getMahaiKartak().gehituHasieran(pKarta);
 	}
 }
