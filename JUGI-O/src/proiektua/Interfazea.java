@@ -40,7 +40,12 @@ public class Interfazea extends JFrame{
 		
 		mazoa.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				Tableroa.getTableroa().getJokalaria().hartuKarta();
+				if (Tableroa.getTableroa().getJokalaria().getEskuKartak().luzera()==4){
+					JOptionPane.showMessageDialog(null, 
+                            "Jada lau karta dauzkazu eskuan", 
+                            "Errorea!", 
+                            JOptionPane.WARNING_MESSAGE);				}
+				Tableroa.getTableroa().getJokalaria().hartuKarta();			
 			}
 		});
 	
