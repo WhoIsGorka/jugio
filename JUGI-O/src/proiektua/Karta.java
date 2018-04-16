@@ -1,6 +1,6 @@
 package proiektua;
 
-public class Karta {
+public abstract class Karta {
 	private int id;
 	private String izena;
 	private String deskr;
@@ -26,4 +26,5 @@ public class Karta {
 	public String getIrudia() {
 		return this.irudia;
 	}
+	public abstract void animaladaEgin();
 }

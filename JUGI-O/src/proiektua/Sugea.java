@@ -6,5 +6,7 @@ public class Sugea extends Karta {
 		super(pId, pIzena, pDeskr, pErre, pPuntuak, pKolorea);
 		oPortaera = new OrdenaSugea();
 	}
-
+	public void animaladaEgin(){
+		
+	}
 }

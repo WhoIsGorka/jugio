@@ -6,5 +6,7 @@ public class Itsaslehoia extends Karta {
 		super(pId, pIzena, pDeskr, pErre, pPuntuak, pKolorea);
 		oPortaera = new OrdenaItsasLehoia();
 	}
-
+	public void animaladaEgin(){
+		
+	}
 }

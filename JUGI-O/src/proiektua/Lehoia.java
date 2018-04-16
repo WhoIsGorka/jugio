@@ -8,5 +8,7 @@ public class Lehoia extends Karta {
 			aPortaera=new LehenaJarri(this);
 		}*/
 	}
-
+	public void animaladaEgin(){
+		
+	}
 }

@@ -6,5 +6,7 @@ public class Kokodriloa extends Karta {
 		super(pId, pIzena, pDeskr, pErre, pPuntuak, pKolorea);
 	
 	}
-
+	public void animaladaEgin(){
+		
+	}
 }

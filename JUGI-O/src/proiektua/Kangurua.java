@@ -6,5 +6,7 @@ public class Kangurua extends Karta {
 		super(pId, pIzena, pDeskr, pErre, pPuntuak, pKolorea);
 	
 	}
-
+	public void animaladaEgin(){
+		
+	}
 }
