@@ -1,43 +1,43 @@
 package proiektua;
  
-import java.util.LinkedList;
+import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Iterator;
-import java.util.NoSuchElementException;
 
- 
+
 public class MahaiKartak {
-	private LinkedList<Karta> lista;
+	private ArrayList<Karta> lista;
 	
 	public MahaiKartak() {
-		this.lista = new LinkedList<Karta>();
+		this.lista = new ArrayList<Karta>();
 	}
 	
-	public LinkedList<Karta> getMahaiKartak() {
+	public ArrayList<Karta> getMahaiKartak() {
 		return this.lista;
+	}
+	
+	public int getTamania() {
+		return this.lista.size();
 	}
 	
 	public boolean hutsaDa() {
 		return this.lista.isEmpty();
 	}
 	
-	public void gehituHasieran(Karta pKarta) {
-		this.lista.addFirst(pKarta);
-	}
-	
 	public void gehituKarta(Karta pKarta) {
-		this.lista.addLast(pKarta);
+		this.lista.add(pKarta);
 	}
 	
-	public Karta kenduKarta(int id) {
-		return this.lista.remove(id);
+	public void gehituHasieran(Karta pKarta) {
+		this.lista.add(0, pKarta);
 	}
 	
-	public Karta kenduHasierakoa() {
-		return this.lista.removeFirst();
+	public Karta kenduKarta(Karta pKarta) {
+		return this.lista.remove(bilatu(pKarta));
 	}
 	
-	public Karta kenduAmaierakoa() {
-		return this.lista.removeLast();
+	public void bueltaEman() {
+		Collections.reverse(lista);
 	}
 	
 	private Iterator<Karta> getIterator(){
@@ -55,5 +55,9 @@ public class MahaiKartak {
 			}
 		}
 		return aurkituta;
+	}
+	
+	public int bilatu(Karta pKarta) {
+		return (badago(pKarta.getIzena()))? pKarta.getId(): null; 
 	}
 }

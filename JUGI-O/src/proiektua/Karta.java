@@ -26,5 +26,8 @@ public abstract class Karta {
 	public String getIrudia() {
 		return this.irudia;
 	}
+	public int getId() {
+		return this.id;
+	}
 	public abstract void animaladaEgin();
 }
