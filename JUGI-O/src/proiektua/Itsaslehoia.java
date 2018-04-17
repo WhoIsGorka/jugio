@@ -7,6 +7,6 @@ public class Itsaslehoia extends Karta {
 		
 	}
 	public void animaladaEgin(){
-		oPortaera = new OrdenaItsasLehoia(this);
+		oPortaera = new OrdenaItsaslehoia(this);
 	}
 }

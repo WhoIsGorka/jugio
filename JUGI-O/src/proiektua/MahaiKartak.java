@@ -48,7 +48,6 @@ public class MahaiKartak {
 			return -1;
 		}
 		
-		
 	}
 	
 	public boolean hutsaDa() {

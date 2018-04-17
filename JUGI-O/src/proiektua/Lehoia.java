@@ -11,6 +11,7 @@ public class Lehoia extends Karta {
 		
 		if (Tableroa.getTableroa().getMahaiKartak().getPosizioa("Lehoia")!=-1) {
 			aPortaera=new LehenaJarri(this);
+			
 			if(Tableroa.getTableroa().getMahaiKartak().getPosizioa("Tximinoa")!=-1){
 				Tableroa.getTableroa().getMahaiKartak().ezabatuGuztiak("Tximinoa");
 			}
