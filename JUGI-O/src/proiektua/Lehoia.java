@@ -7,7 +7,7 @@ public class Lehoia extends Karta {
 		
 	}
 	public void animaladaEgin(){
-		if (Tableroa.getTableroa().getMahaiKartak().badago(ListaKartak.getListaKartak().geTximinoa())) {//TENEMOS QUE TENER LA POSIBILIDAD DE ACCEDER A CUALQUIER KARTA, ES DECIR HACES UNA LISTA KARTAK DONDE ESTEN TODAS
+		if (Tableroa.getTableroa().getMahaiKartak().badago("Tximinoa")) {
 		aPortaera=new LehenaJarri(this);
 		}
 	}

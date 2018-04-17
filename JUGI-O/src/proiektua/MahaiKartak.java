@@ -44,13 +44,13 @@ public class MahaiKartak {
 		return this.lista.iterator();
 	}
 	
-	public boolean badago(Karta pKarta) {
+	public boolean badago(String pS) {
 		Iterator<Karta> itr = this.getIterator();
 		boolean aurkituta=false;
 		Karta aux=null;
 		while(!aurkituta && itr.hasNext()) {
 			aux=itr.next();
-			if (aux.getClass().getName().equals(pKarta.getClass().getName())) {
+			if (aux.getClass().getName().equals(pS)) {
 				aurkituta=true;
 			}
 		}
