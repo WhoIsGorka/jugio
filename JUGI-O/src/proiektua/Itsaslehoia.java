@@ -4,9 +4,9 @@ public class Itsaslehoia extends Karta {
 
 	public Itsaslehoia(int pId,String pIzena,String pDeskr,boolean pErre,int pPuntuak,String pKolorea){
 		super(pId, pIzena, pDeskr, pErre, pPuntuak, pKolorea);
-		oPortaera = new OrdenaItsasLehoia();
+		
 	}
 	public void animaladaEgin(){
-		
+		oPortaera = new OrdenaItsasLehoia(this);
 	}
 }

@@ -8,7 +8,7 @@ public class Lehoia extends Karta {
 	}
 	public void animaladaEgin(){
 		if (Tableroa.getTableroa().getMahaiKartak().badago("Tximinoa")) {
-		aPortaera=new LehenaJarri(this);
+			aPortaera=new LehenaJarri(this);
 		}
 	}
 }
