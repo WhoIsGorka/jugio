@@ -24,6 +24,12 @@ public class MahaiKartak {
 		return this.lista.get(i);
 	}
 	
+	public void aurreraJoan(Karta pKarta) {
+		int i = this.getPosizioa(pKarta.getIzena());
+		Karta aux = this.kenduKarta(pKarta);
+		this.gehituKartaPos(aux, i-1);
+	}
+	
 	public int getPosizioa(String pS) {
 		Iterator<Karta> itr = this.getIterator();
 		boolean aurkituta=false;
@@ -56,9 +62,10 @@ public class MahaiKartak {
 	}
 	
 	public Karta kenduKarta(Karta pKarta) {
-		return this.lista.remove(bilatu(pKarta));
+		int i = getPosizioa(pKarta.getIzena());
+		return this.lista.remove(i);
 	}
-	
+	 
 	public void bueltaEman() {
 		Collections.reverse(lista);
 	}
@@ -69,13 +76,9 @@ public class MahaiKartak {
 //		Karta prev = null;
 //		Karta aux = null;
 //		current=itr.next();
-//		while (current.getId()>prev.getId()) {
-//			aux=current;
-//			current=prev;
-//			prev=aux;
-//			
-//			current=itr.next();
-//			prev=itr.next();
+//		int aux;
+//		for (int i=0; i<lista.size(); i++) {
+//			for (int j=0; j)
 //		}
 //	}
 		
@@ -96,7 +99,7 @@ public class MahaiKartak {
 		return aurkituta;
 	}
 	
-	public int bilatu(Karta pKarta) {
-		return (badago(pKarta.getIzena()))? pKarta.getId(): null; 
-	}
+//	public int bilatu(Karta pKarta) {
+//		return (badago(pKarta.getIzena()))? pKarta.getId(): null; 
+//	}
 }
