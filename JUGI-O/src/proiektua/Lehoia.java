@@ -7,8 +7,15 @@ public class Lehoia extends Karta {
 		
 	}
 	public void animaladaEgin(){
-		if (Tableroa.getTableroa().getMahaiKartak().badago("Tximinoa")) {
+		//MahaiKartak mk = Tableroa.getTableroa().getMahaiKartak();
+		
+		if (Tableroa.getTableroa().getMahaiKartak().getPosizioa("Lehoia")!=-1) {
 			aPortaera=new LehenaJarri(this);
+			if(Tableroa.getTableroa().getMahaiKartak().getPosizioa("Tximinoa")!=-1){
+				Tableroa.getTableroa().getMahaiKartak().ezabatuGuztiak("Tximinoa");
+			}
+		}else{
+			Tableroa.getTableroa().getMahaiKartak().kenduKartaPos(Tableroa.getTableroa().getMahaiKartak().getTamaina());
 		}
 	}
 }
