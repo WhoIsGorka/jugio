@@ -12,7 +12,7 @@ public class MahaiKartak {
 		this.lista = new ArrayList<Karta>();
 	}
 	
-	public ArrayList<Karta> getMahaiKartak() {
+	public ArrayList<Karta> getLista() {
 		return this.lista;
 	}
 	
@@ -24,11 +24,11 @@ public class MahaiKartak {
 		return this.lista.get(i);
 	}
 	
-	public void aurreraJoan(Karta pKarta) {
-		int i = this.getPosizioa(pKarta.getIzena());
-		Karta aux = this.kenduKarta(pKarta);
-		this.gehituKartaPos(aux, i-1);
-	}
+//	public void aurreraJoan(Karta pKarta) {
+//		int i = this.getPosizioa(pKarta.getIzena());
+//		Karta aux = this.kenduKarta(pKarta);
+//		this.gehituKartaPos(aux, i-1);
+//	}
 	
 	public int getPosizioa(String pS) {
 		Iterator<Karta> itr = this.getIterator();
@@ -83,26 +83,25 @@ public class MahaiKartak {
 	}
 
 	
-	public Karta kenduKarta(Karta pKarta) {
-		int i = getPosizioa(pKarta.getIzena());
-		return this.lista.remove(i);
+	public Karta kenduKarta(String pS) {
+		return this.lista.remove(bilatu(pS));
 	}
 	 
 	public void bueltaEman() {
 		Collections.reverse(lista);
 	}
 	
-	public void ezabatuGuztiak(String pS){
-		Iterator<Karta> itr = this.getIterator();
-		Karta aux=null;
-		while(itr.hasNext()) {
-			if (aux.getClass().getName().equals(pS)) {
-				this.kenduKarta(aux);
-			}
-			aux=itr.next();		
-		}
-	}
-	
+//	public void ezabatuGuztiak(String pS){
+//		Iterator<Karta> itr = this.getIterator();
+//		Karta aux=null;
+//		while(itr.hasNext()) {
+//			if (aux.getClass().getName().equals(pS)) {
+//				this.kenduKarta(aux);
+//			}
+//			aux=itr.next();		
+//		}
+//	}
+//	
 //	public void ordenatuHandienetikTxikienera() {
 //		Iterator<Karta> itr = this.getIterator();
 //		Karta current = null;
@@ -134,7 +133,17 @@ public class MahaiKartak {
 	}
 	*/
 	
-//	public int bilatu(Karta pKarta) {
-//		return (badago(pKarta.getIzena()))? pKarta.getId(): null; 
-//	}
+	public int bilatu(String pS) {
+		Iterator<Karta> itr = this.getIterator();
+		boolean aurkituta=false;
+		Karta aux=null;
+		while(!aurkituta && itr.hasNext()) {
+			if (aux.getClass().getName().equals(pS)) {
+				aurkituta=true;
+			}
+			aux=itr.next();
+		}
+		return aux.getId();
+	}
+
 }

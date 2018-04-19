@@ -13,7 +13,7 @@ public class Jirafa extends Karta {
 		int pos = mk.getPosizioa(this.getIzena());
 		if(pos!=0) {
 			if(mk.getKarta(pos).getId()>mk.getKarta(pos-1).getId()) {
-				aPortaera = new AurreratuSinple(this);
+//				aPortaera = new AurreratuSinple(this);
 			}
 		}
 	}
