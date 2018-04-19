@@ -7,6 +7,6 @@ public class Zebra extends Karta {
 	
 	}
 	public void animaladaEgin(){
-		
+		// ez du ezer egiten
 	}
 }

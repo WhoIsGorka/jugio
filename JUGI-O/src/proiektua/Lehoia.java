@@ -9,7 +9,7 @@ public class Lehoia extends Karta {
 	public void animaladaEgin(){
 		//MahaiKartak mk = Tableroa.getTableroa().getMahaiKartak();
 		
-		if (Tableroa.getTableroa().getMahaiKartak().getPosizioa("Lehoia")!=-1) {
+		if (Tableroa.getTableroa().getMahaiKartak().getPosizioa("Lehoia")==-1) {
 			aPortaera=new LehenaJarri(this);
 			
 			if(Tableroa.getTableroa().getMahaiKartak().getPosizioa("Tximinoa")!=-1){

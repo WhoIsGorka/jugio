@@ -50,6 +50,19 @@ public class MahaiKartak {
 		
 	}
 	
+	public int zenbatEspezieBera(String pS) {
+		Iterator<Karta> itr = this.getIterator();
+		Karta aux=null;
+		int kont=0;
+		while(itr.hasNext()) {
+			if (aux.getClass().getName().equals(pS)) {
+				kont++;
+			}
+			aux=itr.next();	
+		}
+		return kont;
+		
+	}
 	public boolean hutsaDa() {
 		return this.lista.isEmpty();
 	}
@@ -101,7 +114,7 @@ public class MahaiKartak {
 //			for (int j=0; j)
 //		}
 //	}
-		
+	
 	private Iterator<Karta> getIterator(){
 		return this.lista.iterator();
 	}

@@ -7,6 +7,6 @@ public class Kamalehoia extends Karta {
 	
 	}
 	public void animaladaEgin(){
-		
+	
 	}
 }
