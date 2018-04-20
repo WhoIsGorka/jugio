@@ -50,7 +50,7 @@ public class MahaiKartak {
 		
 	}
 	
-	public int zenbatEspezieBera(String pS) {
+	public int zenbatEspezieBera(String pS) { 						// este metodo esta para mas adelante 
 		Iterator<Karta> itr = this.getIterator();
 		Karta aux=null;
 		int kont=0;
@@ -82,7 +82,6 @@ public class MahaiKartak {
 		this.lista.remove(i);
 	}
 
-	
 	public Karta kenduKarta(String pS) {
 		return this.lista.remove(bilatu(pS));
 	}
@@ -91,16 +90,33 @@ public class MahaiKartak {
 		Collections.reverse(lista);
 	}
 	
-//	public void ezabatuGuztiak(String pS){
-//		Iterator<Karta> itr = this.getIterator();
-//		Karta aux=null;
-//		while(itr.hasNext()) {
-//			if (aux.getClass().getName().equals(pS)) {
-//				this.kenduKarta(aux);
-//			}
-//			aux=itr.next();		
-//		}
-//	}
+	public void ezabatuBat(int i, String pS){					// i --> Significa la posicion del primer o segundo animal 
+		Iterator<Karta> itr = this.getIterator();				// e --> Significa cuantos animales de esa especie ha recorrido hasta el mo
+		Karta aux=null;											// pos --> Recorre la lista hasta encontrar la primera/segunda especie, para luego borrar esa
+		int e = 0;
+		int pos = -1;
+		while(itr.hasNext() && e <i) {
+			pos++;
+			if (aux.getClass().getName().equals(pS)){
+				e = e + 1;
+				if(i==e){
+					this.kenduKartaPos(pos);						
+				}
+			}
+			aux=itr.next();		
+		}
+	}
+		
+	public void ezabatuGuztiak(String pS){
+		Iterator<Karta> itr = this.getIterator();
+		Karta aux=null;
+		while(itr.hasNext()) {
+			if (aux.getClass().getName().equals(pS)) {
+				this.kenduKarta(aux.getIzena());
+			}
+			aux=itr.next();		
+		}
+	}
 //	
 //	public void ordenatuHandienetikTxikienera() {
 //		Iterator<Karta> itr = this.getIterator();

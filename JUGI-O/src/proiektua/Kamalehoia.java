@@ -7,6 +7,13 @@ public class Kamalehoia extends Karta {
 	
 	}
 	public void animaladaEgin(){
-	
+		
+		// Ze animaliatan bihurtuko den galdetu
+		
+		// Kamalehoia animali hori bihurtu
+		
+		// Animali berriaren animalada egin
+		
+		// Animali berria kamalehoia bihurtu
 	}
 }
