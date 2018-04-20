@@ -7,18 +7,20 @@ public abstract class Karta {
 	private boolean errekurtsiboa;
 	private int puntuak;
 	private String irudia;
+	private String kolorea;
 	
 	protected BotaPortaera bPortaera;
 	protected AurreratuPortaera aPortaera;
 	protected OrdenaPortaera oPortaera;
 	
-	public Karta(int pId,String pIzena,String pDeskr,boolean pErre,int pPuntuak,String pIrudia){
+	public Karta(int pId,String pIzena,String pDeskr,boolean pErre,int pPuntuak,String pIrudia,String pKolorea){
 		this.id = pId;
 		this.izena = pIzena;
 		this.deskr = pDeskr;
 		this.errekurtsiboa = pErre;
 		this.puntuak = pPuntuak;
 		this.irudia = pIrudia;
+		this.kolorea = pKolorea;
 	}
 	public String getIzena() {
 		return this.izena;
@@ -28,6 +30,9 @@ public abstract class Karta {
 	}
 	public int getId() {
 		return this.id;
+	}
+	public String getKolorea() {
+		return this.kolorea;
 	}
 	public abstract void animaladaEgin();
 }

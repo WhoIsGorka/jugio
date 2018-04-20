@@ -1,3 +1,4 @@
+
 package proiektua;
 
 public class ListaKartak {
@@ -6,7 +7,7 @@ public class ListaKartak {
 	
 	
 	public ListaKartak() {
-		this.Tximinoa = new Tximinoa(4,"Tximinoa"," ",false,3,"4monoAzul.PNG");
+		this.Tximinoa = new Tximinoa(4,"Tximinoa"," ",false,3,"4monoAzul.PNG","Urdina");
 	}
 	
 	public static ListaKartak getListaKartak() {

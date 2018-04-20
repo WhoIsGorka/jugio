@@ -39,41 +39,41 @@ public class Tableroa {
 		return this.ilara;
 	}
 	public void KartakSortu(){
-		Karta mofeta1 = new Mofeta(1,"Mofeta"," ",false,4,"1mofetaAzul.PNG");
-		Karta mofeta2 = new Mofeta(1,"Mofeta"," ",false,4,"mofeta1Berde.png");
+		Karta mofeta1 = new Mofeta(1,"Mofeta"," ",false,4,"1mofetaAzul.PNG","Urdina");
+		Karta mofeta2 = new Mofeta(1,"Mofeta"," ",false,4,"mofeta1Berde.png","Berdea");
 		
-		Karta loroa1 = new Loroa(2,"Loroa"," ",false,4,"2loroAzul.PNG");
-		Karta loroa2 = new Loroa(2,"Loroa"," ",false,4,"loro2Berde.png");
+		Karta loroa1 = new Loroa(2,"Loroa"," ",false,4,"2loroAzul.PNG","Urdina");
+		Karta loroa2 = new Loroa(2,"Loroa"," ",false,4,"loro2Berde.png","Berdea");
 		
-		Karta kanguru1 = new Kangurua(3,"Kangurua"," ",false,4,"3canguroAzul.PNG");
-		Karta kanguru2 = new Kangurua(3,"Kangurua"," ",false,4,"kanguro3Berde.png");
+		Karta kanguru1 = new Kangurua(3,"Kangurua"," ",false,4,"3canguroAzul.PNG","Urdina");
+		Karta kanguru2 = new Kangurua(3,"Kangurua"," ",false,4,"kanguro3Berde.png","Berdea");
 		
-		Karta tximinoa1 = new Tximinoa(4,"Tximinoa"," ",false,3,"4monoAzul.PNG");
-		Karta tximinoa2 = new Tximinoa(4,"Tximinoa"," ",false,3,"mono4Berde.png");
+		Karta tximinoa1 = new Tximinoa(4,"Tximinoa"," ",false,3,"4monoAzul.PNG","Urdina");
+		Karta tximinoa2 = new Tximinoa(4,"Tximinoa"," ",false,3,"mono4Berde.png","Berdea");
 		
-		Karta kamalehoia1 = new Kamalehoia(5,"Kamalehoia"," ",false,3,"5camaleonAzul.PNG");
-		Karta kamalehoia2 = new Kamalehoia(5,"Kamalehoia"," ",false,3,"camaleon5Berde.png");
+		Karta kamalehoia1 = new Kamalehoia(5,"Kamalehoia"," ",false,3,"5camaleonAzul.PNG","Urdina");
+		Karta kamalehoia2 = new Kamalehoia(5,"Kamalehoia"," ",false,3,"camaleon5Berde.png","Berdea");
 		
-		Karta itsaslehoia1 = new Itsaslehoia(6,"Itsaslehoia"," ",false,2,"6focaAzul.PNG");
-		Karta itsaslehoia2 = new Itsaslehoia(6,"Itsaslehoia"," ",false,2,"foca6Berde.png");
+		Karta itsaslehoia1 = new Itsaslehoia(6,"Itsaslehoia"," ",false,2,"6focaAzul.PNG","Urdina");
+		Karta itsaslehoia2 = new Itsaslehoia(6,"Itsaslehoia"," ",false,2,"foca6Berde.png","Berdea");
 		
-		Karta zebra1 = new Zebra(7,"Zebra"," ",true,4,"7zebraAzul.PNG");
-		Karta zebra2 = new Zebra(7,"Zebra"," ",true,4,"zebra7Berde.png");
+		Karta zebra1 = new Zebra(7,"Zebra"," ",true,4,"7zebraAzul.PNG","Urdina");
+		Karta zebra2 = new Zebra(7,"Zebra"," ",true,4,"zebra7Berde.png","Berdea");
 		
-		Karta jirafa1 = new Jirafa(8,"Jirafa"," ",true,3,"8jirafaAzul.PNG");
-		Karta jirafa2 = new Jirafa(8,"Jirafa"," ",true,3,"jirafa8Berde.PNG");
+		Karta jirafa1 = new Jirafa(8,"Jirafa"," ",true,3,"8jirafaAzul.PNG","Urdina");
+		Karta jirafa2 = new Jirafa(8,"Jirafa"," ",true,3,"jirafa8Berde.PNG","Berdea");
 		
-		Karta sugea1 = new Sugea(9,"Sugea"," ",false,2,"9serpienteAzul.PNG");
-		Karta sugea2 = new Sugea(9,"Sugea"," ",false,2,"serpiente9Berde.PNG");
+		Karta sugea1 = new Sugea(9,"Sugea"," ",false,2,"9serpienteAzul.PNG","Urdina");
+		Karta sugea2 = new Sugea(9,"Sugea"," ",false,2,"serpiente9Berde.PNG","Berdea");
 		
-		Karta kokodriloa1 = new Kokodriloa(10,"Kokodriloa"," ",true,3,"10cocodriloAzul.PNG");
-		Karta kokodriloa2 = new Kokodriloa(10,"Kokodriloa"," ",true,3,"cocodrilo10Berde.PNG");
+		Karta kokodriloa1 = new Kokodriloa(10,"Kokodriloa"," ",true,3,"10cocodriloAzul.PNG","Urdina");
+		Karta kokodriloa2 = new Kokodriloa(10,"Kokodriloa"," ",true,3,"cocodrilo10Berde.PNG","Berdea");
 		
-		Karta hipopotamoa1 = new Hipopotamoa(11,"Hipopotamoa"," ",true,2,"11hipopotamoAzul.PNG");
-		Karta hipopotamoa2 = new Hipopotamoa(11,"Hipopotamoa"," ",true,2,"hipopotamo11Berde.PNG");
+		Karta hipopotamoa1 = new Hipopotamoa(11,"Hipopotamoa"," ",true,2,"11hipopotamoAzul.PNG","Urdina");
+		Karta hipopotamoa2 = new Hipopotamoa(11,"Hipopotamoa"," ",true,2,"hipopotamo11Berde.PNG","Berdea");
 		
-		Karta lehoia1 = new Lehoia(12,"Lehoia"," ",false,2,"12leonAzul.PNG");
-		Karta lehoia2 = new Lehoia(12,"Lehoia"," ",false,2,"leon12Berde.PNG");
+		Karta lehoia1 = new Lehoia(12,"Lehoia"," ",false,2,"12leonAzul.PNG","Urdina");
+		Karta lehoia2 = new Lehoia(12,"Lehoia"," ",false,2,"leon12Berde.PNG","Berdea");
 		
 		this.m1 = new EskuKartak();
 		
