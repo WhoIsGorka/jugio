@@ -30,13 +30,13 @@ public class MahaiKartak {
 //		this.gehituKartaPos(aux, i-1);
 //	}
 	
-	public int getPosizioa(String pS) {
+	public int getPosizioa(String pI, String pK) {				// *Devuelve la posición de esa carta, y si no esta -1												
 		Iterator<Karta> itr = this.getIterator();
 		boolean aurkituta=false;
 		Karta aux=null;
 		int i=-1;
 		while(!aurkituta && itr.hasNext()) {
-			if (aux.getClass().getName().equals(pS)) {
+			if ((aux.getClass().getName().equals(pI))&&(aux.getKolorea().equals(pK))) {
 				aurkituta=true;
 			}
 			aux=itr.next();
@@ -50,7 +50,7 @@ public class MahaiKartak {
 		
 	}
 	
-	public int zenbatEspezieBera(String pS) { 						// este metodo esta para mas adelante 
+	public int zenbatEspezieBera(String pS) { 						
 		Iterator<Karta> itr = this.getIterator();
 		Karta aux=null;
 		int kont=0;
@@ -78,44 +78,37 @@ public class MahaiKartak {
 	public void gehituKartaPos(Karta pKarta, int i) {
 		this.lista.add(i, pKarta);
 	}
-	public Karta kenduKartaPos(int i) {
+	public Karta kenduKartaPos(int i) {					//*
 		return this.lista.remove(i);
 	}
 
-	public Karta kenduKarta(String pS) {
-		return this.lista.remove(bilatu(pS));
-	}
 	 
 	public void bueltaEman() {
 		Collections.reverse(lista);
 	}
 	
-	public void ezabatuBat(String pI, String pK){					
-		Iterator<Karta> itr = this.getIterator();				
-		Karta aux=null;										
-		int pos = -1;
-		while(itr.hasNext()) {
-			pos++;
-			if (aux.getClass().getName().equals(pI) && pK.equals(aux.getKolorea())){
-					
-				this.kenduKartaPos(pos);						
-			}
-		}
-			aux=itr.next();		
+	
+	public void ezabatuBat(String pI, String pK){		   	//*			
+		int pos = this.getPosizioa(pI, pK);
+		this.kenduKartaPos(pos);
 	}
 	
 		
-	public void ezabatuGuztiak(String pS){
+	public void ezabatuGuztiak(String pS){                 	//*               
 		Iterator<Karta> itr = this.getIterator();
 		Karta aux=null;
+		int pos = -1;
 		while(itr.hasNext()) {
+			pos++;
 			if (aux.getClass().getName().equals(pS)) {
-				this.kenduKarta(aux.getIzena());
+				this.kenduKartaPos(pos);
 			}
 			aux=itr.next();		
 		}
 	}
-//	
+
+	
+	
 //	public void ordenatuHandienetikTxikienera() {
 //		Iterator<Karta> itr = this.getIterator();
 //		Karta current = null;
@@ -133,31 +126,56 @@ public class MahaiKartak {
 	}
 	
 	/*
-	public boolean badago(String pS) {
+	public int bilatu(String pI, String pK) {									
 		Iterator<Karta> itr = this.getIterator();
 		boolean aurkituta=false;
+		int pos = -1;
 		Karta aux=null;
 		while(!aurkituta && itr.hasNext()) {
-			if (aux.getClass().getName().equals(pS)) {
+			pos++;
+			if ((aux.getClass().getName().equals(pI))&&(aux.getKolorea().equals(pK))) {
 				aurkituta=true;
 			}
 			aux=itr.next();
 		}
-		return aurkituta;
+		return pos;
 	}
 	*/
-	
-	public int bilatu(String pS) {
+	public Karta idMax() {
+		int max = 0;	
 		Iterator<Karta> itr = this.getIterator();
-		boolean aurkituta=false;
 		Karta aux=null;
-		while(!aurkituta && itr.hasNext()) {
-			if (aux.getClass().getName().equals(pS)) {
-				aurkituta=true;
+		Karta kMax = null;
+
+		while(itr.hasNext()) {
+	
+			if (aux.getId()>max && aux.getIzena()!="Mofeta"){
+				max = aux.getId();
+				kMax=aux;
 			}
-			aux=itr.next();
+			aux=itr.next();		
 		}
-		return aux.getId();
+		
+		return kMax;
+	}
+	
+	public Karta idMax2(int max1) {
+
+		int max2 = 0;			
+		Iterator<Karta> itr = this.getIterator();
+		Karta aux=null;
+		Karta kMax2 = null;
+
+		while(itr.hasNext()) {
+	
+			if (aux.getId()>max2 && aux.getId()<max1 && aux.getIzena()!="Mofeta"){
+				max2 = aux.getId();
+				kMax2=aux;
+			}
+			aux=itr.next();		
+		}
+		
+		return kMax2;
 	}
 
 }

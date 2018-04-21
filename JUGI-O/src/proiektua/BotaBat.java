@@ -5,6 +5,9 @@ public class BotaBat implements BotaPortaera{
 	}
 	
 	public void bota(String pIzena, String pKolore) {
+		
 		Tableroa.getTableroa().getMahaiKartak().ezabatuBat(pIzena,pKolore);
+		
+		
 	}
 }

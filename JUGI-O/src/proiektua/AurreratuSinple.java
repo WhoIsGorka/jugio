@@ -4,10 +4,12 @@ public class AurreratuSinple implements AurreratuPortaera{
 
 	public AurreratuSinple() {
 	}
-	public void aurreratu(int i, Karta pKarta) {
+	public void aurreratu(int b, int h) {			// b : posicion donde termina, h : posicion donde esta ahora
 		
 	
-		Tableroa.getTableroa().getMahaiKartak().gehituKartaPos(pKarta, i);
+		Karta k = Tableroa.getTableroa().getMahaiKartak().kenduKartaPos(h);	
+		
+		Tableroa.getTableroa().getMahaiKartak().gehituKartaPos(k, b);
 		
 		
 	}

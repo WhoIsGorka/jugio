@@ -10,15 +10,20 @@ public class Lehoia extends Karta {
 	public void animaladaEgin(){
 		if (Tableroa.getTableroa().getMahaiKartak().zenbatEspezieBera("Lehoia")==1) {
 			
-			bPortaera=new BotaGuztiak();		         // lo pongo aqui porque segun en que parte del IF entre la portaera es dintinta	
+			bPortaera=new BotaGuztiak();		         	
 			bPortaera.bota("Tximinoa",null);
 			
-			Karta k = Tableroa.getTableroa().getMahaiKartak().kenduKarta(this.getIzena());		
-			aPortaera.aurreratu(0, k);				 //0 posizioan jartzeko, hau da, lehena
+			int pos = Tableroa.getTableroa().getMahaiKartak().getPosizioa("Lehoia", this.getKolorea());
+			aPortaera.aurreratu(0, pos);				 				//0 posizioan jartzeko, hau da, lehena
 		
 		}else {
-			bPortaera=new BotaBat();					// Same a lo de arriba
+			bPortaera=new BotaBat();					
 			bPortaera.bota(this.getIzena(),this.getKolorea());
 		}
 	}
 }
+
+
+
+
+
