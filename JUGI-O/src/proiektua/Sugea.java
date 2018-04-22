@@ -7,6 +7,6 @@ public class Sugea extends Karta {
 		oPortaera = new OrdenaSugea();
 	}
 	public void animaladaEgin(){
-		
+		oPortaera.ordenaAldatu();
 	}
 }
