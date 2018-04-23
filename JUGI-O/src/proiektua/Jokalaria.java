@@ -67,4 +67,6 @@ public abstract class Jokalaria {
 			this.eskuKartak.gehituKarta(this.mazoa.kenduKarta());
 		}
 	}
+	
+	public abstract void txandaEgin();
 }

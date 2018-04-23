@@ -8,5 +8,9 @@ public class Pc extends Jokalaria {
 		super.id = 0;
 	}
 	
-
+	public void txandaEgin() {
+		
+	}
+	
+	
 }

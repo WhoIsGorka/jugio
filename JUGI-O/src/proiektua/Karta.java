@@ -34,5 +34,11 @@ public abstract class Karta {
 	public String getKolorea() {
 		return this.kolorea;
 	}
+	public boolean getErrekurtsiboa() {
+		return this.errekurtsiboa;
+	}
+	public int getPuntuak() {
+		return this.puntuak;
+	}
 	public abstract void animaladaEgin();
 }

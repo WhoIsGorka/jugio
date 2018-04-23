@@ -130,41 +130,38 @@ public class MahaiKartak {
 		return pos;
 	}
 	*/
-	public Karta idMax() {
-		int max = 0;	
+	public void errekurtsiboakEgin() {
 		Iterator<Karta> itr = this.getIterator();
 		Karta aux=null;
-		Karta kMax = null;
-
-		while(itr.hasNext()) {
-	
-			if (aux.getId()>max && aux.getIzena()!="Mofeta"){
-				max = aux.getId();
-				kMax=aux;
+		while (itr.hasNext()) {
+			if (aux.getErrekurtsiboa()) {
+				aux.animaladaEgin();
 			}
-			aux=itr.next();		
+			aux = itr.next();		
 		}
-		
-		return kMax;
 	}
 	
-	public Karta idMax2(int max1) {
-
-		int max2 = 0;			
-		Iterator<Karta> itr = this.getIterator();
-		Karta aux=null;
-		Karta kMax2 = null;
-
-		while(itr.hasNext()) {
-	
-			if (aux.getId()>max2 && aux.getId()<max1 && aux.getIzena()!="Mofeta"){
-				max2 = aux.getId();
-				kMax2=aux;
+	public void tabernanSartu() {
+		if (lista.size() == 5) {
+			lista.remove(lista.size()-1);   // beti 4
+			Karta k1 = lista.remove(1);
+			Karta k2 = lista.remove(1);
+			if (k1.getKolorea() == "Urdina") {
+				int punt = Tableroa.getTableroa().getNi().getPuntuazioa();
+				Tableroa.getTableroa().getNi().setPuntuazioa(punt + k1.getPuntuak());				
+			}else {
+				int punt = Tableroa.getTableroa().getPc().getPuntuazioa();
+				Tableroa.getTableroa().getPc().setPuntuazioa(punt + k1.getPuntuak());	
+			
 			}
-			aux=itr.next();		
+			if (k2.getKolorea() == "Urdina") {
+				int punt = Tableroa.getTableroa().getNi().getPuntuazioa();
+				Tableroa.getTableroa().getNi().setPuntuazioa(punt + k2.getPuntuak());				
+			}else {
+				int punt = Tableroa.getTableroa().getPc().getPuntuazioa();
+				Tableroa.getTableroa().getPc().setPuntuazioa(punt + k2.getPuntuak());	
+			
+			}
 		}
-		
-		return kMax2;
 	}
-
 }

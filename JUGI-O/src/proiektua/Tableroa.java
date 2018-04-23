@@ -38,6 +38,13 @@ public class Tableroa {
 	public MahaiKartak getMahaiKartak(){
 		return this.ilara;
 	}
+	
+	public Jokalaria getNi() {
+		return this.j1;
+	}
+	public Jokalaria getPc() {
+		return this.pc;
+	}
 	public void KartakSortu(){
 		Karta mofeta1 = new Mofeta(1,"Mofeta"," ",false,4,"1mofetaAzul.PNG","Urdina");
 		Karta mofeta2 = new Mofeta(1,"Mofeta"," ",false,4,"mofeta1Berde.png","Berdea");
@@ -117,11 +124,51 @@ public class Tableroa {
 			
 	}
 	
-	
 	public void sartuJokalariak() {
 		String hitza = JOptionPane.showInputDialog(null, "Sartu jokalariaren izena ");
 		j1.setJokalariarenIzena(hitza);
 		int zenb =  Integer.parseInt(JOptionPane.showInputDialog(null, "Sartu jokalariaren ID-a"));
 		j1.setJokalariarenId(zenb);		
 	}
+	
+	public Jokalaria partidaJolastu() {
+		
+		while(!amaituDa()) {
+			j1.txandaEgin();
+			
+			ilara.errekurtsiboakEgin();
+			
+			ilara.tabernanSartu();
+			
+			pc.txandaEgin();
+			
+			ilara.errekurtsiboakEgin();
+			
+			ilara.tabernanSartu();
+						
+		}
+		return norkIrabazi();
+	}
+	
+	public boolean amaituDa() {
+		boolean amaituDa = false;
+		
+		if(j1.getEskuKartak().hutsaDa() && pc.getEskuKartak().hutsaDa()) {
+			amaituDa = true;
+		}
+
+		
+		return amaituDa;
+	}
+	
+	public Jokalaria norkIrabazi() {
+		if (j1.getPuntuazioa() > pc.getPuntuazioa()) {
+			return j1;
+		}else if(j1.getPuntuazioa() < pc.getPuntuazioa()) {
+			return pc;
+		}else {
+			return null;
+		}
+	}
+	
 }

@@ -6,12 +6,13 @@ public class Ni extends Jokalaria {
 		super();
 	}
 	
-	/*
-	public void setIzena(String pIzena){
-		this.izena = pIzena;
+	public void txandaEgin() {
+		
+		// bota karta
+		
+		// bota dudan kartaren animalada burutu
+		
+		// karta hartu
+		
 	}
-	public void setId(int pId) {
-		this.id = pId;
-	}
-	 */
 }
