@@ -3,9 +3,12 @@ package proiektua;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Iterator;
+import java.util.Observable;
 
 
-public class MahaiKartak {
+
+
+public class MahaiKartak extends Observable{
 	private ArrayList<Karta> lista;
 	
 	public MahaiKartak() {			
@@ -163,5 +166,22 @@ public class MahaiKartak {
 			
 			}
 		}
+		
+	}
+	public void listaPathSortu(){
+		Iterator<Karta> itr = this.getIterator();
+		ArrayList<String> l1 = new ArrayList<String>();
+		Karta aux=null;
+		while(itr.hasNext()) {
+			aux=itr.next();	
+			l1.add(aux.getIrudia());
+		}
+		setChanged();
+		notifyObservers(l1);
+	}
+	@Override
+	public void notifyObservers(){
+		setChanged();
+		super.notifyObservers();
 	}
 }

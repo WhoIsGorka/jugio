@@ -1,8 +1,12 @@
 package proiektua;
 
 import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.Observable;
 
-public class EskuKartak {
+
+
+public class EskuKartak extends Observable{
 	private ArrayList<Karta> eskua;
 	
 	public EskuKartak(){
@@ -22,6 +26,25 @@ public class EskuKartak {
 	}
 	public int luzera(){
 		return this.eskua.size();
+	}
+	private Iterator<Karta> getIterator(){
+		return this.eskua.iterator();
+	}
+	public void listaPathSortu(){
+		Iterator<Karta> itr = this.getIterator();
+		ArrayList<String> lista = new ArrayList<String>();
+		Karta aux=null;
+		while(itr.hasNext()) {
+			aux=itr.next();	
+			lista.add(aux.getIrudia());
+		}
+		setChanged();
+		notifyObservers(lista);
+	}
+	@Override
+	public void notifyObservers(){
+		setChanged();
+		super.notifyObservers();
 	}
 
 }

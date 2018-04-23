@@ -1,6 +1,8 @@
 package proiektua;
 
 import java.awt.BorderLayout;
+
+import java.util.Observer;
 import java.util.Scanner;
 
 import javax.swing.JFrame;
@@ -183,5 +185,14 @@ public class Tableroa {
 //			return null;
 //		}
 //	}
+	public void leihoaErregistratu(Observer o){
+		j1.getEskuKartak().addObserver(o);
+		getMahaiKartak().addObserver(o);
+	}
+	public void jolastu(){
+		j1.getEskuKartak().listaPathSortu();
+		getMahaiKartak().listaPathSortu();
+		
+	}
 	
 }
