@@ -68,5 +68,5 @@ public abstract class Jokalaria {
 		}
 	}
 	
-	public abstract void txandaEgin();
+	public abstract void txandaEgin(int p);
 }

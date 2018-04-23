@@ -21,7 +21,7 @@ public class Tableroa {
 	
 	public Tableroa() {
 		this.ilara = new MahaiKartak();
-		this.j1 =  new Ni();
+		this.j1 =  new Ni(0, null, m1, null, 0);
 		this.pc = new Pc();
 	}
 	
@@ -131,44 +131,57 @@ public class Tableroa {
 		j1.setJokalariarenId(zenb);		
 	}
 	
-	public Jokalaria partidaJolastu() {
+	public void jokatu(int p) {
 		
-		while(!amaituDa()) {
-			j1.txandaEgin();
-			
-			ilara.errekurtsiboakEgin();
-			
-			ilara.tabernanSartu();
-			
-			pc.txandaEgin();
-			
-			ilara.errekurtsiboakEgin();
-			
-			ilara.tabernanSartu();
-						
-		}
-		return norkIrabazi();
+	
+		j1.txandaEgin(p);
+		
+	//	ilara.errekurtsiboakEgin();
+		
+	//	ilara.tabernanSartu();
+		
 	}
 	
-	public boolean amaituDa() {
-		boolean amaituDa = false;
-		
-		if(j1.getEskuKartak().hutsaDa() && pc.getEskuKartak().hutsaDa()) {
-			amaituDa = true;
-		}
-
-		
-		return amaituDa;
-	}
 	
-	public Jokalaria norkIrabazi() {
-		if (j1.getPuntuazioa() > pc.getPuntuazioa()) {
-			return j1;
-		}else if(j1.getPuntuazioa() < pc.getPuntuazioa()) {
-			return pc;
-		}else {
-			return null;
-		}
-	}
+	
+//	public Jokalaria partidaJolastu() {
+//		
+//		while(!amaituDa()) {
+//			j1.txandaEgin();
+//			
+//			ilara.errekurtsiboakEgin();
+//			
+//			ilara.tabernanSartu();
+//			
+//			pc.txandaEgin();
+//			
+//			ilara.errekurtsiboakEgin();
+//			
+//			ilara.tabernanSartu();
+//						
+//		}
+//		return norkIrabazi();
+//	}
+//	
+//	public boolean amaituDa() {
+//		boolean amaituDa = false;
+//		
+//		if(j1.getEskuKartak().hutsaDa() && pc.getEskuKartak().hutsaDa()) {
+//			amaituDa = true;
+//		}
+//
+//		
+//		return amaituDa;
+//	}
+//	
+//	public Jokalaria norkIrabazi() {
+//		if (j1.getPuntuazioa() > pc.getPuntuazioa()) {
+//			return j1;
+//		}else if(j1.getPuntuazioa() < pc.getPuntuazioa()) {
+//			return pc;
+//		}else {
+//			return null;
+//		}
+//	}
 	
 }

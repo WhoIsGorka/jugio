@@ -2,17 +2,19 @@ package proiektua;
 
 public class Ni extends Jokalaria {
 
-	public Ni() {
+	public Ni(int pId, String pIzena, EskuKartak pEskuKartak, MazoKartak pMazoKartak, int pPuntuazioa) {
 		super();
 	}
 	
-	public void txandaEgin() {
+	public void txandaEgin(int p) {
 		
-		// bota karta
+		Karta k = super.getEskuKartak().kenduKarta(p);
 		
-		// bota dudan kartaren animalada burutu
+		Tableroa.getTableroa().getMahaiKartak().getLista().add(k);
 		
-		// karta hartu
+		Tableroa.getTableroa().getMahaiKartak().getLista().get(Tableroa.getTableroa().getMahaiKartak().getLista().size()-1).animaladaEgin();
+		
+	
 		
 	}
 }
