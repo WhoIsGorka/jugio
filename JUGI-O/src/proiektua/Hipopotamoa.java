@@ -13,7 +13,6 @@ public class Hipopotamoa extends Karta {
 		while((pos != 0) &&  (mk.getKarta(pos-1).getId()<id) && (mk.getKarta(pos-1).getIzena()!="Zebra")){
 			aPortaera.aurreratu(pos-1,pos);
 			pos--;
-			
 		}
 	}
 }

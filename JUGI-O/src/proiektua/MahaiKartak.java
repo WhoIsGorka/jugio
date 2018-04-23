@@ -8,17 +8,17 @@ import java.util.Iterator;
 public class MahaiKartak {
 	private ArrayList<Karta> lista;
 	
-	public MahaiKartak() {
+	public MahaiKartak() {			
 		this.lista = new ArrayList<Karta>();
 	}
 	
-	public ArrayList<Karta> getLista() {
+	public ArrayList<Karta> getLista() {	
 		return this.lista;
 	}
 	
-	public int getTamaina() {
-		return this.lista.size();
-	}
+//	public int getTamaina() {
+//		return this.lista.size();
+//	}
 	
 	public Karta getKarta(int i) {
 		return this.lista.get(i);
@@ -63,24 +63,24 @@ public class MahaiKartak {
 		return kont;
 		
 	}
-	public boolean hutsaDa() {
-		return this.lista.isEmpty();
-	}
+//	public boolean hutsaDa() {
+//		return this.lista.isEmpty();
+//	}
 	
-	public void gehituKarta(Karta pKarta) {
-		this.lista.add(pKarta);
-	}
-	
-	public void gehituHasieran(Karta pKarta) {
-		this.lista.add(0, pKarta);
-	}
-	
-	public void gehituKartaPos(Karta pKarta, int i) {
-		this.lista.add(i, pKarta);
-	}
-	public Karta kenduKartaPos(int i) {					//*
-		return this.lista.remove(i);
-	}
+//	public void gehituKarta(Karta pKarta) {
+//		this.lista.add(pKarta);
+//	}
+//	
+//	public void gehituHasieran(Karta pKarta) {
+//		this.lista.add(0, pKarta);
+//	}
+//	
+//	public void gehituKartaPos(Karta pKarta, int i) {
+//		this.lista.add(i, pKarta);
+//	}
+//	public Karta kenduKartaPos(int i) {					//*
+//		return this.lista.remove(i);
+//	}
 
 	 
 	public void bueltaEman() {
@@ -90,7 +90,7 @@ public class MahaiKartak {
 	
 	public void ezabatuBat(String pI, String pK){		   	//*			
 		int pos = this.getPosizioa(pI, pK);
-		this.kenduKartaPos(pos);
+		lista.remove(pos);
 	}
 	
 		
@@ -101,25 +101,14 @@ public class MahaiKartak {
 		while(itr.hasNext()) {
 			pos++;
 			if (aux.getClass().getName().equals(pS)) {
-				this.kenduKartaPos(pos);
+				lista.remove(pos);
 			}
 			aux=itr.next();		
 		}
 	}
 
 	
-	
-//	public void ordenatuHandienetikTxikienera() {
-//		Iterator<Karta> itr = this.getIterator();
-//		Karta current = null;
-//		Karta prev = null;
-//		Karta aux = null;
-//		current=itr.next();
-//		int aux;
-//		for (int i=0; i<lista.size(); i++) {
-//			for (int j=0; j)
-//		}
-//	}
+
 	
 	private Iterator<Karta> getIterator(){
 		return this.lista.iterator();

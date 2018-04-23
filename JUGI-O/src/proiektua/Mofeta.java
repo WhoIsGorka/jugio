@@ -1,5 +1,8 @@
 package proiektua;
 
+import java.util.ArrayList;
+import java.util.Iterator;
+
 public class Mofeta extends Karta{
 
 	public Mofeta(int pId,String pIzena,String pDeskr,boolean pErre,int pPuntuak,String pIrudia,String pKolorea){
@@ -8,11 +11,30 @@ public class Mofeta extends Karta{
 	}
 	public void animaladaEgin(){
 		
-		Karta max1 = Tableroa.getTableroa().getMahaiKartak().idMax();
-		Karta max2 = Tableroa.getTableroa().getMahaiKartak().idMax2(max1.getId());
-	
-		bPortaera.bota(max1.getIzena(), null);
-		bPortaera.bota(max2.getIzena(), null);
+		ArrayList<Karta> lista = Tableroa.getTableroa().getMahaiKartak().getLista();
+		
+		int max = 0;
+
+		Iterator<Karta> itr = lista.iterator();
+		Karta aux = null;
+		Karta kMax = null;
+		Karta kMax2 = null;
+
+		while(itr.hasNext()) {
+			
+			if (aux.getId()>max && aux.getIzena()!="Mofeta"){
+
+				kMax2 = kMax;
+				max = aux.getId();
+				kMax=aux;
+			}
+			aux=itr.next();		
+		}
+		
+		bPortaera.bota(kMax.getIzena(), null);
+		bPortaera.bota(kMax2.getIzena(), null);
 		
 	}
 }
+
+

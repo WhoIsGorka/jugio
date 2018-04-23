@@ -5,7 +5,7 @@ public class AurreratuSinple implements AurreratuPortaera{
 	public AurreratuSinple() {
 	}
 	public void aurreratu(int b, int h) {			// b : posicion donde termina, h : posicion donde esta ahora
-		Karta k = Tableroa.getTableroa().getMahaiKartak().kenduKartaPos(h);	
+		Karta k = Tableroa.getTableroa().getMahaiKartak().getLista().remove(h);
 		Tableroa.getTableroa().getMahaiKartak().getLista().add(b, k);
 	}
 }
