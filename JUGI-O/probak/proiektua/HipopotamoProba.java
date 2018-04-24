@@ -35,11 +35,11 @@ public class HipopotamoProba {
 	
 	@Test
 	public void testAnimaladaEgin() {
-		mk.getLista().add(kanguru);
-		mk.getLista().add(tximino);
-		mk.getLista().add(lehoia);
-		mk.getLista().add(kanguru);
-		mk.getLista().add(hipo);
+		mk.gehituKarta(kanguru);
+		mk.gehituKarta(tximino);
+		mk.gehituKarta(lehoia);
+		mk.gehituKarta(kanguru);
+		mk.gehituKarta(hipo);
 		assertEquals(4,mk.getPosizioa(hipo.getIzena(), hipo.getKolorea()));
 		hipo.animaladaEgin();
 		assertEquals(3,mk.getPosizioa(hipo.getIzena(), hipo.getKolorea()));

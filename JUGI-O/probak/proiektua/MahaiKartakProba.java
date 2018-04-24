@@ -30,10 +30,10 @@ public class MahaiKartakProba {
 		Karta k3 = new Tximinoa(4,"Tximinoa"," ",false,3,"berdea","Berdea");
 		Karta k4 = new Loroa(2,"Loroa"," ",false,3,"berdea","Berdea");
 		
-		mk.getLista().add(k1);
-		mk.getLista().add(k2);
-		mk.getLista().add(k3);
-		mk.getLista().add(k4);
+		mk.gehituKarta(k1);
+		mk.gehituKarta(k2);
+		mk.gehituKarta(k3);
+		mk.gehituKarta(k4);
 		
 		assertEquals(k1, mk.getKarta(0));
 		assertEquals(k2, mk.getKarta(1));
@@ -49,10 +49,10 @@ public class MahaiKartakProba {
 		Karta k3 = new Tximinoa(4,"Tximinoa"," ",false,3,"berdea","Berdea");
 		Karta k4 = new Loroa(2,"Loroa"," ",false,3,"berdea","Berdea");
 		
-		mk.getLista().add(k1);
-		mk.getLista().add(k2);
-		mk.getLista().add(k3);
-		mk.getLista().add(k4);
+		mk.gehituKarta(k1);
+		mk.gehituKarta(k2);
+		mk.gehituKarta(k3);
+		mk.gehituKarta(k4);
 		
 		assertSame(0, mk.getPosizioa("Tximinoa", "Urdina"));
 		assertSame(1,mk.getPosizioa("Loroa", "Urdina"));
@@ -67,9 +67,9 @@ public class MahaiKartakProba {
 		Karta k3 = new Tximinoa(4,"Tximinoa"," ",false,3,"berdea","Berdea");
 
 		
-		mk.getLista().add(k1);
-		mk.getLista().add(k2);
-		mk.getLista().add(k3);
+		mk.gehituKarta(k1);
+		mk.gehituKarta(k2);
+		mk.gehituKarta(k3);
 		
 		assertSame(2,mk.zenbatEspezieBera("Tximinoa"));
 		assertSame(1,mk.zenbatEspezieBera("Loroa"));
@@ -83,10 +83,10 @@ public class MahaiKartakProba {
 		Karta k3 = new Tximinoa(4,"Tximinoa"," ",false,3,"berdea","Berdea");
 		Karta k4 = new Loroa(2,"Loroa"," ",false,3,"berdea","Berdea");
 		
-		mk.getLista().add(k1);
-		mk.getLista().add(k2);
-		mk.getLista().add(k3);
-		mk.getLista().add(k4);
+		mk.gehituKarta(k1);
+		mk.gehituKarta(k2);
+		mk.gehituKarta(k3);
+		mk.gehituKarta(k4);
 		
 		mk.ezabatuBat(k4.getIzena(), k4.getKolorea());
 		assertSame(-1,mk.getPosizioa("Loroa", "Berdea"));
@@ -104,13 +104,13 @@ public class MahaiKartakProba {
 		Karta k3 = new Mofeta(4,"Mofeta"," ",false,3,"urdina","Urdina");
 		Karta k4 = new Loroa(2,"Loroa"," ",false,3,"berdea","Berdea");
 		
-		mk.getLista().add(k1);
-		mk.getLista().add(k2);
-		mk.getLista().add(k3);
-		mk.getLista().add(k4);
+		mk.gehituKarta(k1);
+		mk.gehituKarta(k2);
+		mk.gehituKarta(k3);
+		mk.gehituKarta(k4);
 		
 		mk.ezabatuGuztiak("Zebra");
-		assertSame(4, mk.getLista().size());
+		assertSame(4, mk.getTamaina());
 		
 		mk.ezabatuGuztiak("Mofeta");
 		assertSame(0,mk.zenbatEspezieBera("Mofeta"));
