@@ -39,11 +39,12 @@ public class MahaiKartak extends Observable{
 		Karta aux=null;
 		int i=-1;
 		while(!aurkituta && itr.hasNext()) {
-			if ((aux.getClass().getName().equals(pI))&&(aux.getKolorea().equals(pK))) {
-				aurkituta=true;
-			}
 			aux=itr.next();
+			if ((aux.getIzena()==pI)&&(aux.getKolorea()==pK)) {
+				aurkituta=true;
+			}			
 			i++;
+			
 		}
 		if(aurkituta) {
 			return i;
@@ -58,10 +59,11 @@ public class MahaiKartak extends Observable{
 		Karta aux=null;
 		int kont=0;
 		while(itr.hasNext()) {
-			if (aux.getClass().getName().equals(pS)) {
+			aux=itr.next();	
+			if (aux.getIzena().equals(pS)) {
 				kont++;
 			}
-			aux=itr.next();	
+			
 		}
 		return kont;
 		
@@ -101,12 +103,18 @@ public class MahaiKartak extends Observable{
 		Iterator<Karta> itr = this.getIterator();
 		Karta aux=null;
 		int pos = -1;
+		boolean kendu = false;
 		while(itr.hasNext()) {
-			pos++;
-			if (aux.getClass().getName().equals(pS)) {
-				lista.remove(pos);
+			if (!kendu) {
+				aux=itr.next();	
 			}
-			aux=itr.next();		
+			kendu = false;
+			pos++;
+			if (aux.getIzena()==pS) {
+				lista.remove(pos);
+				kendu = true;
+			}
+			
 		}
 	}
 
