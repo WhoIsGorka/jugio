@@ -54,6 +54,7 @@ public abstract class Jokalaria {
 				this.hartuKartaBat();	
 			}
 		}
+		this.eskuKartak.notifikatuInterfazea();
 	}
 
 	public void hartuLehenegoLauKartak(){
@@ -67,6 +68,7 @@ public abstract class Jokalaria {
 			this.eskuKartak.gehituKarta(this.mazoa.kenduKarta());
 		}
 	}
+
 	
 	public abstract void txandaEgin(int p);
 }

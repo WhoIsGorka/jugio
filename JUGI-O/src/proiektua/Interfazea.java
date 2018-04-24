@@ -28,14 +28,23 @@ public class Interfazea extends JFrame implements Observer{
 		lista = (ArrayList<String>)arg;
 		
 		if(o instanceof EskuKartak){
+			karta1.setIcon(null);
+			karta2.setIcon(null);
+			karta3.setIcon(null);
+			karta4.setIcon(null);
 			
 			karta1.setIcon(resizeIcon(new ImageIcon(getClass().getResource(lista.get(0))),karta1.getWidth(),karta1.getHeight()));
 			karta2.setIcon(resizeIcon(new ImageIcon(getClass().getResource(lista.get(1))),karta2.getWidth(),karta2.getHeight()));
 			karta3.setIcon(resizeIcon(new ImageIcon(getClass().getResource(lista.get(2))),karta3.getWidth(),karta3.getHeight()));
 			karta4.setIcon(resizeIcon(new ImageIcon(getClass().getResource(lista.get(3))),karta4.getWidth(),karta4.getHeight()));
-		
 			repaint();
 		}else if(o instanceof MahaiKartak){
+			mahaiKarta1.setIcon(null);
+			mahaiKarta2.setIcon(null);
+			mahaiKarta3.setIcon(null);
+			mahaiKarta4.setIcon(null);
+			mahaiKarta5.setIcon(null);
+			
 			mahaiKarta1.setIcon(resizeIcon(new ImageIcon(getClass().getResource(lista.get(0))),mahaiKarta1.getWidth(),mahaiKarta1.getHeight()));
 			mahaiKarta2.setIcon(resizeIcon(new ImageIcon(getClass().getResource(lista.get(1))),mahaiKarta2.getWidth(),mahaiKarta2.getHeight()));
 			mahaiKarta3.setIcon(resizeIcon(new ImageIcon(getClass().getResource(lista.get(2))),mahaiKarta3.getWidth(),mahaiKarta3.getHeight()));
@@ -98,9 +107,11 @@ public class Interfazea extends JFrame implements Observer{
 		panel.add(karta1); 
 		karta1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				karta4.setIcon(null);
+				Tableroa.getTableroa().getJokalaria().txandaEgin(0);
+				Tableroa.getTableroa().getMahaiKartak().notifikatuInterfazea();
+			
 				
-				Tableroa.getTableroa().getMahaiKartak().getLista().add(Tableroa.getTableroa().getJokalaria().getEskuKartak().kenduKarta(0));
-				Tableroa.getTableroa().getMahaiKartak().listaPathSortu();
 				
 			}
 		});
@@ -110,8 +121,10 @@ public class Interfazea extends JFrame implements Observer{
 		panel.add(karta2);	
 		karta2.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				Tableroa.getTableroa().getMahaiKartak().getLista().add(Tableroa.getTableroa().getJokalaria().getEskuKartak().kenduKarta(1));
-				Tableroa.getTableroa().getMahaiKartak().listaPathSortu();
+				karta4.setIcon(null);
+				Tableroa.getTableroa().getJokalaria().txandaEgin(1);
+				Tableroa.getTableroa().getMahaiKartak().notifikatuInterfazea();
+
 			}
 		});
 		
@@ -121,8 +134,10 @@ public class Interfazea extends JFrame implements Observer{
 		
 		karta3.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				Tableroa.getTableroa().getMahaiKartak().getLista().add(Tableroa.getTableroa().getJokalaria().getEskuKartak().kenduKarta(2));
-				Tableroa.getTableroa().getMahaiKartak().listaPathSortu();
+				karta4.setIcon(null);
+				Tableroa.getTableroa().getJokalaria().txandaEgin(2);
+				Tableroa.getTableroa().getMahaiKartak().notifikatuInterfazea();
+				
 			}
 		});
 		
@@ -132,9 +147,10 @@ public class Interfazea extends JFrame implements Observer{
 		
 		karta4.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				Tableroa.getTableroa().getMahaiKartak().getLista().add(Tableroa.getTableroa().getJokalaria().getEskuKartak().kenduKarta(3));
-				Tableroa.getTableroa().getJokalaria().getEskuKartak().notifikatuInterfazea();
-				Tableroa.getTableroa().getMahaiKartak().listaPathSortu();
+				karta4.setIcon(null);
+				Tableroa.getTableroa().getJokalaria().txandaEgin(3);
+				Tableroa.getTableroa().getMahaiKartak().notifikatuInterfazea();
+				
 			}
 		});
 		

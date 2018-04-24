@@ -3,6 +3,8 @@ package proiektua;
 import java.util.ArrayList;
 import java.util.Iterator;
 
+
+
 public class Mofeta extends Karta{
 
 	public Mofeta(int pId,String pIzena,String pDeskr,boolean pErre,int pPuntuak,String pIrudia,String pKolorea){
@@ -11,11 +13,11 @@ public class Mofeta extends Karta{
 	}
 	public void animaladaEgin(){
 		
-		ArrayList<Karta> lista = Tableroa.getTableroa().getMahaiKartak().getLista();
+		MahaiKartak lista = Tableroa.getTableroa().getMahaiKartak();
 		
 		int max = 0;
 
-		Iterator<Karta> itr = lista.iterator();
+		Iterator<Karta> itr = lista.getIterator();
 		Karta aux = null;
 		Karta kMax = null;
 		Karta kMax2 = null;

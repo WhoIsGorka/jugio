@@ -2,6 +2,8 @@ package proiektua;
 
 import javax.swing.JOptionPane;
 
+
+
 public class Kamalehoia extends Karta {
 
 	public Kamalehoia(int pId,String pIzena,String pDeskr,boolean pErre,int pPuntuak,String pIrudia,String pKolorea){
@@ -21,12 +23,12 @@ public class Kamalehoia extends Karta {
 		
 		
 		int pos = mk.getPosizioa(this.getIzena(),this.getKolorea());
-		mk.getLista().set(pos, animaliKopia);
+		mk.ordezkatuKarta(pos, animaliKopia);
 		
 		
 		animaliKopia.animaladaEgin();
 		pos = mk.getPosizioa(animaliKopia.getIzena(),animaliKopia.getKolorea());
 		
-		mk.getLista().set(pos, this);
+		mk.ordezkatuKarta(pos, this);
 	}
 }

@@ -1,5 +1,6 @@
 package proiektua;
 
+
 public class Ni extends Jokalaria {
 
 	public Ni(int pId, String pIzena, EskuKartak pEskuKartak, MazoKartak pMazoKartak, int pPuntuazioa) {
@@ -8,11 +9,13 @@ public class Ni extends Jokalaria {
 	
 	public void txandaEgin(int p) {
 		
-		Karta k = super.getEskuKartak().kenduKarta(p);
+		Karta k = this.getEskuKartak().kenduKarta(p);
 		
-		Tableroa.getTableroa().getMahaiKartak().getLista().add(k);
+		Tableroa.getTableroa().getMahaiKartak().gehituKarta(k);
 		
-		Tableroa.getTableroa().getMahaiKartak().getLista().get(Tableroa.getTableroa().getMahaiKartak().getLista().size()-1).animaladaEgin();
+		
+		//ANIMALADA EGIN 5 SEGUNDU ITXARON ONDOREN
+		//Tableroa.getTableroa().getMahaiKartak().getKarta(Tableroa.getTableroa().getMahaiKartak().getTamaina()-1).animaladaEgin();
 		
 	
 		

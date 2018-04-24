@@ -10,18 +10,18 @@ import java.util.Observable;
 
 public class MahaiKartak extends Observable{
 	private ArrayList<Karta> lista;
+	private ArrayList<String> paths;
 	
 	public MahaiKartak() {			
 		this.lista = new ArrayList<Karta>();
+		this.paths = new ArrayList<String>();
 	}
 	
-	public ArrayList<Karta> getLista() {	
-		return this.lista;
-	}
+
 	
-//	public int getTamaina() {
-//		return this.lista.size();
-//	}
+	public int getTamaina() {
+		return this.lista.size();
+	}
 	
 	public Karta getKarta(int i) {
 		return this.lista.get(i);
@@ -68,34 +68,44 @@ public class MahaiKartak extends Observable{
 		return kont;
 		
 	}
-//	public boolean hutsaDa() {
-//		return this.lista.isEmpty();
-//	}
+	public boolean hutsaDa() {
+		return this.lista.isEmpty();
+	}
 	
-//	public void gehituKarta(Karta pKarta) {
-//		this.lista.add(pKarta);
-//	}
-//	
-//	public void gehituHasieran(Karta pKarta) {
-//		this.lista.add(0, pKarta);
-//	}
-//	
-//	public void gehituKartaPos(Karta pKarta, int i) {
-//		this.lista.add(i, pKarta);
-//	}
-//	public Karta kenduKartaPos(int i) {					//*
-//		return this.lista.remove(i);
-//	}
+	public void gehituKarta(Karta pKarta) {
+		this.lista.add(pKarta);
+		this.paths.add(pKarta.getIrudia());
+	}
+	
+	public void gehituHasieran(Karta pKarta) {
+		this.lista.add(0, pKarta);
+		this.paths.add(0, pKarta.getIrudia());
+	}
+	
+	public void gehituKartaPos(Karta pKarta, int i) {
+		this.lista.add(i, pKarta);
+		this.paths.add(i,pKarta.getIrudia());
+	}
+	public Karta kenduKartaPos(int i) {	
+		this.paths.remove(i);
+		return this.lista.remove(i);
+	}
+	public void ordezkatuKarta(int pPos,Karta pKarta){
+		this.lista.set(pPos, pKarta);
+		this.paths.set(pPos, pKarta.getIrudia());
+	}
 
 	 
 	public void bueltaEman() {
 		Collections.reverse(lista);
+		Collections.reverse(paths);
 	}
 	
 	
 	public void ezabatuBat(String pI, String pK){		   	//*			
 		int pos = this.getPosizioa(pI, pK);
-		lista.remove(pos);
+		this.paths.remove(pos);
+		this.lista.remove(pos);
 	}
 	
 		
@@ -121,7 +131,7 @@ public class MahaiKartak extends Observable{
 	
 
 	
-	private Iterator<Karta> getIterator(){
+	public Iterator<Karta> getIterator(){
 		return this.lista.iterator();
 	}
 	
@@ -153,10 +163,10 @@ public class MahaiKartak extends Observable{
 	}
 	
 	public void tabernanSartu() {
-		if (lista.size() == 5) {
-			lista.remove(lista.size()-1);   // beti 4
-			Karta k1 = lista.remove(1);
-			Karta k2 = lista.remove(1);
+		if (this.getTamaina() == 5) {
+			this.kenduKartaPos(this.getTamaina()-1);   // beti 4
+			Karta k1 = this.kenduKartaPos(1);
+			Karta k2 = this.kenduKartaPos(1);
 			if (k1.getKolorea() == "Urdina") {
 				int punt = Tableroa.getTableroa().getNi().getPuntuazioa();
 				Tableroa.getTableroa().getNi().setPuntuazioa(punt + k1.getPuntuak());				
@@ -176,20 +186,11 @@ public class MahaiKartak extends Observable{
 		}
 		
 	}
-	public void listaPathSortu(){
-		Iterator<Karta> itr = this.getIterator();
-		ArrayList<String> l1 = new ArrayList<String>();
-		Karta aux=null;
-		while(itr.hasNext()) {
-			aux=itr.next();	
-			l1.add(aux.getIrudia());
-		}
+	
+
+	public void notifikatuInterfazea(){
 		setChanged();
-		notifyObservers(l1);
+		super.notifyObservers(this.paths);
 	}
-	@Override
-	public void notifyObservers(){
-		setChanged();
-		super.notifyObservers();
-	}
+	
 }
