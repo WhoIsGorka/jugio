@@ -10,7 +10,7 @@ public class KartaProba {
 	Karta k1;
 	@Before
 	public void setUp() throws Exception {
-		k1 = new Karta(6,"Itsaslehoia"," ",false,2,"urdina");
+		k1 =new Itsaslehoia(6,"Itsaslehoia"," ",false,2,"6focaAzul.PNG","Urdina");
 	}
 
 	@After
@@ -26,6 +26,31 @@ public class KartaProba {
 	@Test
 	public void testGetIzena() {
 		assertEquals(k1.getIzena(),"Itsaslehoia");
+	}
+	
+	@Test
+	public void testGetIrudia() {
+		assertEquals(k1.getIrudia(),"6focaAzul.PNG");
+	}
+	
+	@Test
+	public void testGetId() {
+		assertEquals(k1.getId(),6);
+	}
+	
+	@Test
+	public void testGetKolorea() {
+		assertEquals(k1.getKolorea(),"Urdina");
+	}
+	
+	@Test
+	public void testGetErrekurtsiboa() {
+		assertEquals(k1.getErrekurtsiboa(),false);
+	}
+	
+	@Test
+	public void testGetPuntuak() {
+		assertEquals(k1.getPuntuak(),2);
 	}
 
 }

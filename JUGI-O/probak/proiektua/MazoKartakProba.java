@@ -26,9 +26,9 @@ public class MazoKartakProba {
 	@Test
 	public void testMazoaSortu() {
 		EskuKartak kartak = new EskuKartak();
-		Karta k1 = new Karta(6,"Itsaslehoia"," ",false,2,"urdina");
-		Karta k2 = new Karta(4,"Lehoia"," ",true,3,"urdina");
-		Karta k3 = new Karta(5,"Kamalehoia"," ",true,2,"urdina");
+		Karta k1 = new Itsaslehoia(6,"Itsaslehoia"," ",false,2,"6focaAzul.PNG","Urdina");
+		Karta k2 = new Lehoia(12,"Lehoia"," ",false,2,"12leonAzul.PNG","Urdina");
+		Karta k3 = new Kamalehoia(5,"Kamalehoia"," ",false,3,"5camaleonAzul.PNG","Urdina");
 		kartak.gehituKarta(k1);
 		kartak.gehituKarta(k2);
 		kartak.gehituKarta(k3);
@@ -40,7 +40,7 @@ public class MazoKartakProba {
 
 	@Test
 	public void testGehituKarta() {
-		Karta k1 = new Karta(6,"Itsaslehoia"," ",false,2,"urdina");
+		Karta k1 = new Itsaslehoia(6,"Itsaslehoia"," ",false,2,"6focaAzul.PNG","Urdina");
 		m1.gehituKarta(k1);
 		assertEquals(1,m1.tamaina());
 	}
@@ -48,7 +48,7 @@ public class MazoKartakProba {
 	@Test
 	public void testKenduKarta() {
 		//EZ HUTSA
-		Karta k1 = new Karta(6,"Itsaslehoia"," ",false,2,"urdina");
+		Karta k1 = new Itsaslehoia(6,"Itsaslehoia"," ",false,2,"6focaAzul.PNG","Urdina");
 		m1.gehituKarta(k1);
 		Karta k2 = m1.kenduKarta();
 		assertEquals(k1.getIzena(),k2.getIzena());
@@ -61,7 +61,7 @@ public class MazoKartakProba {
 		//HUTSA
 		assertEquals(m1.hutsaDa(),true);
 		//EZ HUTSA
-		Karta k1 = new Karta(6,"Itsaslehoia"," ",false,2,"urdina");
+		Karta k1 = new Itsaslehoia(6,"Itsaslehoia"," ",false,2,"6focaAzul.PNG","Urdina");
 		m1.gehituKarta(k1);
 		assertEquals(m1.hutsaDa(),false);
 	}
@@ -71,7 +71,7 @@ public class MazoKartakProba {
 		//HUTSA
 		assertEquals(m1.tamaina(),0);
 		//EZ HUTSA
-		Karta k1 = new Karta(6,"Itsaslehoia"," ",false,2,"urdina");
+		Karta k1 = new Itsaslehoia(6,"Itsaslehoia"," ",false,2,"6focaAzul.PNG","Urdina");
 		m1.gehituKarta(k1);
 		assertEquals(m1.tamaina(),1);
 	}

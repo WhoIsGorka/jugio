@@ -10,40 +10,19 @@ public class JokalariaProba {
 	Jokalaria j1;
 	EskuKartak ek = new EskuKartak();
 	MazoKartak m = new MazoKartak();
-	
+	//Kartak sortu
+	Karta k1 = new Mofeta(1,"Mofeta"," ",false,4,"1mofetaAzul.PNG","Urdina");
+	Karta k2 = new Loroa(2,"Loroa"," ",false,4,"2loroAzul.PNG","Urdina");
+	Karta k3 = new Kangurua(3,"Kangurua"," ",false,4,"3canguroAzul.PNG","Urdina");
+	Karta k4 = new Tximinoa(4,"Tximinoa"," ",false,3,"4monoAzul.PNG","Urdina");
 
 	@Before
 	public void setUp() throws Exception {
-		j1 = new Ni();
-		//Kartak sortu
-		Karta k1 = new Karta(1,"Mofeta"," ",false,4,"urdina");
-		Karta k2 = new Karta(2,"Loroa"," ",false,4,"urdina");
-		Karta k3 = new Karta(3,"Kangurua"," ",false,4,"urdina");
-		Karta k4 = new Karta(4,"Tximinoa"," ",false,3,"urdina");
-				
-		//Esku kartak definitu
-		ek.gehituKarta(k1);
-		ek.gehituKarta(k2);
-		ek.gehituKarta(k3);
-		ek.gehituKarta(k4);
-		m.gehituKarta(k1);
-		m.gehituKarta(k2);
-		m.gehituKarta(k3);
-		m.gehituKarta(k4);
-		
+		j1 = new Ni(0, null, ek, m, 0);
 		//Jokalariaren atributuak ezarri
 		j1.setJokalariarenIzena("floyd");
 		j1.setJokalariarenId(1);
-		j1.setPuntuazioa(0);
-		j1.getEskuKartak().gehituKarta(k1);
-		j1.getEskuKartak().gehituKarta(k2);
-		j1.getEskuKartak().gehituKarta(k3);
-		j1.getEskuKartak().gehituKarta(k4);
-		j1.getMazoa().gehituKarta(k1);
-		j1.getMazoa().gehituKarta(k2);
-		j1.getMazoa().gehituKarta(k3);
-		j1.getMazoa().gehituKarta(k4);
-		
+		j1.setPuntuazioa(1);
 	}
 
 	@After
@@ -69,17 +48,25 @@ public class JokalariaProba {
 	
 	@Test
 	public void testGetEskuKartak() {
+		j1.getEskuKartak().gehituKarta(k1);
+		j1.getEskuKartak().gehituKarta(k2);
+		j1.getEskuKartak().gehituKarta(k3);
+		j1.getEskuKartak().gehituKarta(k4);
 		assertEquals(j1.getEskuKartak().luzera(),4);
 	}
 	
 	@Test
 	public void testGetMazoa() {
+		j1.getMazoa().gehituKarta(k1);
+		j1.getMazoa().gehituKarta(k2);
+		j1.getMazoa().gehituKarta(k3);
+		j1.getMazoa().gehituKarta(k4);
 		assertEquals(j1.getMazoa().tamaina(),4);
 	}
 	
 	@Test
 	public void testGetPuntuazioa() {
-		assertEquals(j1.getPuntuazioa(),0);
+		assertEquals(j1.getPuntuazioa(),1);
 	}
 	
 	@Test
@@ -102,13 +89,37 @@ public class JokalariaProba {
 	
 	@Test
 	public void testHartuLehenengoLauKartak() {
+		j1.getMazoa().gehituKarta(k1);
+		j1.getMazoa().gehituKarta(k2);
+		j1.getMazoa().gehituKarta(k3);
+		j1.getMazoa().gehituKarta(k4);
 		j1.hartuLehenegoLauKartak();
-		assertEquals(j1.getEskuKartak().luzera(),8); //Eskuan jada gehitu diogu 4 karta, beraz beste 4 hartu behar ditu.
+		assertEquals(j1.getEskuKartak().luzera(),4); //Eskuan jada gehitu diogu 4 karta, beraz beste 4 hartu behar ditu.
 	}
 	
 	@Test
 	public void testHartuKartaBat() {
 		j1.hartuKartaBat();
-		assertEquals(j1.getEskuKartak().luzera(),5);
+		assertEquals(j1.getEskuKartak().luzera(),0);
+		j1.getMazoa().gehituKarta(k1);
+		j1.hartuKartaBat();
+		assertEquals(j1.getEskuKartak().luzera(),1);
+	}
+	@Test
+	public void testHartuKarta() {
+		j1.getMazoa().gehituKarta(k1);
+		j1.getMazoa().gehituKarta(k2);
+		j1.getMazoa().gehituKarta(k3);
+		j1.getMazoa().gehituKarta(k4);
+		j1.hartuKarta();
+		assertEquals(j1.getEskuKartak().luzera(),4); // Esku kartan ez dago kartarik
+		j1.getMazoa().gehituKarta(k1);
+		j1.hartuKarta();
+		assertEquals(j1.getEskuKartak().luzera(),4); // 4 karta daude, beraz ez du kartarik hartuko
+		j1.getEskuKartak().kenduKarta(0);
+		j1.hartuKarta();
+		assertEquals(j1.getEskuKartak().luzera(),4); // 3 karta dauzka, eta mazoan karta bat dago
+		j1.hartuKarta();
+		assertEquals(j1.getEskuKartak().luzera(),4); // 4 karta dauzka eta mazoa hutsik
 	}
 }

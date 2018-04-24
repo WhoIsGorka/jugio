@@ -41,4 +41,8 @@ public abstract class Karta {
 		return this.puntuak;
 	}
 	public abstract void animaladaEgin();
+	
+	public void setKolorea(String pKolorea) {
+		this.kolorea=pKolorea;
+	}
 }
