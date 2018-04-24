@@ -34,6 +34,9 @@ public abstract class Karta {
 	public String getKolorea() {
 		return this.kolorea;
 	}
+	public void setKolorea(String pKolorea){
+		this.kolorea= pKolorea;
+	}
 	public boolean getErrekurtsiboa() {
 		return this.errekurtsiboa;
 	}
@@ -41,8 +44,4 @@ public abstract class Karta {
 		return this.puntuak;
 	}
 	public abstract void animaladaEgin();
-	
-	public void setKolorea(String pKolorea) {
-		this.kolorea=pKolorea;
-	}
 }

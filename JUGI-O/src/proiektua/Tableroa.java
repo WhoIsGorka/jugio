@@ -189,10 +189,6 @@ public class Tableroa {
 		j1.getEskuKartak().addObserver(o);
 		getMahaiKartak().addObserver(o);
 	}
-	public void jolastu(){
-		j1.getEskuKartak().listaPathSortu();
-		getMahaiKartak().listaPathSortu();
-		
-	}
+
 	
 }

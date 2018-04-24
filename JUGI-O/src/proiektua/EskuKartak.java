@@ -8,14 +8,21 @@ import java.util.Observable;
 
 public class EskuKartak extends Observable{
 	private ArrayList<Karta> eskua;
+	private ArrayList<String> paths;
 	
 	public EskuKartak(){
 		this.eskua= new ArrayList<Karta>();
+		this.paths= new ArrayList<String>();
+	}
+	public ArrayList<String> getPaths(){
+		return this.paths;
 	}
 	public void gehituKarta(Karta pKarta){
 		this.eskua.add(pKarta);
+		this.paths.add(pKarta.getIrudia());
 	}
 	public Karta kenduKarta(int num){
+		this.paths.remove(num);		
 		return this.eskua.remove(num);
 	}
 	public boolean hutsaDa(){
@@ -27,24 +34,8 @@ public class EskuKartak extends Observable{
 	public int luzera(){
 		return this.eskua.size();
 	}
-	private Iterator<Karta> getIterator(){
-		return this.eskua.iterator();
-	}
-	public void listaPathSortu(){
-		Iterator<Karta> itr = this.getIterator();
-		ArrayList<String> lista = new ArrayList<String>();
-		Karta aux=null;
-		while(itr.hasNext()) {
-			aux=itr.next();	
-			lista.add(aux.getIrudia());
-		}
+	public void notifikatuInterfazea(){
 		setChanged();
-		notifyObservers(lista);
+		super.notifyObservers(this.paths);
 	}
-	@Override
-	public void notifyObservers(){
-		setChanged();
-		super.notifyObservers();
-	}
-
 }
