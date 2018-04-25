@@ -13,11 +13,11 @@ public class Ni extends Jokalaria {
 		
 		Tableroa.getTableroa().getMahaiKartak().gehituKarta(k);
 		
-		
+		Tableroa.getTableroa().getMahaiKartak().notifikatuInterfazea();
 		//ANIMALADA EGIN 5 SEGUNDU ITXARON ONDOREN
 		//Tableroa.getTableroa().getMahaiKartak().getKarta(Tableroa.getTableroa().getMahaiKartak().getTamaina()-1).animaladaEgin();
 		
 	
-		
+		//Tableroa.getTableroa().getMahaiKartak().notifikatuInterfazea();
 	}
 }

@@ -107,9 +107,9 @@ public class Interfazea extends JFrame implements Observer{
 		panel.add(karta1); 
 		karta1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				karta4.setIcon(null);
+				
 				Tableroa.getTableroa().getJokalaria().txandaEgin(0);
-				Tableroa.getTableroa().getMahaiKartak().notifikatuInterfazea();
+				Tableroa.getTableroa().getNi().getEskuKartak().notifikatuInterfazea();
 			
 				
 				
@@ -121,9 +121,9 @@ public class Interfazea extends JFrame implements Observer{
 		panel.add(karta2);	
 		karta2.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				karta4.setIcon(null);
+			
 				Tableroa.getTableroa().getJokalaria().txandaEgin(1);
-				Tableroa.getTableroa().getMahaiKartak().notifikatuInterfazea();
+				Tableroa.getTableroa().getNi().getEskuKartak().notifikatuInterfazea();
 
 			}
 		});
@@ -134,9 +134,9 @@ public class Interfazea extends JFrame implements Observer{
 		
 		karta3.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				karta4.setIcon(null);
+			
 				Tableroa.getTableroa().getJokalaria().txandaEgin(2);
-				Tableroa.getTableroa().getMahaiKartak().notifikatuInterfazea();
+				Tableroa.getTableroa().getNi().getEskuKartak().notifikatuInterfazea();
 				
 			}
 		});
@@ -147,9 +147,9 @@ public class Interfazea extends JFrame implements Observer{
 		
 		karta4.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				karta4.setIcon(null);
+			
 				Tableroa.getTableroa().getJokalaria().txandaEgin(3);
-				Tableroa.getTableroa().getMahaiKartak().notifikatuInterfazea();
+				Tableroa.getTableroa().getNi().getEskuKartak().notifikatuInterfazea();
 				
 			}
 		});
