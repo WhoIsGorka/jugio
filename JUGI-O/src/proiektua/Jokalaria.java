@@ -70,5 +70,5 @@ public abstract class Jokalaria {
 	}
 
 	
-	public abstract void txandaEgin(int p);
+	public abstract void txandaEgin(int karta);
 }
