@@ -100,6 +100,23 @@ public class MahaiKartak extends Observable{
 		Collections.reverse(paths);
 	}
 	
+	public void ordenatuTxikHand() {
+		ArrayList<Karta> listaaux = new ArrayList<Karta>();
+		Karta max=null;
+		int i;
+	    for (i=0; i<4; i++){  
+	    	max=new Mofeta(1,"Mofeta"," ",false,4,"1mofetaAzul.PNG","Urdina");
+	        for(Karta k: lista){
+	        	if ( k.getId() > max.getId() ){
+	        		max=k;
+	            }
+	        } 
+	        lista.remove(max);
+	        listaaux.add(max); 
+	    } 
+	    listaaux.add(lista.remove(0));
+	    lista.addAll(listaaux);
+	}
 	
 	public void ezabatuBat(String pI, String pK){		   	//*			
 		int pos = this.getPosizioa(pI, pK);
