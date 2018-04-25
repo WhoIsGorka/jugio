@@ -10,6 +10,7 @@ public class Ni extends Jokalaria {
 	
 	public void txandaEgin(int kartazenb) {
 		Tableroa.getTableroa().getMahaiKartak().gehituKarta(this.getEskuKartak().kenduKarta(kartazenb));
+		this.getEskuKartak().notifikatuInterfazea();
 		Tableroa.getTableroa().getMahaiKartak().notifikatuInterfazea();
 		Tableroa.getTableroa().getMahaiKartak().getKarta(Tableroa.getTableroa().getMahaiKartak().getTamaina()-1).animaladaEgin();
 		try {
