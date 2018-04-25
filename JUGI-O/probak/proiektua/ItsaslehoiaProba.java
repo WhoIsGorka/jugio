@@ -1,16 +1,17 @@
 package proiektua;
 
+
 import static org.junit.Assert.*;
 
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
-public class ItsasLehoiaProba {
+public class ItsaslehoiaProba {
 
 	Jokalaria j1;
 	EskuKartak ek = new EskuKartak();
-	MahaiKartak mk = new MahaiKartak();
+	MahaiKartak mk = Tableroa.getTableroa().getMahaiKartak();
 	Karta itsaslehoia = null;
 
 	//Kartak sortu
@@ -36,6 +37,17 @@ public class ItsasLehoiaProba {
 	
 	@Test
 	public void testAnimaladaEgin() {
-	
+		mk.gehituKarta(loro);
+		mk.gehituKarta(tximino);
+		mk.gehituKarta(lehoia);
+		mk.gehituKarta(kanguru);
+		mk.gehituKarta(itsaslehoia);
+		
+		itsaslehoia.animaladaEgin();
+		assertSame(0,mk.getPosizioa(itsaslehoia.getIzena(), itsaslehoia.getKolorea()));
+		assertSame(1,mk.getPosizioa(kanguru.getIzena(), kanguru.getKolorea()));
+		assertSame(2,mk.getPosizioa(lehoia.getIzena(), lehoia.getKolorea()));
+		assertSame(3,mk.getPosizioa(tximino.getIzena(), tximino.getKolorea()));
+		assertSame(4,mk.getPosizioa(loro.getIzena(), loro.getKolorea()));
 	}
 }
