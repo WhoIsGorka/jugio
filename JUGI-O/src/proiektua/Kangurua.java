@@ -1,10 +1,6 @@
 package proiektua;
 
-import java.util.Scanner;
-
 import javax.swing.JOptionPane;
-
-import ssç.Tableroa;
 
 public class Kangurua extends Karta {
 

@@ -5,10 +5,6 @@ import java.util.Collections;
 import java.util.Iterator;
 import java.util.Observable;
 
-import ssç.Tableroa;
-
-
-
 
 public class MahaiKartak extends Observable{
 	private ArrayList<Karta> lista;
