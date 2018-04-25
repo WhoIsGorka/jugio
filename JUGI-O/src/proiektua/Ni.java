@@ -9,24 +9,26 @@ public class Ni extends Jokalaria {
 	}
 	
 	public void txandaEgin(int kartazenb) {
+		
 		Tableroa.getTableroa().getMahaiKartak().gehituKarta(this.getEskuKartak().kenduKarta(kartazenb));
-		this.getEskuKartak().notifikatuInterfazea();
 		Tableroa.getTableroa().getMahaiKartak().notifikatuInterfazea();
+		
+		try {
+			TimeUnit.SECONDS.sleep(3);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		Tableroa.getTableroa().getMahaiKartak().getKarta(Tableroa.getTableroa().getMahaiKartak().getTamaina()-1).animaladaEgin();
-		try {
-			TimeUnit.SECONDS.sleep(1);
-		} catch (InterruptedException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
 		Tableroa.getTableroa().getMahaiKartak().notifikatuInterfazea();
-		Tableroa.getTableroa().getMahaiKartak().errekurtsiboakEgin();
+
 		try {
-			TimeUnit.SECONDS.sleep(1);
+			TimeUnit.SECONDS.sleep(3);
 		} catch (InterruptedException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+		//Tableroa.getTableroa().getMahaiKartak().errekurtsiboakEgin();
 		Tableroa.getTableroa().getMahaiKartak().notifikatuInterfazea();		
 		//ANIMALADA EGIN 5 SEGUNDU ITXARON ONDOREN
 		//Tableroa.getTableroa().getMahaiKartak().getKarta(Tableroa.getTableroa().getMahaiKartak().getTamaina()-1).animaladaEgin();

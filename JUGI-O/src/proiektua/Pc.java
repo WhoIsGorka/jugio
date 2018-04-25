@@ -12,6 +12,7 @@ public class Pc extends Jokalaria {
 	}
 	
 	public void txandaEgin(int kartazenb) {
+		System.out.println("hasiera");
 		try {
 			TimeUnit.SECONDS.sleep(1);
 		} catch (InterruptedException e) {
@@ -20,9 +21,14 @@ public class Pc extends Jokalaria {
 		}
 		int randomNum = ThreadLocalRandom.current().nextInt(0,this.getEskuKartak().luzera());
 		Tableroa.getTableroa().getMahaiKartak().gehituKarta(this.getEskuKartak().kenduKarta(randomNum));
+		System.out.println(randomNum);
+		System.out.println(Tableroa.getTableroa().getPc().getEskuKartak().getKarta(0).getIzena());
+		System.out.println(Tableroa.getTableroa().getPc().getEskuKartak().getKarta(1).getIzena());
+		System.out.println(Tableroa.getTableroa().getPc().getEskuKartak().getKarta(2).getIzena());
+		System.out.println(Tableroa.getTableroa().getPc().getEskuKartak().getKarta(3).getIzena());
 		Tableroa.getTableroa().getMahaiKartak().notifikatuInterfazea();
 		try {
-			TimeUnit.SECONDS.sleep(1);
+			TimeUnit.SECONDS.sleep(3);
 		} catch (InterruptedException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
