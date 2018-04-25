@@ -8,6 +8,10 @@ import org.junit.Test;
 
 public class MahaiKartakProba {
 	MahaiKartak mk;
+	Karta k1 = new Tximinoa(4,"Tximinoa"," ",false,3,"urdina","Urdina");
+	Karta k2 = new Loroa(2,"Loroa"," ",false,4,"urdina","Urdina");
+	Karta k3 = new Tximinoa(4,"Tximinoa"," ",false,3,"berdea","Berdea");
+	Karta k4 = new Loroa(2,"Loroa"," ",false,3,"berdea","Berdea");
 	@Before
 	public void setUp() throws Exception {
 		mk = new MahaiKartak();
@@ -25,10 +29,7 @@ public class MahaiKartakProba {
 
 	@Test
 	public void testGetKarta() {
-		Karta k1 = new Tximinoa(4,"Tximinoa"," ",false,3,"urdina","Urdina");
-		Karta k2 = new Loroa(2,"Loroa"," ",false,4,"urdina","Urdina");
-		Karta k3 = new Tximinoa(4,"Tximinoa"," ",false,3,"berdea","Berdea");
-		Karta k4 = new Loroa(2,"Loroa"," ",false,3,"berdea","Berdea");
+		
 		
 		mk.gehituKarta(k1);
 		mk.gehituKarta(k2);
@@ -44,11 +45,7 @@ public class MahaiKartakProba {
 	
 	@Test
 	public void testGetPosizioa() {
-		Karta k1 = new Tximinoa(4,"Tximinoa"," ",false,3,"urdina","Urdina");
-		Karta k2 = new Loroa(2,"Loroa"," ",false,4,"urdina","Urdina");
-		Karta k3 = new Tximinoa(4,"Tximinoa"," ",false,3,"berdea","Berdea");
-		Karta k4 = new Loroa(2,"Loroa"," ",false,3,"berdea","Berdea");
-		
+				
 		mk.gehituKarta(k1);
 		mk.gehituKarta(k2);
 		mk.gehituKarta(k3);
@@ -62,11 +59,7 @@ public class MahaiKartakProba {
 	}
 	@Test
 	public void testZenbatEspezieBera() {
-		Karta k1 = new Tximinoa(4,"Tximinoa"," ",false,3,"urdina","Urdina");
-		Karta k2 = new Loroa(2,"Loroa"," ",false,4,"urdina","Urdina");
-		Karta k3 = new Tximinoa(4,"Tximinoa"," ",false,3,"berdea","Berdea");
-
-		
+			
 		mk.gehituKarta(k1);
 		mk.gehituKarta(k2);
 		mk.gehituKarta(k3);
@@ -78,10 +71,6 @@ public class MahaiKartakProba {
 	}
 	@Test
 	public void testEzabatuBat() {
-		Karta k1 = new Tximinoa(4,"Tximinoa"," ",false,3,"urdina","Urdina");
-		Karta k2 = new Loroa(2,"Loroa"," ",false,4,"urdina","Urdina");
-		Karta k3 = new Tximinoa(4,"Tximinoa"," ",false,3,"berdea","Berdea");
-		Karta k4 = new Loroa(2,"Loroa"," ",false,3,"berdea","Berdea");
 		
 		mk.gehituKarta(k1);
 		mk.gehituKarta(k2);
@@ -99,10 +88,7 @@ public class MahaiKartakProba {
 	}
 	@Test
 	public void testEzabatuGuztiak() {
-		Karta k1 = new Tximinoa(4,"Tximinoa"," ",false,3,"urdina","Urdina");
-		Karta k2 = new Loroa(2,"Loroa"," ",false,4,"urdina","Urdina");
-		Karta k3 = new Mofeta(4,"Mofeta"," ",false,3,"urdina","Urdina");
-		Karta k4 = new Loroa(2,"Loroa"," ",false,3,"berdea","Berdea");
+
 		
 		mk.gehituKarta(k1);
 		mk.gehituKarta(k2);

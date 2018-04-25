@@ -63,7 +63,6 @@ public class MahaiKartak extends Observable{
 			if (aux.getIzena().equals(pS)) {
 				kont++;
 			}
-			
 		}
 		return kont;
 		
@@ -104,33 +103,37 @@ public class MahaiKartak extends Observable{
 	
 	public void ezabatuBat(String pI, String pK){		   	//*			
 		int pos = this.getPosizioa(pI, pK);
-		this.paths.remove(pos);
-		this.lista.remove(pos);
+		
+		if(pos !=-1) {
+			this.paths.remove(pos);
+			this.lista.remove(pos);
+		}
 	}
 	
 		
-	public void ezabatuGuztiak(String pS){                 	//*               
-		Iterator<Karta> itr = this.getIterator();
-		Karta aux=null;
-		int pos = -1;
-		boolean kendu = false;
-		while(itr.hasNext()) {
-			if (!kendu) {
-				aux=itr.next();	
-			}
-			kendu = false;
-			pos++;
-			if (aux.getIzena()==pS) {
-				lista.remove(pos);
-				kendu = true;
-			}
-			
-		}
+	public void ezabatuGuztiak(String pS){                 	            
+//		Iterator<Karta> itr = this.getIterator();
+//		Karta aux = null;
+//		int pos = -1;
+//		boolean kendu = false;
+//		while(itr.hasNext()) {
+//					
+//			aux = itr.next();		
+//			pos++;
+//		
+//			
+//			if (aux.getIzena()==pS) {			
+//					lista.remove(pos);
+//					ezabatuGuztiak(pS);
+//			}		
+//		}
+		
+		this.ezabatuBat(pS, "Urdina");
+		this.ezabatuBat(pS, "Berdea");
+		
 	}
 
-	
-
-	
+		
 	public Iterator<Karta> getIterator(){
 		return this.lista.iterator();
 	}
@@ -187,7 +190,6 @@ public class MahaiKartak extends Observable{
 		
 	}
 	
-
 	public void notifikatuInterfazea(){
 		setChanged();
 		super.notifyObservers(this.paths);
