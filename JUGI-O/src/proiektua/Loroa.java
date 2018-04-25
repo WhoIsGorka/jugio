@@ -2,6 +2,8 @@ package proiektua;
 
 import java.util.Scanner;
 
+import javax.swing.JOptionPane;
+
 public class Loroa extends Karta {
 
 	public Loroa(int pId,String pIzena,String pDeskr,boolean pErre,int pPuntuak,String pIrudia,String pKolorea){
@@ -9,13 +11,10 @@ public class Loroa extends Karta {
 		bPortaera=new BotaBat();
 	}
 	public void animaladaEgin(){
-		Scanner sc = new Scanner(System.in);
-		String izena;
-		String kolorea;
-		System.out.println("Sartu kalera bota nahi duzun kartaren izena\n\r");
-		izena = sc.next();
-		System.out.println("Sartu kalera bota nahi duzun kartaren kolorea\n\r");
-		kolorea = sc.next();
-		bPortaera.bota(izena, kolorea);
+	
+		int zenb =  Integer.parseInt(JOptionPane.showInputDialog(null, "Sartu kalera bota nahi duzun kartaren posizioa"));
+		Karta animaliKopia= Tableroa.getTableroa().getMahaiKartak().getKarta(zenb);
+			
+		bPortaera.bota(animaliKopia.getIzena(), animaliKopia.getKolorea());
 	}
 }
