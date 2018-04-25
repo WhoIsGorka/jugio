@@ -36,6 +36,7 @@ public class EskuKartak extends Observable{
 	}
 	public void notifikatuInterfazea(){
 		setChanged();
-		super.notifyObservers(this.paths);
+		notifyObservers(this.paths);
+		
 	}
 }

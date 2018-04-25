@@ -1,7 +1,6 @@
 package proiektua;
 
 import java.awt.BorderLayout;
-
 import java.util.Observer;
 import java.util.Scanner;
 
@@ -133,14 +132,13 @@ public class Tableroa {
 		j1.setJokalariarenId(zenb);		
 	}
 	
-	public void jokatu(int p) {
+	public void jolastu(int pPos) {
 		
-	
-		j1.txandaEgin(p);
+		this.j1.txandaEgin(pPos);
 		
-	//	ilara.errekurtsiboakEgin();
+		this.j1.getEskuKartak().notifikatuInterfazea();
 		
-	//	ilara.tabernanSartu();
+		this.pc.txandaEgin(0);
 		
 	}
 	

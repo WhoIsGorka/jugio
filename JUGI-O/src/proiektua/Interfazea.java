@@ -148,10 +148,7 @@ public class Interfazea extends JFrame implements Observer{
 		panel.add(karta1); 
 		karta1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				
-				Tableroa.getTableroa().getNi().txandaEgin(0);
-				Tableroa.getTableroa().getNi().getEskuKartak().notifikatuInterfazea();
-				Tableroa.getTableroa().getPc().txandaEgin(0);		
+				Tableroa.getTableroa().jolastu(0);		
 			}
 		});
 		
@@ -160,10 +157,7 @@ public class Interfazea extends JFrame implements Observer{
 		panel.add(karta2);	
 		karta2.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-			
-				Tableroa.getTableroa().getNi().txandaEgin(1);
-				Tableroa.getTableroa().getPc().txandaEgin(0);
-
+				Tableroa.getTableroa().jolastu(1);
 			}
 		});
 		
@@ -173,10 +167,7 @@ public class Interfazea extends JFrame implements Observer{
 		
 		karta3.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-			
-				Tableroa.getTableroa().getNi().txandaEgin(2);
-				Tableroa.getTableroa().getPc().txandaEgin(0);
-				
+				Tableroa.getTableroa().jolastu(2);
 			}
 		});
 		
@@ -186,10 +177,7 @@ public class Interfazea extends JFrame implements Observer{
 		
 		karta4.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-			
-				Tableroa.getTableroa().getJokalaria().txandaEgin(3);
-				Tableroa.getTableroa().getPc().txandaEgin(0);
-				
+				Tableroa.getTableroa().jolastu(3);
 			}
 		});
 		
@@ -295,7 +283,6 @@ public class Interfazea extends JFrame implements Observer{
 			
 		
 				
-				// TODO EL JUEGO HASTA QUE ACABE
 				
 			}
 
