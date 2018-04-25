@@ -37,6 +37,7 @@ public class HipopotamoProba {
 	
 	@Test
 	public void testAnimaladaEgin() {
+		// Lehoia ezin aurreratu, 3 pos-en gelditu
 		mk.gehituKarta(kanguru);
 		mk.gehituKarta(tximino);
 		mk.gehituKarta(lehoia);
@@ -46,13 +47,19 @@ public class HipopotamoProba {
 		hipo.animaladaEgin();
 		assertEquals(3,mk.getPosizioa(hipo.getIzena(), hipo.getKolorea()));
 		
+		// Zebra ezin aurreratu, 3 pos-en gelditu
+		mk.kenduKartaPos(2);
+		mk.gehituKartaPos(zebra, 2);
+		hipo.animaladaEgin();
+		assertEquals(3,mk.getPosizioa(hipo.getIzena(), hipo.getKolorea()));
 		
-		
+		// Aurreko guztiak aurreratu, 0 pos-en gelditu
 		mk.kenduKartaPos(2);
 		mk.gehituKartaPos(mofeta, 2);
-		
 		assertEquals(3,mk.getPosizioa(hipo.getIzena(), hipo.getKolorea()));
 		hipo.animaladaEgin();
 		assertEquals(0,mk.getPosizioa(hipo.getIzena(), hipo.getKolorea()));
+	
+		
 	}
 }

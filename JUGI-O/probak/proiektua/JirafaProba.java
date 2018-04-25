@@ -21,7 +21,7 @@ public class JirafaProba {
 	Karta lehoia = new Lehoia(12,"Lehoia"," ",false,2,"12leonAzul.PNG","Urdina");
 	@Before
 	public void setUp() throws Exception {
-		Jirafa = new Jirafa(11,"Hipopotamoa"," ",true,2,"11hipopotamoAzul.PNG","Urdina"); 
+		Jirafa = new Jirafa(8,"Jirafa"," ",true,3,"8jirafaAzul.PNG","Urdina");
 	}
 
 	@After
@@ -36,6 +36,7 @@ public class JirafaProba {
 	
 	@Test
 	public void testAnimaladaEgin() {
+		// Aurrekoa ahulagoa denez, aurreratu
 		mk.gehituKarta(kanguru);
 		mk.gehituKarta(tximino);
 		mk.gehituKarta(lehoia);
@@ -45,9 +46,8 @@ public class JirafaProba {
 		Jirafa.animaladaEgin();
 		assertEquals(3,mk.getPosizioa(Jirafa.getIzena(), Jirafa.getKolorea()));
 		
+		// Aurrekoa ezin aurreratu, dagoen lekuan geratu
 		Jirafa.animaladaEgin();
 		assertEquals(3,mk.getPosizioa(Jirafa.getIzena(), Jirafa.getKolorea()));
-		
-		
 	}
 }
