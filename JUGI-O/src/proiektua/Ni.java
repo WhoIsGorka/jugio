@@ -14,25 +14,21 @@ public class Ni extends Jokalaria {
 		Tableroa.getTableroa().getMahaiKartak().notifikatuInterfazea();
 		
 		try {
-			TimeUnit.SECONDS.sleep(3);
+			Thread.sleep(2000);
 		} catch (InterruptedException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		Tableroa.getTableroa().getMahaiKartak().getKarta(Tableroa.getTableroa().getMahaiKartak().getTamaina()-1).animaladaEgin();
-		Tableroa.getTableroa().getMahaiKartak().notifikatuInterfazea();
-
+		int tamaina = Tableroa.getTableroa().getMahaiKartak().getTamaina();
+		if(tamaina!=1){
+			Tableroa.getTableroa().getMahaiKartak().getKarta(tamaina-1).animaladaEgin();
+			Tableroa.getTableroa().getMahaiKartak().notifikatuInterfazea();
+		}
 		try {
-			TimeUnit.SECONDS.sleep(3);
+			Thread.sleep(2000);
 		} catch (InterruptedException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		//Tableroa.getTableroa().getMahaiKartak().errekurtsiboakEgin();
-		Tableroa.getTableroa().getMahaiKartak().notifikatuInterfazea();		
-		//ANIMALADA EGIN 5 SEGUNDU ITXARON ONDOREN
-		//Tableroa.getTableroa().getMahaiKartak().getKarta(Tableroa.getTableroa().getMahaiKartak().getTamaina()-1).animaladaEgin();
+		//Tableroa.getTableroa().getMahaiKartak().notifikatuInterfazea();		
 		
-	
-		//Tableroa.getTableroa().getMahaiKartak().notifikatuInterfazea();
 	}}

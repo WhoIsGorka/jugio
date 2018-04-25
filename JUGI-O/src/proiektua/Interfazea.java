@@ -33,10 +33,22 @@ public class Interfazea extends JFrame implements Observer{
 				karta3.setIcon(null);
 				karta4.setIcon(null);
 				try{
-					karta1.setIcon(resizeIcon(new ImageIcon(getClass().getResource(lista.get(0))),karta1.getWidth(),karta1.getHeight()));
-					karta2.setIcon(resizeIcon(new ImageIcon(getClass().getResource(lista.get(1))),karta2.getWidth(),karta2.getHeight()));
-					karta3.setIcon(resizeIcon(new ImageIcon(getClass().getResource(lista.get(2))),karta3.getWidth(),karta3.getHeight()));
-					karta4.setIcon(resizeIcon(new ImageIcon(getClass().getResource(lista.get(3))),karta4.getWidth(),karta4.getHeight()));
+					if(lista.size()==1){
+						karta1.setIcon(resizeIcon(new ImageIcon(getClass().getResource(lista.get(0))),karta1.getWidth(),karta1.getHeight()));
+					}else if(lista.size()==2){
+						karta2.setIcon(resizeIcon(new ImageIcon(getClass().getResource(lista.get(1))),karta2.getWidth(),karta2.getHeight()));
+						karta3.setIcon(resizeIcon(new ImageIcon(getClass().getResource(lista.get(2))),karta3.getWidth(),karta3.getHeight()));
+					}else if(lista.size()==3){
+						karta1.setIcon(resizeIcon(new ImageIcon(getClass().getResource(lista.get(0))),karta1.getWidth(),karta1.getHeight()));
+						karta2.setIcon(resizeIcon(new ImageIcon(getClass().getResource(lista.get(1))),karta2.getWidth(),karta2.getHeight()));
+						karta3.setIcon(resizeIcon(new ImageIcon(getClass().getResource(lista.get(2))),karta3.getWidth(),karta3.getHeight()));
+					}else if(lista.size()==4){
+						karta1.setIcon(resizeIcon(new ImageIcon(getClass().getResource(lista.get(0))),karta1.getWidth(),karta1.getHeight()));
+						karta2.setIcon(resizeIcon(new ImageIcon(getClass().getResource(lista.get(1))),karta2.getWidth(),karta2.getHeight()));
+						karta3.setIcon(resizeIcon(new ImageIcon(getClass().getResource(lista.get(2))),karta3.getWidth(),karta3.getHeight()));
+						karta4.setIcon(resizeIcon(new ImageIcon(getClass().getResource(lista.get(3))),karta4.getWidth(),karta4.getHeight()));
+					}
+					
 				}catch(IndexOutOfBoundsException e){
 					System.out.println("fuera de aqui ");
 					
@@ -52,11 +64,30 @@ public class Interfazea extends JFrame implements Observer{
 			mahaiKarta4.setIcon(null);
 			mahaiKarta5.setIcon(null);
 			try{
-				mahaiKarta1.setIcon(resizeIcon(new ImageIcon(getClass().getResource(lista.get(0))),mahaiKarta1.getWidth(),mahaiKarta1.getHeight()));
-				mahaiKarta2.setIcon(resizeIcon(new ImageIcon(getClass().getResource(lista.get(1))),mahaiKarta2.getWidth(),mahaiKarta2.getHeight()));
-				mahaiKarta3.setIcon(resizeIcon(new ImageIcon(getClass().getResource(lista.get(2))),mahaiKarta3.getWidth(),mahaiKarta3.getHeight()));
-				mahaiKarta4.setIcon(resizeIcon(new ImageIcon(getClass().getResource(lista.get(3))),mahaiKarta4.getWidth(),mahaiKarta4.getHeight()));
-				mahaiKarta5.setIcon(resizeIcon(new ImageIcon(getClass().getResource(lista.get(4))),mahaiKarta5.getWidth(),mahaiKarta5.getHeight()));	
+				if(lista.size()==1){
+					mahaiKarta1.setIcon(resizeIcon(new ImageIcon(getClass().getResource(lista.get(0))),mahaiKarta1.getWidth(),mahaiKarta1.getHeight()));
+				}else if(lista.size()==2){
+					mahaiKarta1.setIcon(resizeIcon(new ImageIcon(getClass().getResource(lista.get(0))),mahaiKarta1.getWidth(),mahaiKarta1.getHeight()));
+					mahaiKarta2.setIcon(resizeIcon(new ImageIcon(getClass().getResource(lista.get(1))),mahaiKarta2.getWidth(),mahaiKarta2.getHeight()));
+				}else if(lista.size()==3){
+					mahaiKarta1.setIcon(resizeIcon(new ImageIcon(getClass().getResource(lista.get(0))),mahaiKarta1.getWidth(),mahaiKarta1.getHeight()));
+					mahaiKarta2.setIcon(resizeIcon(new ImageIcon(getClass().getResource(lista.get(1))),mahaiKarta2.getWidth(),mahaiKarta2.getHeight()));
+					mahaiKarta3.setIcon(resizeIcon(new ImageIcon(getClass().getResource(lista.get(2))),mahaiKarta3.getWidth(),mahaiKarta3.getHeight()));
+				}else if(lista.size()==4){
+					mahaiKarta1.setIcon(resizeIcon(new ImageIcon(getClass().getResource(lista.get(0))),mahaiKarta1.getWidth(),mahaiKarta1.getHeight()));
+					mahaiKarta2.setIcon(resizeIcon(new ImageIcon(getClass().getResource(lista.get(1))),mahaiKarta2.getWidth(),mahaiKarta2.getHeight()));
+					mahaiKarta3.setIcon(resizeIcon(new ImageIcon(getClass().getResource(lista.get(2))),mahaiKarta3.getWidth(),mahaiKarta3.getHeight()));
+					mahaiKarta4.setIcon(resizeIcon(new ImageIcon(getClass().getResource(lista.get(3))),mahaiKarta4.getWidth(),mahaiKarta4.getHeight()));
+				}else if(lista.size()==5){
+					mahaiKarta1.setIcon(resizeIcon(new ImageIcon(getClass().getResource(lista.get(0))),mahaiKarta1.getWidth(),mahaiKarta1.getHeight()));
+					mahaiKarta2.setIcon(resizeIcon(new ImageIcon(getClass().getResource(lista.get(1))),mahaiKarta2.getWidth(),mahaiKarta2.getHeight()));
+					mahaiKarta3.setIcon(resizeIcon(new ImageIcon(getClass().getResource(lista.get(2))),mahaiKarta3.getWidth(),mahaiKarta3.getHeight()));
+					mahaiKarta4.setIcon(resizeIcon(new ImageIcon(getClass().getResource(lista.get(3))),mahaiKarta4.getWidth(),mahaiKarta4.getHeight()));
+					mahaiKarta5.setIcon(resizeIcon(new ImageIcon(getClass().getResource(lista.get(4))),mahaiKarta5.getWidth(),mahaiKarta5.getHeight()));
+				}
+				
+				
+					
 			}catch(IndexOutOfBoundsException e){
 				System.out.println("jolinbo");
 				
