@@ -4,6 +4,8 @@ import java.util.Scanner;
 
 import javax.swing.JOptionPane;
 
+import ssç.Tableroa;
+
 public class Kangurua extends Karta {
 
 	public Kangurua(int pId,String pIzena,String pDeskr,boolean pErre,int pPuntuak,String pIrudia,String pKolorea){
@@ -11,15 +13,20 @@ public class Kangurua extends Karta {
 		aPortaera=new AurreratuSinple();
 	}
 	public void animaladaEgin(){
-		Scanner sc = new Scanner(System.in);
+
 		int pos = Tableroa.getTableroa().getMahaiKartak().getPosizioa(this.getIzena(),this.getKolorea());
 	
 		int zenb =  Integer.parseInt(JOptionPane.showInputDialog(null, "Zenbat salto egin nahi dituzu, 1 edo 2?"));
 		Karta animaliKopia= Tableroa.getTableroa().getMahaiKartak().getKarta(zenb);
-		if (zenb==1) {
+		
+		
+		if (((zenb==1)&&(pos>0))||((zenb==2)&&(pos==1))) {
 			aPortaera.aurreratu(pos-1, pos);
-		}else if (zenb==2) {
+		}else if ((zenb==2)&&(pos>1)){	
 			aPortaera.aurreratu(pos-2, pos);
 		}
 	}
 }
+	
+		
+

@@ -5,6 +5,8 @@ import java.util.Collections;
 import java.util.Iterator;
 import java.util.Observable;
 
+import ssç.Tableroa;
+
 
 
 
@@ -185,8 +187,8 @@ public class MahaiKartak extends Observable{
 	public void tabernanSartu() {
 		if (this.getTamaina() == 5) {
 			this.kenduKartaPos(this.getTamaina()-1);   // beti 4
-			Karta k1 = this.kenduKartaPos(1);
-			Karta k2 = this.kenduKartaPos(1);
+			Karta k1 = this.kenduKartaPos(0);
+			Karta k2 = this.kenduKartaPos(0);
 			if (k1.getKolorea() == "Urdina") {
 				int punt = Tableroa.getTableroa().getNi().getPuntuazioa();
 				Tableroa.getTableroa().getNi().setPuntuazioa(punt + k1.getPuntuak());				
