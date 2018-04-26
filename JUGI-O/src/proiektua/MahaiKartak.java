@@ -114,10 +114,19 @@ public class MahaiKartak extends Observable{
 	            }
 	        } 
 	        lista.remove(max);
+	        paths.remove(max.getIrudia());
+	        
 	        listaaux.add(max); 
 	    } 
 	    listaaux.add(lista.remove(0));
-	    lista.addAll(listaaux);
+	    paths.remove(0);
+	    for(i=0;i<=listaaux.size();i++){
+	    	lista.add(listaaux.get(i));
+	    	paths.add(listaaux.get(i).getIrudia());
+	    }
+	    
+	   
+	    
 	}
 	
 	public void ezabatuBat(String pI, String pK){		   	//*			

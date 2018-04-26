@@ -1,7 +1,6 @@
 package proiektua;
 import javax.swing.*;
 
-
 import javafx.beans.Observable;
 
 import java.awt.*;
@@ -21,6 +20,8 @@ public class Interfazea extends JFrame implements Observer{
 	private JButton mahaiKarta3;
 	private JButton mahaiKarta4;
 	private JButton mahaiKarta5;
+	private JButton jarraitu ;
+	private JTextField txtJokalariarenPuntuazioa;
 	
 	
 	public void update(java.util.Observable o, Object arg) {
@@ -120,13 +121,14 @@ public class Interfazea extends JFrame implements Observer{
 				
 			}
 		});
+	
 		panel.setLayout(null);
 		this.karta1 = new JButton("");
 		karta1.setBounds(332, 0, 127, 218);
 		panel.add(karta1); 
 		karta1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				Tableroa.getTableroa().jolastu(0);		
+				jolastu(0);		
 			}
 		});
 		
@@ -135,7 +137,7 @@ public class Interfazea extends JFrame implements Observer{
 		panel.add(karta2);	
 		karta2.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				Tableroa.getTableroa().jolastu(1);
+				jolastu(1);	
 			}
 		});
 		
@@ -145,7 +147,7 @@ public class Interfazea extends JFrame implements Observer{
 		
 		karta3.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				Tableroa.getTableroa().jolastu(2);
+				jolastu(2);
 			}
 		});
 		
@@ -155,7 +157,7 @@ public class Interfazea extends JFrame implements Observer{
 		
 		karta4.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				Tableroa.getTableroa().jolastu(3);
+				jolastu(3);
 			}
 		});
 		
@@ -237,16 +239,45 @@ public class Interfazea extends JFrame implements Observer{
 		patadaGate.setIcon(resizeIcon(new ImageIcon(getClass().getResource("patadaGate.png")),patadaGate.getWidth(),patadaGate.getHeight()));
 		tablero.add(patadaGate);
 		
-		JTextArea txtrhistoriala = new JTextArea();
-		txtrhistoriala.setBackground(new Color(189, 183, 107));
-		txtrhistoriala.setText("***HISTORIALA***");
+	
+		
+		JPanel score = new JPanel();
+		score.setBounds(0, 0, 171, 480);
+		getContentPane().add(score);
 		
 		
-		txtrhistoriala.setEditable(false);
-		txtrhistoriala.setBounds(0, 0, 180, 480);
 		
-		getContentPane().add(txtrhistoriala);
+		jarraitu = new JButton("");
+		jarraitu.setText("Jarraitu");
+		jarraitu.setBounds(50, -200, 171, 480);
+		
+		jarraitu.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				Tableroa.getTableroa().getPc().txandaEgin(0);
+				jarraitu.setVisible(false);
+			}
+		});
+		score.add(jarraitu);
+		jarraitu.setVisible(false);
 	}
+	public void jolastu(int pPos){
+		if(Tableroa.getTableroa().getNi().getEskuKartak().luzera()==4 || Tableroa.getTableroa().getNi().getMazoa().hutsaDa()){
+			Tableroa.getTableroa().getNi().txandaEgin(pPos);
+			
+			Tableroa.getTableroa().notifikatuInterfazea();
+			
+			jarraitu.setVisible(true);
+
+		}else{
+			JOptionPane.showMessageDialog(null, 
+                    "Karta bota baino lehen beste bat lapurtu!!!", 
+                    "Errorea!", 
+                    JOptionPane.WARNING_MESSAGE);	
+		}
+
+		
+	}
+	
 	
 	public static void main(String[] args) {
 			
@@ -263,6 +294,5 @@ public class Interfazea extends JFrame implements Observer{
 				
 				
 			}
-
 }
 

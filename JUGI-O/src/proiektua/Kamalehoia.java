@@ -17,13 +17,14 @@ public class Kamalehoia extends Karta {
 		}else{
 			kolorea="Berdea";
 		}
-		int zenb =  Integer.parseInt(JOptionPane.showInputDialog(null, "Aukeratu mahiko animali bat (0-4): "));
-		Karta animaliKopia= mk.getKarta(zenb);
+		int zenb =  Integer.parseInt(JOptionPane.showInputDialog(null, "Aukeratu mahiko animali bat (1-5): "));
+		Karta animaliKopia= mk.getKarta(zenb-1);
 		animaliKopia.setKolorea(kolorea);
 		
 		
 		int pos = mk.getPosizioa(this.getIzena(),this.getKolorea());
 		mk.ordezkatuKarta(pos, animaliKopia);
+		
 		
 		
 		animaliKopia.animaladaEgin();
