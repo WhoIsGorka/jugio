@@ -11,7 +11,7 @@ public class Pc extends Jokalaria {
 		super.id = 0;
 	}
 	
-	public void txandaEgin(int kartazenb) {
+	public int txandaEgin(int kartazenb) {
 		System.out.println("hasiera");
 	
 		int randomNum = ThreadLocalRandom.current().nextInt(0,this.getEskuKartak().luzera());
@@ -33,5 +33,6 @@ public class Pc extends Jokalaria {
 		}
 		
 		this.hartuKarta();
+		return this.getPuntuazioa();
 	}
 }

@@ -1,5 +1,7 @@
 package proiektua;
 
+import java.util.concurrent.ThreadLocalRandom;
+
 import javax.swing.JOptionPane;
 
 public class Kangurua extends Karta {
@@ -9,18 +11,25 @@ public class Kangurua extends Karta {
 		aPortaera=new AurreratuSinple();
 	}
 	public void animaladaEgin(){
-
-		int pos = Tableroa.getTableroa().getMahaiKartak().getPosizioa(this.getIzena(),this.getKolorea());
-	
-		int zenb =  Integer.parseInt(JOptionPane.showInputDialog(null, "Zenbat salto egin nahi dituzu, 1 edo 2?"));
-
-		if (((zenb==1)&&(pos>0))||((zenb==2)&&(pos==1))) {
-			aPortaera.aurreratu(pos-1, pos);
-		}else if ((zenb==2)&&(pos>1)){	
-			aPortaera.aurreratu(pos-2, pos);
+		if(this.getKolorea()=="Urdina"){
+			int pos = Tableroa.getTableroa().getMahaiKartak().getPosizioa(this.getIzena(),this.getKolorea());
+			int zenb =  Integer.parseInt(JOptionPane.showInputDialog(null, "Zenbat salto egin nahi dituzu, 1 edo 2?"));
+			if (((zenb==1)&&(pos>0))||((zenb==2)&&(pos==1))) {
+				aPortaera.aurreratu(pos-1, pos);
+			}else if ((zenb==2)&&(pos>1)){	
+				aPortaera.aurreratu(pos-2, pos);
 		}
 	}
+		else if(this.getKolorea()=="Berdea"){
+			int pos = Tableroa.getTableroa().getMahaiKartak().getPosizioa(this.getIzena(),this.getKolorea());
+			int zenb =  ThreadLocalRandom.current().nextInt(1,3);
+			if (((zenb==1)&&(pos>0))||((zenb==2)&&(pos==1))) {
+				aPortaera.aurreratu(pos-1, pos);
+			}else if ((zenb==2)&&(pos>1)){	
+				aPortaera.aurreratu(pos-2, pos);
+		}
+		}
 }
-	
+}
 		
 

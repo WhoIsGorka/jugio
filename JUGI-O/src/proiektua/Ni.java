@@ -8,7 +8,7 @@ public class Ni extends Jokalaria {
 		super();
 	}
 	
-	public void txandaEgin(int kartazenb) {
+	public int txandaEgin(int kartazenb) {
 		
 		Tableroa.getTableroa().getMahaiKartak().gehituKarta(this.getEskuKartak().kenduKarta(kartazenb));
 		
@@ -27,7 +27,7 @@ public class Ni extends Jokalaria {
 		if(Tableroa.getTableroa().getMahaiKartak().getTamaina()==5){
 			Tableroa.getTableroa().getMahaiKartak().tabernanSartu();
 		}
-		System.out.println("Zure puntuazioa" + this.getPuntuazioa());
 		
+		return this.getPuntuazioa();
 	}
 }

@@ -1,5 +1,7 @@
 package proiektua;
 
+import java.util.concurrent.ThreadLocalRandom;
+
 import javax.swing.JOptionPane;
 
 
@@ -17,19 +19,26 @@ public class Kamalehoia extends Karta {
 		}else{
 			kolorea="Berdea";
 		}
-		int zenb =  Integer.parseInt(JOptionPane.showInputDialog(null, "Aukeratu mahiko animali bat (1-5): "));
+		if (kolorea=="Urdina"){
+			int aukeragarriZenbMaximoa=mk.getTamaina()-1;
+			int zenb =  Integer.parseInt(JOptionPane.showInputDialog(null, "Aukeratu mahiko animali bat (1-"+aukeragarriZenbMaximoa+"):"));
+			Karta animaliKopia= mk.getKarta(zenb-1);
+			animaliKopia.setKolorea(kolorea);
+			int pos = mk.getPosizioa(this.getIzena(),this.getKolorea());
+			mk.ordezkatuKarta(pos, animaliKopia);
+			animaliKopia.animaladaEgin();
+			pos = mk.getPosizioa(animaliKopia.getIzena(),animaliKopia.getKolorea());		
+			mk.ordezkatuKarta(pos, this);}
+		else if(kolorea=="Berdea"){
+		int zenb = ThreadLocalRandom.current().nextInt(1,mk.getTamaina()+1);
 		Karta animaliKopia= mk.getKarta(zenb-1);
 		animaliKopia.setKolorea(kolorea);
-		
-		
 		int pos = mk.getPosizioa(this.getIzena(),this.getKolorea());
 		mk.ordezkatuKarta(pos, animaliKopia);
-		
-		
-		
 		animaliKopia.animaladaEgin();
-		pos = mk.getPosizioa(animaliKopia.getIzena(),animaliKopia.getKolorea());
-		
-		mk.ordezkatuKarta(pos, this);
+		pos = mk.getPosizioa(animaliKopia.getIzena(),animaliKopia.getKolorea());		
+		mk.ordezkatuKarta(pos, this);}
 	}
 }
+
+
