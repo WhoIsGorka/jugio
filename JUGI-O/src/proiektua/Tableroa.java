@@ -1,20 +1,22 @@
 package proiektua;
 
 import java.awt.BorderLayout;
+import java.util.ArrayList;
+import java.util.Observable;
 import java.util.Observer;
 import java.util.Scanner;
 
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 
-public class Tableroa {
+public class Tableroa extends Observable{
 	
 	private MahaiKartak ilara;
 	private Jokalaria j1;
 	private Jokalaria pc;
 	private EskuKartak m1;
 	private EskuKartak m2;
-	private Scanner sc;
+	private ArrayList<String>[] eskuMahaiPaths;
 	
 	private static Tableroa nTableroa=null;
 	
@@ -24,6 +26,9 @@ public class Tableroa {
 		this.ilara = new MahaiKartak();
 		this.j1 =  new Ni(0, null, m1, null, 0);
 		this.pc = new Pc();
+		this.eskuMahaiPaths = new ArrayList[2];
+		eskuMahaiPaths[0]= new ArrayList<String>();
+		eskuMahaiPaths[1]= new ArrayList<String>();
 	}
 	
 	public static Tableroa getTableroa() {
@@ -133,12 +138,24 @@ public class Tableroa {
 	}
 	
 	public void jolastu(int pPos) {
-		
-		this.j1.txandaEgin(pPos);
-		
-		this.j1.getEskuKartak().notifikatuInterfazea();
-		
-		this.pc.txandaEgin(0);
+		if(this.getNi().getEskuKartak().luzera()==4 || this.getNi().getMazoa().hutsaDa()){
+			this.j1.txandaEgin(pPos);
+			
+			this.notifikatuInterfazea();
+			try {
+				Thread.sleep(2000);
+			} catch (InterruptedException e) {
+				e.printStackTrace();
+			}
+			
+			this.pc.txandaEgin(0);
+		}else{
+			JOptionPane.showMessageDialog(null, 
+                    "Karta bota baino lehen beste bat lapurtu!!!", 
+                    "Errorea!", 
+                    JOptionPane.WARNING_MESSAGE);	
+		}
+
 		
 	}
 	
@@ -184,8 +201,16 @@ public class Tableroa {
 //		}
 //	}
 	public void leihoaErregistratu(Observer o){
-		j1.getEskuKartak().addObserver(o);
-		getMahaiKartak().addObserver(o);
+		this.addObserver(o);
+	}
+	public void pathListaSortu(){
+		this.eskuMahaiPaths[0]= this.getNi().getEskuKartak().getPaths();
+		this.eskuMahaiPaths[1]= this.getMahaiKartak().getPaths();
+	}
+	public void notifikatuInterfazea(){
+		this.pathListaSortu();
+		setChanged();
+		super.notifyObservers(this.eskuMahaiPaths);
 	}
 
 	

@@ -13,9 +13,7 @@ public class Kangurua extends Karta {
 		int pos = Tableroa.getTableroa().getMahaiKartak().getPosizioa(this.getIzena(),this.getKolorea());
 	
 		int zenb =  Integer.parseInt(JOptionPane.showInputDialog(null, "Zenbat salto egin nahi dituzu, 1 edo 2?"));
-		Karta animaliKopia= Tableroa.getTableroa().getMahaiKartak().getKarta(zenb);
-		
-		
+
 		if (((zenb==1)&&(pos>0))||((zenb==2)&&(pos==1))) {
 			aPortaera.aurreratu(pos-1, pos);
 		}else if ((zenb==2)&&(pos>1)){	

@@ -1,5 +1,6 @@
 package proiektua;
 
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public abstract class Jokalaria {
@@ -9,10 +10,12 @@ public abstract class Jokalaria {
 	private MazoKartak mazoa;
 	private int puntuazioa;
 	
+	
 	public Jokalaria() {
 		this.eskuKartak = new EskuKartak();
 		this.mazoa = new MazoKartak();
 		this.puntuazioa = 0;
+		
 	}
 	
 	public int getId() {
@@ -54,7 +57,7 @@ public abstract class Jokalaria {
 				this.hartuKartaBat();	
 			}
 		}
-		this.eskuKartak.notifikatuInterfazea();
+		Tableroa.getTableroa().notifikatuInterfazea();
 	}
 
 	public void hartuLehenegoLauKartak(){

@@ -24,6 +24,9 @@ public class MahaiKartak extends Observable{
 	public Karta getKarta(int i) {
 		return this.lista.get(i);
 	}
+	public ArrayList<String> getPaths(){
+		return this.paths;
+	}
 	
 //	public void aurreraJoan(Karta pKarta) {
 //		int i = this.getPosizioa(pKarta.getIzena());
@@ -181,26 +184,25 @@ public class MahaiKartak extends Observable{
 	}
 	
 	public void tabernanSartu() {
-		if (this.getTamaina() == 5) {
-			this.kenduKartaPos(this.getTamaina()-1);   // beti 4
-			Karta k1 = this.kenduKartaPos(0);
-			Karta k2 = this.kenduKartaPos(0);
-			if (k1.getKolorea() == "Urdina") {
-				int punt = Tableroa.getTableroa().getNi().getPuntuazioa();
-				Tableroa.getTableroa().getNi().setPuntuazioa(punt + k1.getPuntuak());				
-			}else {
-				int punt = Tableroa.getTableroa().getPc().getPuntuazioa();
-				Tableroa.getTableroa().getPc().setPuntuazioa(punt + k1.getPuntuak());	
-			
-			}
-			if (k2.getKolorea() == "Urdina") {
-				int punt = Tableroa.getTableroa().getNi().getPuntuazioa();
-				Tableroa.getTableroa().getNi().setPuntuazioa(punt + k2.getPuntuak());				
-			}else {
-				int punt = Tableroa.getTableroa().getPc().getPuntuazioa();
-				Tableroa.getTableroa().getPc().setPuntuazioa(punt + k2.getPuntuak());	
-			
-			}
+		
+		this.kenduKartaPos(4);   // beti 4
+		Karta k1 = this.kenduKartaPos(0);
+		Karta k2 = this.kenduKartaPos(0);
+		if (k1.getKolorea() == "Urdina") {
+			int punt = Tableroa.getTableroa().getNi().getPuntuazioa();
+			Tableroa.getTableroa().getNi().setPuntuazioa(punt + k1.getPuntuak());				
+		}else {
+			int punt = Tableroa.getTableroa().getPc().getPuntuazioa();
+			Tableroa.getTableroa().getPc().setPuntuazioa(punt + k1.getPuntuak());	
+		
+		}
+		if (k2.getKolorea() == "Urdina") {
+			int punt = Tableroa.getTableroa().getNi().getPuntuazioa();
+			Tableroa.getTableroa().getNi().setPuntuazioa(punt + k2.getPuntuak());				
+		}else {
+			int punt = Tableroa.getTableroa().getPc().getPuntuazioa();
+			Tableroa.getTableroa().getPc().setPuntuazioa(punt + k2.getPuntuak());	
+		
 		}
 		
 	}
