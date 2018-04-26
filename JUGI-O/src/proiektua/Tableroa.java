@@ -142,11 +142,8 @@ public class Tableroa extends Observable{
 			this.j1.txandaEgin(pPos);
 			
 			this.notifikatuInterfazea();
-			try {
-				Thread.sleep(2000);
-			} catch (InterruptedException e) {
-				e.printStackTrace();
-			}
+			
+			
 			
 			this.pc.txandaEgin(0);
 		}else{
