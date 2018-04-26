@@ -105,8 +105,9 @@ public class MahaiKartak extends Observable{
 		ArrayList<Karta> listaaux = new ArrayList<Karta>();
 		Karta max=null;
 		int i;
-	    for (i=0; i<4; i++){  
-	    	max=new Mofeta(1,"Mofeta"," ",false,4,"1mofetaAzul.PNG","Urdina");
+		int j = lista.size()-1;
+	    for (i=0; i<j; i++){  
+	    	max=lista.get(0);
 	        for(Karta k: lista){
 	        	if ( k.getId() > max.getId() ){
 	        		max=k;

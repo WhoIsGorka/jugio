@@ -36,18 +36,46 @@ public class SugeaProba {
 	
 	@Test
 	public void testAnimaladaEgin() {
-		mk.gehituKarta(loro);
-		mk.gehituKarta(tximino);
-		mk.gehituKarta(lehoia);
-		mk.gehituKarta(kanguru);
+		// Karta bat bakarrik ilaran
 		mk.gehituKarta(sugea);
+		
+		sugea.animaladaEgin();
+		assertEquals(0,mk.getPosizioa(sugea.getIzena(), sugea.getKolorea()));
+		
+		// 2 karta ilaran
+		mk.gehituKarta(loro);
+		
+		sugea.animaladaEgin();
+		assertEquals(0,mk.getPosizioa(sugea.getIzena(), sugea.getKolorea()));
+		assertEquals(1,mk.getPosizioa(loro.getIzena(), loro.getKolorea()));
+		
+		// 3 karta ilaran
+		mk.gehituKarta(tximino);
+
+		sugea.animaladaEgin();
+		assertEquals(0,mk.getPosizioa(sugea.getIzena(), sugea.getKolorea()));
+		assertEquals(1,mk.getPosizioa(tximino.getIzena(), tximino.getKolorea()));
+		assertEquals(2,mk.getPosizioa(loro.getIzena(), loro.getKolorea()));
+		
+		// 4 karta ilaran
+		mk.gehituKarta(lehoia);
+		
+		sugea.animaladaEgin();
+		assertEquals(0,mk.getPosizioa(lehoia.getIzena(), lehoia.getKolorea()));
+		assertEquals(1,mk.getPosizioa(sugea.getIzena(), sugea.getKolorea()));
+		assertEquals(2,mk.getPosizioa(tximino.getIzena(), tximino.getKolorea()));
+		assertEquals(3,mk.getPosizioa(loro.getIzena(), loro.getKolorea()));
+		
+		// 5 karta ilaran
+		mk.gehituKarta(kanguru);
 		
 		sugea.animaladaEgin();
 		assertEquals(0,mk.getPosizioa(lehoia.getIzena(), lehoia.getKolorea()));
 		assertEquals(1,mk.getPosizioa(sugea.getIzena(), sugea.getKolorea()));
 		assertEquals(2,mk.getPosizioa(tximino.getIzena(), tximino.getKolorea()));
 		assertEquals(3,mk.getPosizioa(kanguru.getIzena(), kanguru.getKolorea()));
-		assertEquals(4,mk.getPosizioa(loro.getIzena(), loro.getKolorea()));
+		assertEquals(4,mk.getPosizioa(loro.getIzena(), loro.getKolorea()));		
+		
 		
 		mk.kenduKartaPos(2);
 		mk.gehituKartaPos(mofeta, 2);
