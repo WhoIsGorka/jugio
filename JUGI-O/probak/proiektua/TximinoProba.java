@@ -51,7 +51,7 @@ public class TximinoProba {
 		assertEquals(2,mk.getPosizioa(hipo.getIzena(), hipo.getKolorea()));
 		assertEquals(3,mk.getPosizioa(kokodrilo.getIzena(), kokodrilo.getKolorea()));
 		
-		// Tximino bat baino gehiago
+		// Tximino bat baino gehiago, bota hipo coco
 		mk.gehituKarta(tximinoberde);
 		
 		tximinoberde.animaladaEgin();
