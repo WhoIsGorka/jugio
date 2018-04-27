@@ -116,11 +116,11 @@ public class Interfazea extends JFrame implements Observer{
 		jarraitu = new JButton("");
 		jarraitu.setEnabled(false);
 		jarraitu.setText("JARRAITU");
-		jarraitu.setBounds(27, 11, 109, 40);
+		jarraitu.setBounds(10, 11, 151, 40);
 		
 		jarraitu.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				pcPuntuazioa.setText("PC PUNTUAZIOA:"+Tableroa.getTableroa().getPc().txandaEgin(0));
+				pcPuntuazioa.setText("PC PUNTUAZIOA: "+Tableroa.getTableroa().getPc().txandaEgin(0));
 				jarraitu.setEnabled(false);
 				mazoa.setIcon(resizeIcon(new ImageIcon(getClass().getResource("geziGorria.png")),mazoa.getWidth(),mazoa.getHeight()));
 				repaint();
@@ -129,16 +129,16 @@ public class Interfazea extends JFrame implements Observer{
 		score.setLayout(null);
 		score.add(jarraitu);
 		
-		jPuntuazioa = new JButton("ZURE PUNTUAZIOA:0");
-		jPuntuazioa.setBounds(10, 105, 151, 94);
+		jPuntuazioa = new JButton("ZURE PUNTUAZIOA: 0");
+		jPuntuazioa.setBounds(0, 105, 171, 94);
 		score.add(jPuntuazioa);
 		
-		pcPuntuazioa = new JButton("PC PUNTUAZIOA:0");
+		pcPuntuazioa = new JButton("PC PUNTUAZIOA: 0");
 		pcPuntuazioa.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 			}
 		});
-		pcPuntuazioa.setBounds(10, 205, 151, 94);
+		pcPuntuazioa.setBounds(0, 205, 171, 94);
 		score.add(pcPuntuazioa);
 		
 		JPanel panel_1 = new JPanel();
@@ -148,12 +148,12 @@ public class Interfazea extends JFrame implements Observer{
 		getContentPane().add(panel_1);
 		panel_1.setLayout(null);
 		
-		final JButton kartak = new JButton("Kartak:12");
+		final JButton kartak = new JButton("Kartak: 12");
 		kartak.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 			}
 		});
-		kartak.setBounds(43, 80, 89, 23);
+		kartak.setBounds(0, 72, 171, 31);
 		panel_1.add(kartak);
 		jarraitu.setVisible(true);
 		
@@ -171,7 +171,7 @@ public class Interfazea extends JFrame implements Observer{
                             "Errorea!", 
                             JOptionPane.WARNING_MESSAGE);				}
 				Tableroa.getTableroa().getJokalaria().hartuKarta();
-				kartak.setText("Kartak:"+Tableroa.getTableroa().getNi().getMazoa().tamaina());
+				kartak.setText("Kartak: "+Tableroa.getTableroa().getNi().getMazoa().tamaina());
 				mazoa.setIcon(resizeIcon(new ImageIcon(getClass().getResource("yugioReverso.png")),mazoa.getWidth(),mazoa.getHeight()));
 
 				
@@ -300,7 +300,7 @@ public class Interfazea extends JFrame implements Observer{
 		
 	public void jolastu(int pPos){
 		if(Tableroa.getTableroa().getNi().getEskuKartak().luzera()==4 || Tableroa.getTableroa().getNi().getMazoa().hutsaDa()){
-			jPuntuazioa.setText("ZURE PUNTUAZIOA:"+Tableroa.getTableroa().getNi().txandaEgin(pPos));		
+			jPuntuazioa.setText("ZURE PUNTUAZIOA: "+Tableroa.getTableroa().getNi().txandaEgin(pPos));		
 			Tableroa.getTableroa().notifikatuInterfazea();			
 			jarraitu.setEnabled(true);
 

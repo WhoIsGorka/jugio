@@ -103,6 +103,7 @@ public class MahaiKartak extends Observable{
 	
 	public void ordenatuTxikHand() {
 		ArrayList<Karta> listaaux = new ArrayList<Karta>();
+		ArrayList<String> pathsaux = new ArrayList<String>();
 		Karta max=null;
 		int i;
 		int j = lista.size()-1;
@@ -113,20 +114,13 @@ public class MahaiKartak extends Observable{
 	        		max=k;
 	            }
 	        } 
-	        lista.remove(max);
-	        paths.remove(max.getIrudia());
-	        
+	        this.kenduKartaPos(this.getPosizioa(max.getIzena(), max.getKolorea()));
 	        listaaux.add(max); 
 	    } 
-	    listaaux.add(lista.remove(0));
-	    paths.remove(0);
-	    for(i=0;i<=listaaux.size();i++){
-	    	lista.add(listaaux.get(i));
-	    	paths.add(listaaux.get(i).getIrudia());
+	    listaaux.add(this.kenduKartaPos(0));
+	    for (Karta k: listaaux) {
+	    	this.gehituKarta(k);
 	    }
-	    
-	   
-	    
 	}
 	
 	public void ezabatuBat(String pI, String pK){		   	//*			
