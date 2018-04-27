@@ -3,6 +3,8 @@ package proiektua;
 import java.util.concurrent.ThreadLocalRandom;
 import java.util.concurrent.TimeUnit;
 
+import javax.swing.JOptionPane;
+
 public class Pc extends Jokalaria {
 
 	public Pc() {
@@ -13,7 +15,11 @@ public class Pc extends Jokalaria {
 	
 	public int txandaEgin(int kartazenb) {
 		System.out.println("hasiera");
-	
+		if (this.getEskuKartak().luzera()==0){
+			int result = JOptionPane.showConfirmDialog(null, "MAS VIDA", "QUE MI TIO QUE TOCABA UN POCO LA GAITA",
+                    JOptionPane.OK_OPTION);
+            if (result == JOptionPane.OK_OPTION)
+                System.exit(0);		}
 		int randomNum = ThreadLocalRandom.current().nextInt(0,this.getEskuKartak().luzera());
 		Tableroa.getTableroa().getMahaiKartak().gehituKarta(this.getEskuKartak().kenduKarta(randomNum));
 	

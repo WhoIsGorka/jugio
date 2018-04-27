@@ -124,6 +124,11 @@ public class Interfazea extends JFrame implements Observer{
 				jarraitu.setEnabled(false);
 				mazoa.setIcon(resizeIcon(new ImageIcon(getClass().getResource("geziGorria.png")),mazoa.getWidth(),mazoa.getHeight()));
 				repaint();
+				karta1.setEnabled(true);
+				karta2.setEnabled(true);
+				karta3.setEnabled(true);
+				karta4.setEnabled(true);
+				mazoa.setEnabled(true);
 			}
 		});
 		score.setLayout(null);
@@ -184,6 +189,11 @@ public class Interfazea extends JFrame implements Observer{
 		panel.add(karta1); 
 		karta1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				karta1.setEnabled(false);
+				karta2.setEnabled(false);
+				karta3.setEnabled(false);
+				karta4.setEnabled(false);
+				mazoa.setEnabled(false);
 				jolastu(0);		
 			}
 		});
@@ -193,6 +203,11 @@ public class Interfazea extends JFrame implements Observer{
 		panel.add(karta2);	
 		karta2.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				karta1.setEnabled(false);
+				karta2.setEnabled(false);
+				karta3.setEnabled(false);
+				karta4.setEnabled(false);
+				mazoa.setEnabled(false);
 				jolastu(1);	
 			}
 		});
@@ -203,6 +218,11 @@ public class Interfazea extends JFrame implements Observer{
 		
 		karta3.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				karta1.setEnabled(false);
+				karta2.setEnabled(false);
+				karta3.setEnabled(false);
+				karta4.setEnabled(false);
+				mazoa.setEnabled(false);
 				jolastu(2);
 			}
 		});
@@ -213,6 +233,11 @@ public class Interfazea extends JFrame implements Observer{
 		
 		karta4.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				karta1.setEnabled(false);
+				karta2.setEnabled(false);
+				karta3.setEnabled(false);
+				karta4.setEnabled(false);
+				mazoa.setEnabled(false);
 				jolastu(3);
 			}
 		});
