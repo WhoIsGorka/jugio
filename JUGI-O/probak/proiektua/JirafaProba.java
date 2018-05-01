@@ -8,8 +8,6 @@ import org.junit.Before;
 import org.junit.Test;
 
 public class JirafaProba {
-	Jokalaria j1;
-	EskuKartak ek = new EskuKartak();
 	MahaiKartak mk = Tableroa.getTableroa().getMahaiKartak();
 	Karta Jirafa =null; 
 

@@ -7,9 +7,6 @@ import org.junit.Before;
 import org.junit.Test;
 
 public class LehoiaProba {
-
-	Jokalaria j1;
-	EskuKartak ek = new EskuKartak();
 	MahaiKartak mk = Tableroa.getTableroa().getMahaiKartak();
 	Karta lehoi =null; 
 

@@ -8,9 +8,6 @@ import org.junit.Before;
 import org.junit.Test;
 
 public class ItsaslehoiaProba {
-
-	Jokalaria j1;
-	EskuKartak ek = new EskuKartak();
 	MahaiKartak mk = Tableroa.getTableroa().getMahaiKartak();
 	Karta itsaslehoia = null;
 

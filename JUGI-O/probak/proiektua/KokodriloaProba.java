@@ -8,8 +8,6 @@ import org.junit.Test;
 
 
 public class KokodriloaProba {
-	Jokalaria j1;
-	EskuKartak ek = new EskuKartak();
 	MahaiKartak mk = Tableroa.getTableroa().getMahaiKartak();
 	Karta koko =null; 
 

@@ -7,9 +7,6 @@ import org.junit.Before;
 import org.junit.Test;
 
 public class TximinoProba {
-
-	Jokalaria j1;
-	EskuKartak ek = new EskuKartak();
 	MahaiKartak mk = Tableroa.getTableroa().getMahaiKartak();
 	Karta tximinourdin=null;
 	Karta tximinoberde = null;
