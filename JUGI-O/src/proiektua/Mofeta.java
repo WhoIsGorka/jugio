@@ -16,6 +16,9 @@ public class Mofeta extends Karta{
 		MahaiKartak lista = Tableroa.getTableroa().getMahaiKartak();
 		
 		int max = 0;
+		int max2 = 0;
+		int i = 0;
+		
 
 		Iterator<Karta> itr = lista.getIterator();
 		Karta aux = null;
@@ -24,19 +27,30 @@ public class Mofeta extends Karta{
 
 		while(itr.hasNext()) {
 			
-			if (aux.getId()>max && aux.getIzena()!="Mofeta"){
-
-				kMax2 = kMax;
-				max = aux.getId();
-				kMax=aux;
-			}
 			aux=itr.next();		
+			
+			if(aux.getIzena()!="Mofeta") {
+				if (aux.getId()>max){
+					i++;
+					kMax2 = kMax;
+					max2 = max;
+					max = aux.getId();
+					kMax=aux;
+				}else if(aux.getId()>max2){	
+					i++;
+					max2 = aux.getId();
+					kMax2 = aux;				
+				}			
+			}
 		}
-		
-		bPortaera.bota(kMax.getIzena(), null);
-		bPortaera.bota(kMax2.getIzena(), null);
-		
-	}
+		if (i==1) {
+			bPortaera.bota(kMax.getIzena(), null);
+		}else if(i>1) {
+			bPortaera.bota(kMax.getIzena(), null);
+			bPortaera.bota(kMax2.getIzena(), null);
+		}
+			
+	}	
 }
 
 

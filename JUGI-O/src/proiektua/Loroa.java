@@ -19,13 +19,16 @@ public class Loroa extends Karta {
 		}else{
 			kolorea="Berdea";
 		}
+		
 		if(kolorea=="Urdina"){
-			int zenb =  Integer.parseInt(JOptionPane.showInputDialog(null, "Sartu kalera bota nahi duzun kartaren posizioa"));
+			int zenb =  Integer.parseInt(JOptionPane.showInputDialog(null, "Sartu kalera bota nahi duzun kartaren posizioa (1 -"+Tableroa.getTableroa().getMahaiKartak().getTamaina()+"):"));
 			Karta animaliKopia= Tableroa.getTableroa().getMahaiKartak().getKarta(zenb-1);	
 			bPortaera.bota(animaliKopia.getIzena(), animaliKopia.getKolorea());}
 		else if(kolorea=="Berdea"){
 			int zenb = ThreadLocalRandom.current().nextInt(1, Tableroa.getTableroa().getMahaiKartak().getTamaina()+1);
 			Karta animaliKopia= Tableroa.getTableroa().getMahaiKartak().getKarta(zenb-1);	
-			bPortaera.bota(animaliKopia.getIzena(), animaliKopia.getKolorea());}
+			bPortaera.bota(animaliKopia.getIzena(), animaliKopia.getKolorea());
+			
+		}
 		
 }}

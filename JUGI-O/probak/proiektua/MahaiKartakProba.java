@@ -12,6 +12,7 @@ public class MahaiKartakProba {
 	Karta k2 = new Loroa(2,"Loroa"," ",false,4,"urdina","Urdina");
 	Karta k3 = new Tximinoa(4,"Tximinoa"," ",false,3,"berdea","Berdea");
 	Karta k4 = new Loroa(2,"Loroa"," ",false,3,"berdea","Berdea");
+	Karta k5 = new Lehoia(12,"Lehoia"," ",false,2,"berdea","Berdea");
 	@Before
 	public void setUp() throws Exception {
 		mk = new MahaiKartak();
@@ -103,6 +104,23 @@ public class MahaiKartakProba {
 		
 		mk.ezabatuGuztiak("Tximinoa");
 		assertSame(0,mk.zenbatEspezieBera("Tximinoa"));
+	}
+	@Test
+	public void testTabernanSartu() {
+		mk.gehituKarta(k1);
+		mk.gehituKarta(k2);
+		mk.gehituKarta(k3);
+		mk.gehituKarta(k4);
+		mk.gehituKarta(k5);
+		
+		mk.tabernanSartu();
+		assertSame(2, mk.getTamaina());
+		assertSame(-1,mk.getPosizioa(k1.getIzena(), k1.getKolorea()));
+		assertSame(-1,mk.getPosizioa(k2.getIzena(), k2.getKolorea()));
+		assertSame(0,mk.getPosizioa(k3.getIzena(), k3.getKolorea()));
+		assertSame(1,mk.getPosizioa(k4.getIzena(), k4.getKolorea()));
+		assertSame(-1,mk.getPosizioa(k5.getIzena(), k5.getKolorea()));		
+		
 	}
 	
 }
