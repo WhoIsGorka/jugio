@@ -44,8 +44,8 @@ public class Interfazea extends JFrame implements Observer{
 		if(lista[0].size()==1){
 			karta1.setIcon(resizeIcon(new ImageIcon(getClass().getResource(lista[0].get(0))),karta1.getWidth(),karta1.getHeight()));
 		}else if(lista[0].size()==2){
+			karta1.setIcon(resizeIcon(new ImageIcon(getClass().getResource(lista[0].get(0))),karta1.getWidth(),karta1.getHeight()));
 			karta2.setIcon(resizeIcon(new ImageIcon(getClass().getResource(lista[0].get(1))),karta2.getWidth(),karta2.getHeight()));
-			karta3.setIcon(resizeIcon(new ImageIcon(getClass().getResource(lista[0].get(2))),karta3.getWidth(),karta3.getHeight()));
 		}else if(lista[0].size()==3){
 			karta1.setIcon(resizeIcon(new ImageIcon(getClass().getResource(lista[0].get(0))),karta1.getWidth(),karta1.getHeight()));
 			karta2.setIcon(resizeIcon(new ImageIcon(getClass().getResource(lista[0].get(1))),karta2.getWidth(),karta2.getHeight()));
