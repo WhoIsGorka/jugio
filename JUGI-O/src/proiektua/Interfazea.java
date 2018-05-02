@@ -129,6 +129,7 @@ public class Interfazea extends JFrame implements Observer{
 				karta3.setEnabled(true);
 				karta4.setEnabled(true);
 				mazoa.setEnabled(true);
+				Tableroa.getTableroa().getNi().hartuKarta();
 			}
 		});
 		score.setLayout(null);
