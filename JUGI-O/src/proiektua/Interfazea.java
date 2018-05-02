@@ -129,7 +129,6 @@ public class Interfazea extends JFrame implements Observer{
 				karta3.setEnabled(true);
 				karta4.setEnabled(true);
 				mazoa.setEnabled(true);
-				Tableroa.getTableroa().getNi().hartuKarta();
 			}
 		});
 		score.setLayout(null);
@@ -334,7 +333,12 @@ public class Interfazea extends JFrame implements Observer{
 			JOptionPane.showMessageDialog(null, 
                     "Karta bota baino lehen beste bat lapurtu!!!", 
                     "Errorea!", 
-                    JOptionPane.WARNING_MESSAGE);	
+                    JOptionPane.WARNING_MESSAGE);
+					karta1.setEnabled(true);
+					karta2.setEnabled(true);
+					karta3.setEnabled(true);
+					karta4.setEnabled(true);
+					mazoa.setEnabled(true);
 		}
 
 		
