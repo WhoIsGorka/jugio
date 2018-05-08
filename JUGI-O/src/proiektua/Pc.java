@@ -13,7 +13,7 @@ public class Pc extends Jokalaria {
 		super.id = 0;
 	}
 	
-	public int txandaEgin(int kartazenb) {
+	public int txandaEgin(int kartazenb){
 		System.out.println("hasiera");
 		if (this.getEskuKartak().luzera()==0){
 			int result = JOptionPane.showConfirmDialog(null, "MAS VIDA", "QUE MI TIO QUE TOCABA UN POCO LA GAITA",
@@ -32,7 +32,7 @@ public class Pc extends Jokalaria {
 			Tableroa.getTableroa().notifikatuInterfazea();
 		}
 		
-		//Tableroa.getTableroa().getMahaiKartak().errekurtsiboakEgin();
+		Tableroa.getTableroa().getMahaiKartak().errekurtsiboakEgin();
 		
 		if(Tableroa.getTableroa().getMahaiKartak().getTamaina()==5){
 			Tableroa.getTableroa().getMahaiKartak().tabernanSartu();

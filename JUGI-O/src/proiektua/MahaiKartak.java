@@ -4,6 +4,9 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Iterator;
 import java.util.Observable;
+import java.util.concurrent.TimeUnit;
+
+import javax.swing.JOptionPane;
 
 
 public class MahaiKartak extends Observable{
@@ -53,6 +56,23 @@ public class MahaiKartak extends Observable{
 			return -1;
 		}
 		
+	}
+	public void errekurtsiboakEgin() {
+		Iterator<Karta> itr = this.getIterator();
+		Karta k1;
+		while(itr.hasNext()) {
+			k1=itr.next();
+			if(this.getTamaina()>1){
+				if(k1.getErrekurtsiboa()){
+					String erantzuna =  (JOptionPane.showInputDialog(null, "ERREKURTSIBOAK:" + k1.getIzena()+"ren animalada egin? (S/N)"));
+					if(erantzuna.equals("S")||erantzuna.equals("s")){
+						k1.animaladaEgin();
+						Tableroa.getTableroa().notifikatuInterfazea();
+					}
+					
+				}
+			}
+		}
 	}
 	
 	public int zenbatEspezieBera(String pS) { 						
@@ -176,17 +196,7 @@ public class MahaiKartak extends Observable{
 		return pos;
 	}
 	*/
-	public void errekurtsiboakEgin() {
-		Iterator<Karta> itr = this.getIterator();
-		Karta aux=null;
-		while (itr.hasNext()) {
-			if (aux.getErrekurtsiboa()) {
-				aux.animaladaEgin();
-			}
-			aux = itr.next();		
-		}
-	}
-	
+
 	public void tabernanSartu() {
 		
 		this.kenduKartaPos(4);   // beti 4
