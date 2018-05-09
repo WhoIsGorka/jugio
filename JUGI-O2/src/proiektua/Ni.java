@@ -14,7 +14,7 @@ public class Ni extends Jokalaria {
 		
 		Tableroa.getTableroa().getMahaiKartak().gehituKarta(this.getEskuKartak().kenduKarta(kartazenb));
 		if (this.getEskuKartak().luzera()==0){
-			int result = JOptionPane.showConfirmDialog(null, "MAS VIDA", "QUE MI TIO QUE TOCABA UN POCO LA GAITA",
+			int result = JOptionPane.showConfirmDialog(null, "AMAITU DA", "HAS GANAU!!!",
                     JOptionPane.OK_OPTION);
             if (result == JOptionPane.OK_OPTION)
                 System.exit(0);	}	

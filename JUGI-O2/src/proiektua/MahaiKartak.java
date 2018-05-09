@@ -64,11 +64,13 @@ public class MahaiKartak extends Observable{
 			k1=itr.next();
 			if(this.getTamaina()>1){
 				if(k1.getErrekurtsiboa()){
-					String erantzuna =  (JOptionPane.showInputDialog(null, "ERREKURTSIBOAK:" + k1.getIzena()+"ren animalada egin? (S/N)"));
-					if(erantzuna.equals("S")||erantzuna.equals("s")){
-						k1.animaladaEgin();
-						Tableroa.getTableroa().notifikatuInterfazea();
-					}
+					JOptionPane.showMessageDialog(null, 
+							k1.getIzena() +" "+ k1.getKolorea(), 
+                            "ERREKURTSIBOA", 
+                            JOptionPane.DEFAULT_OPTION); 
+					k1.animaladaEgin();
+					Tableroa.getTableroa().notifikatuInterfazea();
+					
 					
 				}
 			}
