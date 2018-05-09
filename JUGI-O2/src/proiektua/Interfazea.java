@@ -78,7 +78,9 @@ public class Interfazea extends JFrame implements Observer{
 			mahaiKarta4.setIcon(resizeIcon(new ImageIcon(getClass().getResource(lista[1].get(3))),mahaiKarta4.getWidth(),mahaiKarta4.getHeight()));
 			mahaiKarta5.setIcon(resizeIcon(new ImageIcon(getClass().getResource(lista[1].get(4))),mahaiKarta5.getWidth(),mahaiKarta5.getHeight()));
 		}
-			repaint();
+		jPuntuazioa.setText("Zure puntuazioa:" + Tableroa.getTableroa().getNi().getPuntuazioa());
+		pcPuntuazioa.setText("Zure puntuazioa:" + Tableroa.getTableroa().getPc().getPuntuazioa());
+		repaint();
 		
 	}
 
@@ -120,7 +122,7 @@ public class Interfazea extends JFrame implements Observer{
 		
 		jarraitu.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				pcPuntuazioa.setText("PC PUNTUAZIOA: "+Tableroa.getTableroa().getPc().txandaEgin(0));
+				Tableroa.getTableroa().getPc().txandaEgin(0);
 				jarraitu.setEnabled(false);
 				mazoa.setIcon(resizeIcon(new ImageIcon(getClass().getResource("geziGorria.png")),mazoa.getWidth(),mazoa.getHeight()));
 				repaint();
@@ -325,7 +327,7 @@ public class Interfazea extends JFrame implements Observer{
 		
 	public void jolastu(int pPos){
 		if(Tableroa.getTableroa().getNi().getEskuKartak().luzera()==4 || Tableroa.getTableroa().getNi().getMazoa().hutsaDa()){
-			jPuntuazioa.setText("ZURE PUNTUAZIOA: "+Tableroa.getTableroa().getNi().txandaEgin(pPos));		
+			Tableroa.getTableroa().getNi().txandaEgin(pPos);		
 			Tableroa.getTableroa().notifikatuInterfazea();			
 			jarraitu.setEnabled(true);
 
