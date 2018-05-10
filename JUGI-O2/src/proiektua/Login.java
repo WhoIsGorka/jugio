@@ -5,6 +5,7 @@ import java.awt.BorderLayout;
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.sql.SQLException;
 import java.util.Hashtable;
 
 import javax.swing.JButton;
@@ -28,10 +29,12 @@ import java.awt.Color;
 
 public class Login extends JFrame {
 	private JPanel contentPane;
-	private JTextField email;
-	private JTextField pasahitza;
+	private JTextField textEmail;
+	private JTextField textPasahitza;
 	
-	private MenuNagusia mn = new MenuNagusia();
+	private String email;
+	private String pasahitza; 
+	
 	public Login() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(500, 200, 353, 222);
@@ -48,9 +51,9 @@ public class Login extends JFrame {
 		lblEmail.setHorizontalAlignment(SwingConstants.CENTER);
 		panel_1.add(lblEmail);
 		
-		email = new JTextField();
-		panel_1.add(email);
-		email.setColumns(10);
+		textEmail = new JTextField();
+		panel_1.add(textEmail);
+		textEmail.setColumns(10);
 		JPanel panel_2 = new JPanel();
 		contentPane.add(panel_2);
 		panel_2.setLayout(new GridLayout(0, 2, 0, 0));
@@ -59,9 +62,9 @@ public class Login extends JFrame {
 		lblPasahitza.setHorizontalAlignment(SwingConstants.CENTER);
 		panel_2.add(lblPasahitza);
 		
-		pasahitza = new JTextField();
-		panel_2.add(pasahitza);
-		pasahitza.setColumns(10);
+		textPasahitza = new JTextField();
+		panel_2.add(textPasahitza);
+		textPasahitza.setColumns(10);
 		
 		JPanel panel_3 = new JPanel();
 		contentPane.add(panel_3);
@@ -83,9 +86,48 @@ public class Login extends JFrame {
 		panel_3.add(btnLogin);
 		btnLogin.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				leihoaItxi();
-				mn.setVisible(true);
-				
+				email=textEmail.getText();
+				pasahitza=textPasahitza.getText();
+				if((email.equals("") || pasahitza.equals("") )){
+					JFrame frame = new JFrame();
+					JOptionPane.showMessageDialog(frame,"Zerbait ez dozu idatzi. Errepikatu, mesedez.");
+					
+				}else {
+
+					try {
+						if(Mysql.getMysql().erabiltzaileEdoAdmin(email).equals("EZ")) {
+							JFrame frame = new JFrame();
+							JOptionPane.showMessageDialog(frame,"Email-a ez dago logeatuta.");
+						}else if(Mysql.getMysql().pasahitzaEgokia(email, pasahitza)) {
+							leihoaItxi();
+							JFrame frame = new JFrame();
+							System.out.println("logged");
+							if(Mysql.getMysql().erabiltzaileEdoAdmin(email).equals("Erabiltzaile")) {
+								leihoaItxi();
+								MenuNagusiaErab mn = new MenuNagusiaErab();
+								mn.setVisible(true);
+							}else if(Mysql.getMysql().erabiltzaileEdoAdmin(email).equals("Administratzaile")) {
+								leihoaItxi();
+								MenuNagusiaAdmin mn = new MenuNagusiaAdmin();
+								mn.setVisible(true);
+							}
+						}
+						else if((Mysql.getMysql().pasahitzaEgokia(email, pasahitza)==false)){
+							JFrame frame = new JFrame();
+							JOptionPane.showMessageDialog(frame,"Pasahitza txarto idatzi dozu!.");
+						}
+							
+					}
+					
+				  catch (ClassNotFoundException e) {
+						// TODO Auto-generated catch block
+						e.printStackTrace();
+					} catch (SQLException e) {
+						// TODO Auto-generated catch block
+						e.printStackTrace();
+					}
+			
+				}
 				
 			}
 		});

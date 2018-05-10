@@ -43,7 +43,7 @@ public class MenuLogin extends JFrame {
 		
 		JButton btnLogin = new JButton("Login");
 		btnLogin.setFont(new Font("Tahoma", Font.PLAIN, 18));
-		btnLogin.addActionListener(new ActionListener() {
+		btnLogin.addActionListener(new ActionListener(){
 			public void actionPerformed(ActionEvent arg0) {
 				leihoaItxi();
 				login.setVisible(true);

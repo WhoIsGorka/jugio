@@ -54,7 +54,7 @@ public class Erregistratu extends JFrame {
 	private String pasahitza;
 	private String jaiotzeData;
 	
-	private MenuNagusia mn = new MenuNagusia();
+	private MenuLogin mn = new MenuLogin();
 	
 	public Erregistratu() {	
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -188,7 +188,7 @@ public class Erregistratu extends JFrame {
 						mota=("Erabiltzaile");					
 					}
 					try {
-						Mysql.getMysql().erregistratu(izena, abizena, email, pasahitza, jaiotzeData, erregistroData, mota);
+						Mysql.getMysql().erregistratuJokalari(izena, abizena, email, pasahitza, jaiotzeData, erregistroData, mota);
 						
 					} catch (ClassNotFoundException e) {
 						// TODO Auto-generated catch block
