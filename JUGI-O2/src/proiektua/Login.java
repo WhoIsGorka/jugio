@@ -28,10 +28,10 @@ import java.awt.Color;
 
 public class Login extends JFrame {
 	private JPanel contentPane;
-	private JTextField textField;
-	private JTextField textField_1;
+	private JTextField email;
+	private JTextField pasahitza;
 	
-	private MenuNagusiaErab mn = new MenuNagusiaErab();
+	private MenuNagusia mn = new MenuNagusia();
 	public Login() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(500, 200, 353, 222);
@@ -48,10 +48,9 @@ public class Login extends JFrame {
 		lblEmail.setHorizontalAlignment(SwingConstants.CENTER);
 		panel_1.add(lblEmail);
 		
-		textField = new JTextField();
-		panel_1.add(textField);
-		textField.setColumns(10);
-		
+		email = new JTextField();
+		panel_1.add(email);
+		email.setColumns(10);
 		JPanel panel_2 = new JPanel();
 		contentPane.add(panel_2);
 		panel_2.setLayout(new GridLayout(0, 2, 0, 0));
@@ -60,9 +59,9 @@ public class Login extends JFrame {
 		lblPasahitza.setHorizontalAlignment(SwingConstants.CENTER);
 		panel_2.add(lblPasahitza);
 		
-		textField_1 = new JTextField();
-		panel_2.add(textField_1);
-		textField_1.setColumns(10);
+		pasahitza = new JTextField();
+		panel_2.add(pasahitza);
+		pasahitza.setColumns(10);
 		
 		JPanel panel_3 = new JPanel();
 		contentPane.add(panel_3);

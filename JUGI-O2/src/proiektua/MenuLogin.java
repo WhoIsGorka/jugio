@@ -1,4 +1,3 @@
-
 package proiektua;
 
 
@@ -42,8 +41,9 @@ public class MenuLogin extends JFrame {
 		JPanel panel_1 = new JPanel();
 		contentPane.add(panel_1);
 		
-		JButton btnNewButton = new JButton("Login");
-		btnNewButton.addActionListener(new ActionListener() {
+		JButton btnLogin = new JButton("Login");
+		btnLogin.setFont(new Font("Tahoma", Font.PLAIN, 18));
+		btnLogin.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				leihoaItxi();
 				login.setVisible(true);
@@ -52,13 +52,14 @@ public class MenuLogin extends JFrame {
 			}
 		});
 		panel_1.setLayout(new GridLayout(3, 0, 0, 0));
-		panel_1.add(btnNewButton);
+		panel_1.add(btnLogin);
 		
 	
 		
 		
 		
 		JButton btnErregistratu = new JButton("Erregistratu");
+		btnErregistratu.setFont(new Font("Tahoma", Font.PLAIN, 18));
 		btnErregistratu.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				leihoaItxi();
@@ -73,6 +74,7 @@ public class MenuLogin extends JFrame {
 
 		
 		JButton btnIrten = new JButton("Irten");
+		btnIrten.setFont(new Font("Tahoma", Font.PLAIN, 18));
 		btnIrten.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				System.exit(0);
@@ -85,11 +87,11 @@ public class MenuLogin extends JFrame {
 		
 		panel_2.setLayout(new GridLayout(1, 0, 0, 0));
 		
-		JButton btnNewButton_1 = new JButton("");
-		btnNewButton_1.setBackground(new Color(255, 255, 255));
-		btnNewButton_1.setBounds(10, 11, 200, 200);
-		btnNewButton_1.setIcon(resizeIcon(new ImageIcon(getClass().getResource("barDiegal.PNG")),btnNewButton_1.getWidth(),btnNewButton_1.getHeight()));
-		panel_2.add(btnNewButton_1);
+		JButton fotoBarDiegal = new JButton("");
+		fotoBarDiegal.setBackground(new Color(255, 255, 255));
+		fotoBarDiegal.setBounds(10, 11, 200, 200);
+		fotoBarDiegal.setIcon(resizeIcon(new ImageIcon(getClass().getResource("barDiegal.PNG")),fotoBarDiegal.getWidth(),fotoBarDiegal.getHeight()));
+		panel_2.add(fotoBarDiegal);
 	}
 
 	public void leihoaItxi(){

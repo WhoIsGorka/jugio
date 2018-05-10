@@ -5,8 +5,13 @@ import java.awt.BorderLayout;
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.sql.Date;
+import java.sql.SQLException;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
 import java.util.Hashtable;
 
+import javax.swing.ButtonGroup;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
@@ -38,11 +43,18 @@ public class Erregistratu extends JFrame {
 	private JTextField textField_2;
 	private JLabel label;
 	private JTextField textField_3;
-	private JTextField textField_4;
-	private JTextField textField_5;
-	private JTextField textField_6;
-	private JTextField textField_7;
-	private JTextField textField_10;
+	private JTextField izenaSartu;
+	private JTextField abizenaSartu;
+	private JTextField pasahitzaSartu;
+	private JTextField dataSartu;
+	private JTextField emailSartu;
+	private String izena;
+	private String abizena;
+	private String email;
+	private String pasahitza;
+	private String jaiotzeData;
+	
+	private MenuNagusia mn = new MenuNagusia();
 	
 	public Erregistratu() {	
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -60,9 +72,10 @@ public class Erregistratu extends JFrame {
 		lblIzena_1.setHorizontalAlignment(SwingConstants.CENTER);
 		panel_1.add(lblIzena_1);
 		
-		textField_4 = new JTextField();
-		panel_1.add(textField_4);
-		textField_4.setColumns(10);
+		izenaSartu = new JTextField();
+		panel_1.add(izenaSartu);
+		izenaSartu.setColumns(10);
+		izena=izenaSartu.getText();
 		
 		JPanel panel_2 = new JPanel();
 		contentPane.add(panel_2);
@@ -72,9 +85,10 @@ public class Erregistratu extends JFrame {
 		lblAbizena.setHorizontalAlignment(SwingConstants.CENTER);
 		panel_2.add(lblAbizena);
 		
-		textField_5 = new JTextField();
-		panel_2.add(textField_5);
-		textField_5.setColumns(10);
+		abizenaSartu = new JTextField();
+		panel_2.add(abizenaSartu);
+		abizenaSartu.setColumns(10);
+		abizena=abizenaSartu.getText();
 		
 		JPanel panel_3 = new JPanel();
 		contentPane.add(panel_3);
@@ -84,9 +98,10 @@ public class Erregistratu extends JFrame {
 		lblPasahitza_1.setHorizontalAlignment(SwingConstants.CENTER);
 		panel_3.add(lblPasahitza_1);
 		
-		textField_6 = new JTextField();
-		panel_3.add(textField_6);
-		textField_6.setColumns(10);
+		pasahitzaSartu = new JTextField();
+		panel_3.add(pasahitzaSartu);
+		pasahitzaSartu.setColumns(10);
+		pasahitza=pasahitzaSartu.getText();
 		
 		JPanel panel_4 = new JPanel();
 		contentPane.add(panel_4);
@@ -96,9 +111,10 @@ public class Erregistratu extends JFrame {
 		lblJaiotzedata_1.setHorizontalAlignment(SwingConstants.CENTER);
 		panel_4.add(lblJaiotzedata_1);
 		
-		textField_7 = new JTextField();
-		panel_4.add(textField_7);
-		textField_7.setColumns(10);
+		dataSartu = new JTextField();
+		panel_4.add(dataSartu);
+		dataSartu.setColumns(10);
+		jaiotzeData=dataSartu.getText();
 		
 		JPanel panel_5 = new JPanel();
 		contentPane.add(panel_5);
@@ -108,21 +124,29 @@ public class Erregistratu extends JFrame {
 		lblEmail.setHorizontalAlignment(SwingConstants.CENTER);
 		panel_5.add(lblEmail);
 		
-		textField_10 = new JTextField();
-		panel_5.add(textField_10);
-		textField_10.setColumns(10);
+		emailSartu = new JTextField();
+		panel_5.add(emailSartu);
+		emailSartu.setColumns(10);
+		email=emailSartu.getText();
 		
 		JPanel panel_6 = new JPanel();
 		contentPane.add(panel_6);
 		panel_6.setLayout(new GridLayout(0, 2, 0, 0));
 		
-		JRadioButton rdbtnErabiltzaile = new JRadioButton("ERABILTZAILE");
+		final JRadioButton rdbtnErabiltzaile = new JRadioButton("ERABILTZAILE");
 		rdbtnErabiltzaile.setHorizontalAlignment(SwingConstants.CENTER);
 		panel_6.add(rdbtnErabiltzaile);
 		
-		JRadioButton rdbtnAdministratzaile = new JRadioButton("ADMINISTRATZAILE");
+		final JRadioButton rdbtnAdministratzaile = new JRadioButton("ADMINISTRATZAILE");
 		rdbtnAdministratzaile.setHorizontalAlignment(SwingConstants.CENTER);
 		panel_6.add(rdbtnAdministratzaile);
+		
+		rdbtnErabiltzaile.setSelected(true);
+		rdbtnAdministratzaile.setSelected(false);
+		
+		ButtonGroup group = new ButtonGroup();
+		group.add(rdbtnErabiltzaile);
+		group.add(rdbtnAdministratzaile);
 		
 		JPanel panel_7 = new JPanel();
 		contentPane.add(panel_7);
@@ -140,6 +164,49 @@ public class Erregistratu extends JFrame {
 		
 		JButton btnErregistratu = new JButton("ERREGISTRATU");
 		panel_7.add(btnErregistratu);
+		btnErregistratu.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				izena=izenaSartu.getText();
+				abizena=abizenaSartu.getText();
+				email=emailSartu.getText();
+				pasahitza=pasahitzaSartu.getText();
+				jaiotzeData=dataSartu.getText();
+				if((izena.equals("") || abizena.equals("") || email.equals("") || jaiotzeData.equals("") || pasahitza.equals(""))){
+					JFrame frame = new JFrame();
+					JOptionPane.showMessageDialog(frame,"Zerbait ez dozu idatzi. Errepikatu, mesedez.");
+					
+				}
+				else{
+					java.util.Date todayDate = Calendar.getInstance().getTime();
+					SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd");
+					String erregistroData = formatter.format(todayDate);
+					String mota=("");
+					if (rdbtnAdministratzaile.isSelected()){
+						mota= ("Administratzaile");
+					}
+					else if(rdbtnErabiltzaile.isSelected()){
+						mota=("Erabiltzaile");					
+					}
+					try {
+						Mysql.getMysql().erregistratu(izena, abizena, email, pasahitza, jaiotzeData, erregistroData, mota);
+						
+					} catch (ClassNotFoundException e) {
+						// TODO Auto-generated catch block
+						e.printStackTrace();
+					} catch (SQLException e) {
+						// TODO Auto-generated catch block
+						e.printStackTrace();
+					}
+					leihoaItxi();
+					mn.setVisible(true);
+				}
+					
+			}
+		});
+	
+		
+		
+		
 		
 	
 		
@@ -147,5 +214,6 @@ public class Erregistratu extends JFrame {
 	public void leihoaItxi(){
 		this.dispose();
 	}
+	
 	
 }
