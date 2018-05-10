@@ -341,31 +341,6 @@ public class Interfazea extends JFrame implements Observer{
 					karta4.setEnabled(true);
 					mazoa.setEnabled(true);
 		}
-
-		
 	}
-	
-	public static void main(String[] args) {
-			Tableroa.getTableroa().menuaIreki();
-			
-			Tableroa.getTableroa().hasieraketak();
-			Interfazea frame = new Interfazea();
-	    	frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-			frame.getContentPane().setLayout(new BorderLayout());
-			frame.setSize(1280, 720);
-			frame.setLocationRelativeTo(null);
-			
-			boolean zabaldu = false;
-			while(!zabaldu){
-				if(Tableroa.getTableroa().partidaHasi()){
-					zabaldu = true;
-					frame.setVisible(true);
-				}
-			}
-			
-		
-				
-				
-			}
 }
 

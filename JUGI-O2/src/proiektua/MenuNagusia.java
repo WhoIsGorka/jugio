@@ -42,18 +42,23 @@ public class MenuNagusia extends JFrame{
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				leihoaItxi();
-				setHasi();
+				interfazAbiarazi();
 			}
 		});
 		panel_1.add(btnNewButton);
 	}
-	public void setHasi(){
-		this.hasi = true;
-	}
-	public boolean getHasi(){
-		return this.hasi;
-	}
+	
 	public void leihoaItxi(){
 		this.dispose();
+	}
+	public void interfazAbiarazi(){
+		Tableroa.getTableroa().hasieraketak();
+		Interfazea frame = new Interfazea();
+    	frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		frame.getContentPane().setLayout(new BorderLayout());
+		frame.setSize(1280, 720);
+		frame.setLocationRelativeTo(null);
+		
+		frame.setVisible(true);
 	}
 }

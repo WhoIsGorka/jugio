@@ -31,6 +31,7 @@ public class Login extends JFrame {
 	private JTextField textField;
 	private JTextField textField_1;
 	
+	private MenuNagusia mn = new MenuNagusia();
 	public Login() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(500, 200, 353, 222);
@@ -84,13 +85,13 @@ public class Login extends JFrame {
 		btnLogin.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				leihoaItxi();
-				MenuNagusia frame2 = new MenuNagusia();
-				frame2.setVisible(true);
+				mn.setVisible(true);
 				
 				
 			}
 		});
 	}
+
 	public void leihoaItxi(){
 		this.dispose();
 	}

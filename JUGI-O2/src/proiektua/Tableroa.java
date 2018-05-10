@@ -160,9 +160,7 @@ public class Tableroa extends Observable{
 		menuLogin = new MenuLogin();
 		menuLogin.setVisible(true);
 	}
-	public boolean partidaHasi(){
-		return menuNagusia.getHasi();
-	}
+
 	
 	public void leihoaErregistratu(Observer o){
 		this.addObserver(o);
