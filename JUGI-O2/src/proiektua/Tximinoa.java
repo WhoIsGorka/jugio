@@ -24,11 +24,21 @@ public class Tximinoa extends Karta {
 			int i = Tableroa.getTableroa().getMahaiKartak().getPosizioa("Tximinoa", kol);		
 			aPortaera.aurreratu(0, i);
 			
-			
-			
 			i = Tableroa.getTableroa().getMahaiKartak().getPosizioa("Tximinoa", this.getKolorea());	
-			aPortaera.aurreratu(0,i);	
+			aPortaera.aurreratu(0,i);
 			
+		}else if(zenbat == 3) {
+			bPortaera.bota("Kokodriloa", null);
+			bPortaera.bota("Hipopotamoa", null);
+			
+			int i = Tableroa.getTableroa().getMahaiKartak().getPosizioa("Tximinoa", "Urdina");		
+			aPortaera.aurreratu(0, i);
+			
+			i = Tableroa.getTableroa().getMahaiKartak().getPosizioa("Tximinoa", "Berdea");		
+			aPortaera.aurreratu(0, i);
+			
+			i = Tableroa.getTableroa().getMahaiKartak().getPosizioa("Tximinoa", this.getKolorea());		
+			aPortaera.aurreratu(0, i);
 			
 		}
 	}

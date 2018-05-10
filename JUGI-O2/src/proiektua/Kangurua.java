@@ -15,13 +15,13 @@ public class Kangurua extends Karta {
 		do {
 			try{	
 				String kolorea;
-				if(this.getKolorea()=="Urdina"){
+				if(this.getKolorea()=="Urdina" || this.getKolorea()=="Gorria"){
 					kolorea= "Urdina";
 				}else{
 					kolorea="Berdea";
 				}
 				if(kolorea=="Urdina"){
-					int pos = Tableroa.getTableroa().getMahaiKartak().getPosizioa(this.getIzena(),this.getKolorea());
+					int pos = Tableroa.getTableroa().getMahaiKartak().getPosizioa("Kangurua",this.getKolorea());
 					int zenb =  Integer.parseInt(JOptionPane.showInputDialog(null, "Zenbat salto egin nahi dituzu, 1 edo 2?"));
 					if (zenb <= 0 || zenb > 2) {
 						throw new KanguroException();
@@ -35,7 +35,7 @@ public class Kangurua extends Karta {
 						}
 					}
 				}
-				else if(kolorea=="Berdea"){
+				else if(kolorea=="Berdea" ){
 					int pos = Tableroa.getTableroa().getMahaiKartak().getPosizioa(this.getIzena(),this.getKolorea());
 					int zenb =  ThreadLocalRandom.current().nextInt(1,3);
 					if (((zenb==1)&&(pos>0))||((zenb==2)&&(pos==1))) {

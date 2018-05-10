@@ -17,7 +17,7 @@ public class Loroa extends Karta {
 		do {
 			try{
 				String kolorea;
-				if(this.getKolorea()=="Urdina"){
+				if(this.getKolorea()=="Urdina" || this.getKolorea()=="Gorria"){
 					kolorea= "Urdina";
 				}else{
 					kolorea="Berdea";
