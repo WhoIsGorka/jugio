@@ -1,4 +1,5 @@
 package proiektua;
+
  
 import java.util.ArrayList;
 import java.util.Collections;
@@ -206,18 +207,22 @@ public class MahaiKartak extends Observable{
 		Karta k2 = this.kenduKartaPos(0);
 		if (k1.getKolorea() == "Urdina") {
 			int punt = Tableroa.getTableroa().getNi().getPuntuazioa();
-			Tableroa.getTableroa().getNi().setPuntuazioa(punt + k1.getPuntuak());				
+			Tableroa.getTableroa().getNi().setPuntuazioa(punt + k1.getPuntuak());
+			Tableroa.getTableroa().getNi().setKontKartak();
 		}else {
 			int punt = Tableroa.getTableroa().getPc().getPuntuazioa();
 			Tableroa.getTableroa().getPc().setPuntuazioa(punt + k1.getPuntuak());	
+			Tableroa.getTableroa().getPc().setKontKartak();
 		
 		}
 		if (k2.getKolorea() == "Urdina") {
 			int punt = Tableroa.getTableroa().getNi().getPuntuazioa();
-			Tableroa.getTableroa().getNi().setPuntuazioa(punt + k2.getPuntuak());				
+			Tableroa.getTableroa().getNi().setPuntuazioa(punt + k2.getPuntuak());	
+			Tableroa.getTableroa().getNi().setKontKartak();
 		}else {
 			int punt = Tableroa.getTableroa().getPc().getPuntuazioa();
 			Tableroa.getTableroa().getPc().setPuntuazioa(punt + k2.getPuntuak());	
+			Tableroa.getTableroa().getPc().setKontKartak();
 		
 		}
 		

@@ -1,5 +1,6 @@
 package proiektua;
 
+
 import java.awt.BorderLayout;
 import java.util.ArrayList;
 import java.util.Observable;
@@ -18,7 +19,7 @@ public class Tableroa extends Observable{
 	private EskuKartak m2;
 	private ArrayList<String>[] eskuMahaiPaths;
 	private MenuLogin menuLogin;
-	private MenuNagusia menuNagusia;
+
 	
 	private static Tableroa nTableroa=null;
 	
@@ -160,7 +161,19 @@ public class Tableroa extends Observable{
 		menuLogin = new MenuLogin();
 		menuLogin.setVisible(true);
 	}
-
+	public String norkIrabaziDu(){
+		if(this.j1.getKontKartak()>this.pc.getKontKartak()){
+			return "Irabazi duzu!!!";
+		}else if(this.j1.getKontKartak()<this.pc.getKontKartak()){
+			return  "Galdu duzu!!! Bekario";
+		}else{
+			if(this.j1.getPuntuazioa()>this.pc.getPuntuazioa()){
+				return "Irabazi duzu!!!";
+			}else{
+				return  "Galdu duzu!!! Bekario";
+			}
+		}
+	}
 	
 	public void leihoaErregistratu(Observer o){
 		this.addObserver(o);

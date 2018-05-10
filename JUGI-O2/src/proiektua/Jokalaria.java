@@ -1,5 +1,6 @@
 package proiektua;
 
+
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -8,14 +9,21 @@ public abstract class Jokalaria {
 	protected String izena;
 	private EskuKartak eskuKartak;
 	private MazoKartak mazoa;
+	private int kontKartak;
 	private int puntuazioa;
 	
 	
 	public Jokalaria() {
 		this.eskuKartak = new EskuKartak();
 		this.mazoa = new MazoKartak();
+		this.kontKartak = 0;
 		this.puntuazioa = 0;
-		
+	}
+	public int getKontKartak(){
+		return this.kontKartak;
+	}
+	public void setKontKartak(){
+		kontKartak++;
 	}
 	
 	public int getId() {
