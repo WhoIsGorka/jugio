@@ -80,6 +80,7 @@ public class MenuNagusiaErab extends JFrame{
 		JButton btnBetikoPuntuazioOnenak = new JButton("BETIKO PUNTUAZIO ONENAK");
 		btnBetikoPuntuazioOnenak.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				
 			}
 		});
 		panel_4.setLayout(new GridLayout(0, 1, 0, 0));

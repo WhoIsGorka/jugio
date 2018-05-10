@@ -4,6 +4,7 @@ import java.sql.Date;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.Scanner;
 
 import com.mysql.jdbc.Connection;
@@ -60,6 +61,11 @@ public class Mysql {
 			return false;		
 		}
 	}
+	/*public ArrayList<String> jokalaririkOnenak(){
+		Statement s = (Statement) konexioa.createStatement();	
+		ResultSet rs = s.executeQuery("SELECT izena,puntuazioa FROM jokalaria,partida ORDER BY puntuazioa");
+		
+	}*/
 
 	public void konexioaZarratu()throws ClassNotFoundException, SQLException{
 		konexioa.close();
