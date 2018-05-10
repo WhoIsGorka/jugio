@@ -22,12 +22,12 @@ import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 
 
-public class MenuNagusia extends JFrame{
+public class MenuNagusiaErab extends JFrame{
 
 	private JPanel contentPane;
 	private boolean hasi = false;
 	
-	public MenuNagusia() {
+	public MenuNagusiaErab() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(500, 200, 500, 500);
 		contentPane = new JPanel();

@@ -31,7 +31,7 @@ public class Login extends JFrame {
 	private JTextField textField;
 	private JTextField textField_1;
 	
-	private MenuNagusia mn = new MenuNagusia();
+	private MenuNagusiaErab mn = new MenuNagusiaErab();
 	public Login() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(500, 200, 353, 222);

@@ -78,8 +78,8 @@ public class Interfazea extends JFrame implements Observer{
 			mahaiKarta4.setIcon(resizeIcon(new ImageIcon(getClass().getResource(lista[1].get(3))),mahaiKarta4.getWidth(),mahaiKarta4.getHeight()));
 			mahaiKarta5.setIcon(resizeIcon(new ImageIcon(getClass().getResource(lista[1].get(4))),mahaiKarta5.getWidth(),mahaiKarta5.getHeight()));
 		}
-		jPuntuazioa.setText("Zure puntuazioa:" + Tableroa.getTableroa().getNi().getPuntuazioa());
-		pcPuntuazioa.setText("Zure puntuazioa:" + Tableroa.getTableroa().getPc().getPuntuazioa());
+		jPuntuazioa.setText("Zure puntuazioa: " + Tableroa.getTableroa().getNi().getKontKartak());
+		pcPuntuazioa.setText("PC puntuazioa: " + Tableroa.getTableroa().getPc().getKontKartak());
 		repaint();
 		
 	}
