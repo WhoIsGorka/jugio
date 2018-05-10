@@ -17,6 +17,8 @@ public class Tableroa extends Observable{
 	private EskuKartak m1;
 	private EskuKartak m2;
 	private ArrayList<String>[] eskuMahaiPaths;
+	private MenuLogin menuLogin;
+	private MenuNagusia menuNagusia;
 	
 	private static Tableroa nTableroa=null;
 	
@@ -119,7 +121,6 @@ public class Tableroa extends Observable{
 		this.m2.gehituKarta(lehoia2);
 	}
 	public void hasieraketak(){
-		sartuJokalariak();
 		
 		this.KartakSortu();
 		
@@ -155,48 +156,14 @@ public class Tableroa extends Observable{
 
 		
 	}
+	public void menuaIreki(){
+		menuLogin = new MenuLogin();
+		menuLogin.setVisible(true);
+	}
+	public boolean partidaHasi(){
+		return menuNagusia.getHasi();
+	}
 	
-	
-	
-//	public Jokalaria partidaJolastu() {
-//		
-//		while(!amaituDa()) {
-//			j1.txandaEgin();
-//			
-//			ilara.errekurtsiboakEgin();
-//			
-//			ilara.tabernanSartu();
-//			
-//			pc.txandaEgin();
-//			
-//			ilara.errekurtsiboakEgin();
-//			
-//			ilara.tabernanSartu();
-//						
-//		}
-//		return norkIrabazi();
-//	}
-//	
-//	public boolean amaituDa() {
-//		boolean amaituDa = false;
-//		
-//		if(j1.getEskuKartak().hutsaDa() && pc.getEskuKartak().hutsaDa()) {
-//			amaituDa = true;
-//		}
-//
-//		
-//		return amaituDa;
-//	}
-//	
-//	public Jokalaria norkIrabazi() {
-//		if (j1.getPuntuazioa() > pc.getPuntuazioa()) {
-//			return j1;
-//		}else if(j1.getPuntuazioa() < pc.getPuntuazioa()) {
-//			return pc;
-//		}else {
-//			return null;
-//		}
-//	}
 	public void leihoaErregistratu(Observer o){
 		this.addObserver(o);
 	}

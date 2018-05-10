@@ -91,7 +91,6 @@ public class Interfazea extends JFrame implements Observer{
 		
 	}
 	public Interfazea() {
-		
 		Tableroa.getTableroa().leihoaErregistratu(this);
 		
 		setResizable(false);
@@ -347,6 +346,7 @@ public class Interfazea extends JFrame implements Observer{
 	}
 	
 	public static void main(String[] args) {
+			Tableroa.getTableroa().menuaIreki();
 			
 			Tableroa.getTableroa().hasieraketak();
 			Interfazea frame = new Interfazea();
@@ -354,8 +354,14 @@ public class Interfazea extends JFrame implements Observer{
 			frame.getContentPane().setLayout(new BorderLayout());
 			frame.setSize(1280, 720);
 			frame.setLocationRelativeTo(null);
-			frame.setVisible(true);
 			
+			boolean zabaldu = false;
+			while(!zabaldu){
+				if(Tableroa.getTableroa().partidaHasi()){
+					zabaldu = true;
+					frame.setVisible(true);
+				}
+			}
 			
 		
 				
