@@ -33,7 +33,35 @@ public class MenuNagusiaErab extends JFrame{
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
-		contentPane.setLayout(new GridLayout(3, 0, 0, 0));
+		contentPane.setLayout(new GridLayout(5, 0, 0, 0));
+		
+		JPanel panel = new JPanel();
+		contentPane.add(panel);
+		
+		JButton btnJolastu = new JButton("JOLASTU");
+		btnJolastu.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+			}
+		});
+		panel.add(btnJolastu);
+		
+		JPanel panel_2 = new JPanel();
+		contentPane.add(panel_2);
+		
+		JButton btnPartidaOnenak = new JButton("PARTIDA ONENAK");
+		panel_2.add(btnPartidaOnenak);
+		
+		JPanel panel_3 = new JPanel();
+		contentPane.add(panel_3);
+		
+		JButton btnEgunekoPuntuazioOnenak = new JButton("EGUNEKO PUNTUAZIO ONENAK");
+		panel_3.add(btnEgunekoPuntuazioOnenak);
+		
+		JPanel panel_4 = new JPanel();
+		contentPane.add(panel_4);
+		
+		JButton btnBetikoPuntuazioOnenak = new JButton("BETIKO PUNTUAZIO ONENAK");
+		panel_4.add(btnBetikoPuntuazioOnenak);
 		
 		JPanel panel_1 = new JPanel();
 		contentPane.add(panel_1);
