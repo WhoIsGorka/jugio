@@ -61,8 +61,10 @@ public class MahaiKartak extends Observable{
 	public void errekurtsiboakEgin() {
 		Iterator<Karta> itr = this.getIterator();
 		Karta k1;
+		int pos = 0;
 		
-		while(itr.hasNext()) {
+		
+		while(itr.hasNext()){
 			k1=itr.next();
 			if(this.getTamaina()>1){
 				if(k1.getErrekurtsiboa()){
@@ -72,7 +74,15 @@ public class MahaiKartak extends Observable{
                             JOptionPane.DEFAULT_OPTION); 
 					k1.animaladaEgin();
 					Tableroa.getTableroa().notifikatuInterfazea();
+					
+					itr = this.getIterator();
+					itr.next();
+					for(int i=0;i<pos;i++){
+						itr.next();
+					}
+					
 				}
+				pos++;
 			}
 		}
 	}

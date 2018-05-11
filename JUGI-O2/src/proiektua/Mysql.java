@@ -65,16 +65,8 @@ public class Mysql {
 	}
 	public void erregistratuPartida(String pEmail,int pPuntuazioa,int pPcPuntuazioa,String pKolorea,String pHOrdua,String pBOrdua) throws SQLException{
 		Statement s = (Statement) konexioa.createStatement();
-		String t = "";
-		for (int i = 0; i < pEmail.length(); ++i) {
-		    char ch = pEmail.charAt(i);
-		    if (!t.isEmpty()) {
-		        t += " ";
-		    }
-		    int n = (int)ch - (int)'a' + 1;
-		    t += String.valueOf(n);
-		}
-		String pKode = t;
+		
+		int pKode = 5;
 		
 		java.util.Date todayDate = Calendar.getInstance().getTime();
 		SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd");
