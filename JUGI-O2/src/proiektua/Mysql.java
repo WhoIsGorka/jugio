@@ -7,6 +7,7 @@ import java.sql.SQLException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
+import java.util.Random;
 import java.util.Scanner;
 
 import com.mysql.jdbc.Connection;
@@ -66,7 +67,9 @@ public class Mysql {
 	public void erregistratuPartida(String pEmail,int pPuntuazioa,int pPcPuntuazioa,String pKolorea,String pHOrdua,String pBOrdua) throws SQLException{
 		Statement s = (Statement) konexioa.createStatement();
 		
-		int pKode = 5;
+		Random r = new Random();
+		int randomNum = r.nextInt(1000)+1;
+		int pKode = randomNum;
 		
 		java.util.Date todayDate = Calendar.getInstance().getTime();
 		SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd");
@@ -85,7 +88,7 @@ public class Mysql {
 
 }
 	
-//com.mysql.jdbc.exceptions.jdbc4.MySQLIntegrityConstraintViolationException
+
 
 
 	
