@@ -76,6 +76,25 @@ public class Mysql {
 		String pData = formatter.format(todayDate);
 		s.executeUpdate("INSERT INTO partida VALUES('"+pKode+"','"+pEmail+"','"+pPuntuazioa+"','"+pPcPuntuazioa+"', '"+pKolorea+"','"+pData+"','"+pHOrdua+"','"+pBOrdua+"')");
 	}
+	public ArrayList<String> partidaOnenak() throws SQLException{
+		Statement s = (Statement) konexioa.createStatement();	
+		ResultSet rs = s.executeQuery("SELECT Kode,Izena,NirePuntuak,HOrdua,BOrdua,Data FROM jokalaria as J INNER JOIN partida as P on J.Email=P.ErabiltzaileEmail ORDER BY NirePuntuak DESC");
+		ArrayList<String> arrayString = new ArrayList<String>();
+		while(rs.next()) {
+			String Kode = rs.getString("Kode");
+			String izena = rs.getString("Izena");
+			String puntuak = rs.getString("NirePuntuak");
+			SimpleDateFormat formatter1 = new SimpleDateFormat("HH:mm:ss");
+			String HOrdua  = formatter1.format(rs.getDate("HOrdua"));
+			SimpleDateFormat formatter2 = new SimpleDateFormat("HH:mm:ss");
+			String BOrdua  = formatter2.format(rs.getDate("BOrdua"));
+			SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd");
+			String data  = formatter.format(rs.getDate("Data"));
+			String em = Kode+" "+ izena +"-->"+puntuak+" "+HOrdua+" "+BOrdua+" "+data;
+			arrayString.add(em);
+		}
+		return arrayString;
+		}
 	public ArrayList<String> jokalaririkOnenak() throws SQLException{
 		Statement s = (Statement) konexioa.createStatement();	
 		ResultSet rs = s.executeQuery("SELECT Izena,NirePuntuak FROM jokalaria as J INNER JOIN partida as P on J.Email=P.ErabiltzaileEmail ORDER BY NirePuntuak DESC");
