@@ -32,7 +32,7 @@ public class MenuLogin extends JFrame {
 
 	public MenuLogin() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(500, 200, 379, 283);
+		setBounds(500, 200, 600, 300);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);

@@ -27,6 +27,8 @@ public class MenuNagusiaErab extends JFrame{
 	private JPanel contentPane;
 	private boolean hasi = false;
 	
+	private String email;
+	
 	public MenuNagusiaErab() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(500, 200, 512, 360);
@@ -103,8 +105,12 @@ public class MenuNagusiaErab extends JFrame{
 	public void leihoaItxi(){
 		this.dispose();
 	}
+	public void setEmail(String pEmail){
+		this.email = pEmail;
+	}
 	public void interfazAbiarazi(){
 		Tableroa.getTableroa().hasieraketak();
+		Tableroa.getTableroa().setEmail(email);
 		Interfazea frame = new Interfazea();
     	frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.getContentPane().setLayout(new BorderLayout());

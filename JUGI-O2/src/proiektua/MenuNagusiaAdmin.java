@@ -25,7 +25,8 @@ import java.awt.event.ActionEvent;
 public class MenuNagusiaAdmin extends JFrame{
 
 	private JPanel contentPane;
-	private boolean hasi = false;
+	private String email;
+	
 	
 	public MenuNagusiaAdmin() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -125,8 +126,12 @@ public class MenuNagusiaAdmin extends JFrame{
 	public void leihoaItxi(){
 		this.dispose();
 	}
+	public void setEmail(String pEmail){
+		this.email = pEmail;
+	}
 	public void interfazAbiarazi(){
 		Tableroa.getTableroa().hasieraketak();
+		Tableroa.getTableroa().setEmail(email);
 		Interfazea frame = new Interfazea();
     	frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.getContentPane().setLayout(new BorderLayout());

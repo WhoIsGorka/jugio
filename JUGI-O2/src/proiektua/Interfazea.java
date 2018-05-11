@@ -5,6 +5,7 @@ import javafx.beans.Observable;
 
 import java.awt.*;
 import java.awt.event.*;
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.Observer;
 public class Interfazea extends JFrame implements Observer{
@@ -121,7 +122,15 @@ public class Interfazea extends JFrame implements Observer{
 		
 		jarraitu.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				Tableroa.getTableroa().getPc().txandaEgin(0);
+				try {
+					Tableroa.getTableroa().getPc().txandaEgin(0);
+				} catch (ClassNotFoundException e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
+				} catch (SQLException e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
+				}
 				jarraitu.setEnabled(false);
 				mazoa.setIcon(resizeIcon(new ImageIcon(getClass().getResource("geziGorria.png")),mazoa.getWidth(),mazoa.getHeight()));
 				repaint();
@@ -195,7 +204,15 @@ public class Interfazea extends JFrame implements Observer{
 				karta3.setEnabled(false);
 				karta4.setEnabled(false);
 				mazoa.setEnabled(false);
-				jolastu(0);		
+				try {
+					jolastu(0);
+				} catch (ClassNotFoundException e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
+				} catch (SQLException e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
+				}		
 			}
 		});
 		
@@ -209,7 +226,15 @@ public class Interfazea extends JFrame implements Observer{
 				karta3.setEnabled(false);
 				karta4.setEnabled(false);
 				mazoa.setEnabled(false);
-				jolastu(1);	
+				try {
+					jolastu(1);
+				} catch (ClassNotFoundException e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
+				} catch (SQLException e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
+				}	
 			}
 		});
 		
@@ -224,7 +249,15 @@ public class Interfazea extends JFrame implements Observer{
 				karta3.setEnabled(false);
 				karta4.setEnabled(false);
 				mazoa.setEnabled(false);
-				jolastu(2);
+				try {
+					jolastu(2);
+				} catch (ClassNotFoundException e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
+				} catch (SQLException e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
+				}
 			}
 		});
 		
@@ -239,7 +272,15 @@ public class Interfazea extends JFrame implements Observer{
 				karta3.setEnabled(false);
 				karta4.setEnabled(false);
 				mazoa.setEnabled(false);
-				jolastu(3);
+				try {
+					jolastu(3);
+				} catch (ClassNotFoundException e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
+				} catch (SQLException e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
+				}
 			}
 		});
 		
@@ -324,7 +365,7 @@ public class Interfazea extends JFrame implements Observer{
 	
 		
 		
-	public void jolastu(int pPos){
+	public void jolastu(int pPos) throws ClassNotFoundException, SQLException{
 		if(Tableroa.getTableroa().getNi().getEskuKartak().luzera()==4 || Tableroa.getTableroa().getNi().getMazoa().hutsaDa()){
 			Tableroa.getTableroa().getNi().txandaEgin(pPos);		
 			Tableroa.getTableroa().notifikatuInterfazea();			

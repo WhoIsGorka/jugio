@@ -35,6 +35,9 @@ public class Login extends JFrame {
 	private String email;
 	private String pasahitza; 
 	
+	private MenuNagusiaErab mnE;
+	private MenuNagusiaAdmin mnA;
+	
 	public Login() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(500, 200, 353, 222);
@@ -104,12 +107,14 @@ public class Login extends JFrame {
 							System.out.println("logged");
 							if(Mysql.getMysql().erabiltzaileEdoAdmin(email).equals("Erabiltzaile")) {
 								leihoaItxi();
-								MenuNagusiaErab mn = new MenuNagusiaErab();
-								mn.setVisible(true);
+								mnE = new MenuNagusiaErab();
+								mnE.setEmail(email);
+								mnE.setVisible(true);
 							}else if(Mysql.getMysql().erabiltzaileEdoAdmin(email).equals("Administratzaile")) {
 								leihoaItxi();
-								MenuNagusiaAdmin mn = new MenuNagusiaAdmin();
-								mn.setVisible(true);
+								mnA = new MenuNagusiaAdmin();
+								mnA.setEmail(email);
+								mnA.setVisible(true);
 							}
 						}
 						else if((Mysql.getMysql().pasahitzaEgokia(email, pasahitza)==false)){

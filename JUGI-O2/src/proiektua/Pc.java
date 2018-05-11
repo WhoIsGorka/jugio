@@ -32,15 +32,7 @@ public class Pc extends Jokalaria {
 		if(Tableroa.getTableroa().getMahaiKartak().getTamaina()==5){
 			Tableroa.getTableroa().getMahaiKartak().tabernanSartu();
 		}
-		if (this.getEskuKartak().luzera()==0){
-			JOptionPane.showMessageDialog(null, 
-					Tableroa.getTableroa().norkIrabaziDu(), 
-                    "AMAIERA", 
-                    JOptionPane.DEFAULT_OPTION); 
-			int result = JOptionPane.showConfirmDialog(null, "IRTEN?", "JOKOA AMAITU DA",
-                    JOptionPane.OK_OPTION);
-            if (result == JOptionPane.OK_OPTION)
-                System.exit(0);		}
+		
 		
 		this.hartuKarta();
 		

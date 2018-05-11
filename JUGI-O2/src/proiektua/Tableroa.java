@@ -2,7 +2,10 @@ package proiektua;
 
 
 import java.awt.BorderLayout;
+import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.GregorianCalendar;
 import java.util.Observable;
 import java.util.Observer;
 import java.util.Scanner;
@@ -20,6 +23,8 @@ public class Tableroa extends Observable{
 	private ArrayList<String>[] eskuMahaiPaths;
 	private MenuLogin menuLogin;
 
+	private String hOrdua;
+	private String email;
 	
 	private static Tableroa nTableroa=null;
 	
@@ -47,12 +52,20 @@ public class Tableroa extends Observable{
 	public MahaiKartak getMahaiKartak(){
 		return this.ilara;
 	}
-	
+	public void setEmail(String pEmail){
+		this.email= pEmail;
+	}
+	public String getEmail(){
+		return this.email;
+	}
 	public Jokalaria getNi() {
 		return this.j1;
 	}
 	public Jokalaria getPc() {
 		return this.pc;
+	}
+	public String getHOrdua(){
+		return this.hOrdua;
 	}
 	public void KartakSortu(){
 		Karta mofeta1 = new Mofeta(1,"Mofeta"," ",false,4,"1mofetaAzul.PNG","Urdina");
@@ -129,7 +142,18 @@ public class Tableroa extends Observable{
 		pc.getMazoa().mazoaSortu(m2);
 		
 		pc.hartuLehenegoLauKartak();	
+		
+		hOrdua = this.orduaLortu();
 			
+	}
+	public String orduaLortu(){
+		Calendar calendario = new GregorianCalendar();
+		int ordua, min, secs;
+		ordua =calendario.get(Calendar.HOUR_OF_DAY);
+		min = calendario.get(Calendar.MINUTE);
+		secs = calendario.get(Calendar.SECOND);
+		
+		return (ordua + ":" + min + ":" + secs);
 	}
 	
 	public void sartuJokalariak() {
@@ -139,7 +163,7 @@ public class Tableroa extends Observable{
 		j1.setJokalariarenId(zenb);		
 	}
 	
-	public void jolastu(int pPos) {
+	public void jolastu(int pPos) throws ClassNotFoundException, SQLException {
 		if(this.getNi().getEskuKartak().luzera()==4 || this.getNi().getMazoa().hutsaDa()){
 			this.j1.txandaEgin(pPos);
 			

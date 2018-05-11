@@ -1,6 +1,7 @@
 package proiektua;
 
 
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -81,5 +82,5 @@ public abstract class Jokalaria {
 	}
 
 	
-	public abstract void txandaEgin(int karta);
+	public abstract void txandaEgin(int karta) throws ClassNotFoundException, SQLException;
 }
