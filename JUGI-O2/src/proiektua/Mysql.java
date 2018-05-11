@@ -61,6 +61,10 @@ public class Mysql {
 			return false;		
 		}
 	}
+	public void erregistratuPartida(int pKode,String pEmail,int pPuntuazioa,int pPcPuntuazioa,String pKolorea,String pData,String pHOrdua,String pBOrdua) throws SQLException{
+		Statement s = (Statement) konexioa.createStatement();	
+		s.executeUpdate("INSERT INTO partida VALUES('"+pKode+"','"+pEmail+"','"+pPuntuazioa+"','"+pPcPuntuazioa+"', '"+pKolorea+"','"+pData+"','"+pHOrdua+"','"+pBOrdua+"')");
+	}
 	/*public ArrayList<String> jokalaririkOnenak(){
 		Statement s = (Statement) konexioa.createStatement();	
 		ResultSet rs = s.executeQuery("SELECT izena,puntuazioa FROM jokalaria,partida ORDER BY puntuazioa");
