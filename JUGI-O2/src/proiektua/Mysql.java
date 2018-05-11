@@ -76,11 +76,19 @@ public class Mysql {
 		String pData = formatter.format(todayDate);
 		s.executeUpdate("INSERT INTO partida VALUES('"+pKode+"','"+pEmail+"','"+pPuntuazioa+"','"+pPcPuntuazioa+"', '"+pKolorea+"','"+pData+"','"+pHOrdua+"','"+pBOrdua+"')");
 	}
-	/*public ArrayList<String> jokalaririkOnenak(){
+	public ArrayList<String> jokalaririkOnenak() throws SQLException{
 		Statement s = (Statement) konexioa.createStatement();	
-		ResultSet rs = s.executeQuery("SELECT izena,puntuazioa FROM jokalaria,partida ORDER BY puntuazioa");
-		
-	}*/
+		ResultSet rs = s.executeQuery("SELECT Izena,NirePuntuak FROM jokalaria as J INNER JOIN partida as P on J.Email=P.ErabiltzaileEmail ORDER BY NirePuntuak DESC");
+		ArrayList<String> arrayString=null;
+		int maximoa = 0;
+		while(rs.next()) {
+		    maximoa++;
+		}
+		for(int i=0;i<maximoa;i++){
+			arrayString.add(i, rs.getString(i));
+		    }
+		return arrayString;
+		}
 
 	public void konexioaZarratu()throws ClassNotFoundException, SQLException{
 		konexioa.close();

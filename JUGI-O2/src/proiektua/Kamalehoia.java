@@ -21,22 +21,35 @@ public class Kamalehoia extends Karta {
 			kolorea="Berdea";
 		}
 		if(kolorea=="Berdea"){
+			
 			zenb = ThreadLocalRandom.current().nextInt(1,mk.getTamaina()+1);
 			Karta animaliKopia= mk.getKarta(zenb-1);
-	 		animaliKopia.setKolorea(kolorea);
-			
-			
-	 		int pos = mk.getPosizioa(this.getIzena(),this.getKolorea());
-	 		mk.ordezkatuKarta(pos, animaliKopia);
-			
-			
-			
-	 		animaliKopia.animaladaEgin();
-			pos = mk.getPosizioa(animaliKopia.getIzena(),animaliKopia.getKolorea());
-			
-			mk.ordezkatuKarta(pos, this);
-			pos = mk.getPosizioa(animaliKopia.getIzena(),animaliKopia.getKolorea());		
-			mk.ordezkatuKarta(pos, this);
+			boolean ondo=false;
+			do{
+				if(animaliKopia instanceof Kamalehoia){
+					zenb = ThreadLocalRandom.current().nextInt(1,mk.getTamaina()+1);
+					animaliKopia= mk.getKarta(zenb-1);
+				}else{
+					animaliKopia.setKolorea(kolorea);
+					
+					
+			 		int pos = mk.getPosizioa(this.getIzena(),this.getKolorea());
+			 		mk.ordezkatuKarta(pos, animaliKopia);
+					
+					
+					
+			 		animaliKopia.animaladaEgin();
+					pos = mk.getPosizioa(animaliKopia.getIzena(),animaliKopia.getKolorea());
+					
+					mk.ordezkatuKarta(pos, this);
+					pos = mk.getPosizioa(animaliKopia.getIzena(),animaliKopia.getKolorea());		
+					mk.ordezkatuKarta(pos, this);
+					ondo = true;
+					
+				}
+				
+			}while(!ondo);
+	 		
 			
 		}else{
 			boolean ondo=false;

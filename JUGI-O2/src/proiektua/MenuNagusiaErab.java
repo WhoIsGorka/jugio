@@ -20,13 +20,15 @@ import javax.swing.JButton;
 
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
+import java.sql.SQLException;
+import java.util.ArrayList;
 
 
 public class MenuNagusiaErab extends JFrame{
 
 	private JPanel contentPane;
 	private boolean hasi = false;
-	
+	private PuntuazioInterfazea puntuazioInterfazea;
 	private String email;
 	
 	public MenuNagusiaErab() {
@@ -82,7 +84,18 @@ public class MenuNagusiaErab extends JFrame{
 		JButton btnBetikoPuntuazioOnenak = new JButton("BETIKO PUNTUAZIO ONENAK");
 		btnBetikoPuntuazioOnenak.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				
+				try {
+					ArrayList<String> pString=Mysql.getMysql().jokalaririkOnenak();
+					puntuazioInterfazea= new PuntuazioInterfazea();
+					puntuazioInterfazea.displayJokalariOnenak(pString);
+					puntuazioInterfazea.setVisible(true);
+				} catch (ClassNotFoundException e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
+				} catch (SQLException e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
+				}
 			}
 		});
 		panel_4.setLayout(new GridLayout(0, 1, 0, 0));

@@ -78,7 +78,10 @@ public class MahaiKartak extends Observable{
 					itr = this.getIterator();
 					itr.next();
 					for(int i=0;i<pos;i++){
-						itr.next();
+						if(itr.hasNext()){
+							itr.next();
+						}
+						
 					}
 					
 				}
