@@ -15,6 +15,7 @@ public class Kamalehoia extends Karta {
 		MahaiKartak mk = Tableroa.getTableroa().getMahaiKartak();
 		String kolorea;
 		int zenb = 0;
+		
 		boolean ondo=false;
 		do {
 			try {
@@ -91,5 +92,3 @@ public class Kamalehoia extends Karta {
 		
 	}	
 }
-
-
