@@ -79,14 +79,13 @@ public class Mysql {
 	public ArrayList<String> jokalaririkOnenak() throws SQLException{
 		Statement s = (Statement) konexioa.createStatement();	
 		ResultSet rs = s.executeQuery("SELECT Izena,NirePuntuak FROM jokalaria as J INNER JOIN partida as P on J.Email=P.ErabiltzaileEmail ORDER BY NirePuntuak DESC");
-		ArrayList<String> arrayString=null;
-		int maximoa = 0;
+		ArrayList<String> arrayString= new ArrayList<String>();
 		while(rs.next()) {
-		    maximoa++;
+			 String puntuak = rs.getString("NirePuntuak");
+			 String izena = rs.getString("Izena");
+			 String em = izena +"-->"+ puntuak;
+			 arrayString.add(em);
 		}
-		for(int i=0;i<maximoa;i++){
-			arrayString.add(i, rs.getString(i));
-		    }
 		return arrayString;
 		}
 
