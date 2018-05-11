@@ -7,8 +7,7 @@ public class Jirafa extends Karta {
 		aPortaera = new AurreratuSinple();
 	}
 	public void animaladaEgin(){
-		MahaiKartak mk = Tableroa.getTableroa().getMahaiKartak(); // esto lo he puesto para poner todo el tiempo lo mismo
-																  // pd: no se si se puede hacer	
+		MahaiKartak mk = Tableroa.getTableroa().getMahaiKartak(); 
 		int pos = mk.getPosizioa(this.getIzena(),this.getKolorea());
 		if(pos!=0) {
 			if(mk.getKarta(pos).getId()>mk.getKarta(pos-1).getId()) {

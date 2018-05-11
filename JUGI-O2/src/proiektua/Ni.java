@@ -22,7 +22,7 @@ public class Ni extends Jokalaria {
 	
 		
 		Tableroa.getTableroa().getMahaiKartak().errekurtsiboakEgin();
-		//Tableroa.getTableroa().getMahaiKartak().notifikatuInterfazea();		
+				
 		
 		if(Tableroa.getTableroa().getMahaiKartak().getTamaina()==5){
 			Tableroa.getTableroa().getMahaiKartak().tabernanSartu();
