@@ -189,12 +189,12 @@ public class Tableroa extends Observable{
 		if(this.j1.getKontKartak()>this.pc.getKontKartak()){
 			return "Irabazi duzu!!!";
 		}else if(this.j1.getKontKartak()<this.pc.getKontKartak()){
-			return  "Galdu duzu!!! Bekario";
+			return  "Galdu duzu!!!";
 		}else{
 			if(this.j1.getPuntuazioa()>this.pc.getPuntuazioa()){
 				return "Irabazi duzu!!!";
 			}else{
-				return  "Galdu duzu!!! Bekario";
+				return  "Galdu duzu!!!";
 			}
 		}
 	}

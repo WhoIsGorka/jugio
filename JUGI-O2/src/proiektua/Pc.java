@@ -1,6 +1,7 @@
 package proiektua;
 
 
+import java.sql.SQLException;
 import java.util.concurrent.ThreadLocalRandom;
 import java.util.concurrent.TimeUnit;
 
@@ -14,7 +15,8 @@ public class Pc extends Jokalaria {
 		super.id = 0;
 	}
 	
-	public void txandaEgin(int kartazenb){
+	public void txandaEgin(int kartazenb) throws ClassNotFoundException, SQLException{
+		
 		int randomNum = ThreadLocalRandom.current().nextInt(0,this.getEskuKartak().luzera());
 		Tableroa.getTableroa().getMahaiKartak().gehituKarta(this.getEskuKartak().kenduKarta(randomNum));
 	
@@ -31,9 +33,21 @@ public class Pc extends Jokalaria {
 		
 		if(Tableroa.getTableroa().getMahaiKartak().getTamaina()==5){
 			Tableroa.getTableroa().getMahaiKartak().tabernanSartu();
+			Tableroa.getTableroa().notifikatuInterfazea();
 		}
 		
-		
+		if (this.getEskuKartak().luzera()==0){
+			String pBOrdua = Tableroa.getTableroa().orduaLortu();
+			Mysql.getMysql().erregistratuPartida(Tableroa.getTableroa().getEmail(), this.getKontKartak(), Tableroa.getTableroa().getPc().getKontKartak(), "Urdina", Tableroa.getTableroa().getHOrdua(), pBOrdua);
+			JOptionPane.showMessageDialog(null, 
+					Tableroa.getTableroa().norkIrabaziDu(), 
+                    "AMAIERA", 
+                    JOptionPane.DEFAULT_OPTION); 
+			int result = JOptionPane.showConfirmDialog(null, "IRTEN?", "JOKOA AMAITU DA",
+                    JOptionPane.OK_OPTION);
+            if (result == JOptionPane.OK_OPTION)
+                System.exit(0);		
+        }
 		this.hartuKarta();
 		
 	}
