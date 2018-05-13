@@ -90,7 +90,7 @@ public class Mysql {
 			String BOrdua  = formatter2.format(rs.getDate("BOrdua"));
 			SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd");
 			String data  = formatter.format(rs.getDate("Data"));
-			String em = Kode+" "+ izena +"-->"+puntuak+" "+HOrdua+" "+BOrdua+" "+data;
+			String em = Kode+" "+ izena +" --> "+puntuak+" "+HOrdua+" "+BOrdua+" "+data;
 			arrayString.add(em);
 		}
 		return arrayString;
@@ -102,7 +102,7 @@ public class Mysql {
 		while(rs.next()) {
 			 String puntuak = rs.getString("NirePuntuak");
 			 String izena = rs.getString("Izena");
-			 String em = izena +"-->"+ puntuak;
+			 String em = izena +" --> "+ puntuak;
 			 arrayString.add(em);
 		}
 		return arrayString;

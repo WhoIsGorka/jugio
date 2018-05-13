@@ -68,7 +68,22 @@ public class MenuNagusiaAdmin extends JFrame{
 		
 		JButton btnPartidaOnenak = new JButton("PARTIDA ONENAK");
 		panel_2.add(btnPartidaOnenak);
-		
+		btnPartidaOnenak.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				try {
+					ArrayList<String> pString=Mysql.getMysql().partidaOnenak();
+					puntuazioInterfazea= new PuntuazioInterfazea();
+					puntuazioInterfazea.displayJokalariOnenak(pString);
+					puntuazioInterfazea.setVisible(true);
+				} catch (ClassNotFoundException e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
+				} catch (SQLException e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
+				}
+			}
+		});
 		JPanel panel_3 = new JPanel();
 		contentPane.add(panel_3);
 		panel_3.setLayout(new GridLayout(0, 1, 0, 0));
