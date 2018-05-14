@@ -33,7 +33,7 @@ public class MenuNagusiaErab extends JFrame{
 	
 	public MenuNagusiaErab() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(500, 200, 512, 360);
+		setBounds(500, 200, 500, 500);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);

@@ -27,6 +27,7 @@ public class PuntuazioInterfazea extends JFrame {
 		textArea = new JTextArea();
 		contentPane.add(textArea);
 		textArea.setBounds(59, 11, 262, 172);
+		textArea.setEditable(false);
 	}
 	public void displayJokalariOnenak(ArrayList<String> pString){		
 		for(int i=0;i<pString.size();i++){

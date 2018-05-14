@@ -8,6 +8,8 @@ import java.awt.event.ActionListener;
 import java.sql.SQLException;
 import java.util.Hashtable;
 
+import javafx.scene.control.PasswordField;
+
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
@@ -65,7 +67,7 @@ public class Login extends JFrame {
 		lblPasahitza.setHorizontalAlignment(SwingConstants.CENTER);
 		panel_2.add(lblPasahitza);
 		
-		textPasahitza = new JTextField();
+		textPasahitza = new JPasswordField();
 		panel_2.add(textPasahitza);
 		textPasahitza.setColumns(10);
 		
