@@ -116,7 +116,7 @@ public class Interfazea extends JFrame implements Observer{
 		
 		
 		jarraitu = new JButton("");
-		jarraitu.setFont(new Font("Tahoma", Font.BOLD, 15));
+		jarraitu.setFont(new Font("Tahoma", Font.BOLD, 16));
 		jarraitu.setBackground(new Color(153, 102, 102));
 		jarraitu.setEnabled(false);
 		jarraitu.setText("JARRAITU");
