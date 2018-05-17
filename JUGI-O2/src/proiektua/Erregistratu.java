@@ -56,9 +56,10 @@ public class Erregistratu extends JFrame {
 	
 	private MenuLogin mn = new MenuLogin();
 	
-	public Erregistratu() {	
+	public Erregistratu() {
+		setTitle("                       JOKALARI ERREGISTROA");	
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(500, 200, 403, 272);
+		setBounds(500, 200, 613, 378);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
@@ -152,6 +153,9 @@ public class Erregistratu extends JFrame {
 		contentPane.add(panel_7);
 		panel_7.setLayout(new GridLayout(0, 2, 0, 0));
 		
+		JButton btnErregistratu = new JButton("ERREGISTRATU");
+		panel_7.add(btnErregistratu);
+		
 		JButton btnAtzera = new JButton("ATZERA");
 		panel_7.add(btnAtzera);
 		btnAtzera.addActionListener(new ActionListener() {
@@ -161,9 +165,6 @@ public class Erregistratu extends JFrame {
 				frame1.setVisible(true);
 			}
 		});
-		
-		JButton btnErregistratu = new JButton("ERREGISTRATU");
-		panel_7.add(btnErregistratu);
 		btnErregistratu.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				izena=izenaSartu.getText();

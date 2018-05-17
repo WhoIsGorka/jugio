@@ -22,6 +22,8 @@ import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.awt.Font;
+import java.awt.Color;
 
 
 public class MenuNagusiaErab extends JFrame{
@@ -32,8 +34,9 @@ public class MenuNagusiaErab extends JFrame{
 	private String email;
 	
 	public MenuNagusiaErab() {
+		setTitle("            MENU ERABILTZAILEA");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(500, 200, 500, 500);
+		setBounds(500, 200, 689, 500);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
@@ -43,6 +46,9 @@ public class MenuNagusiaErab extends JFrame{
 		contentPane.add(panel_1);
 		
 		JButton btnNewButton = new JButton("JOLASTU");
+		btnNewButton.setBackground(new Color(204, 255, 204));
+		btnNewButton.setForeground(new Color(0, 0, 0));
+		btnNewButton.setFont(new Font("Tahoma", Font.BOLD, 18));
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				leihoaItxi();
@@ -56,6 +62,8 @@ public class MenuNagusiaErab extends JFrame{
 		contentPane.add(panel);
 		
 		JButton btnJolastu = new JButton("JOKALARI ONENAK");
+		btnJolastu.setBackground(new Color(204, 255, 255));
+		btnJolastu.setFont(new Font("Tahoma", Font.BOLD, 18));
 		btnJolastu.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				try {	
@@ -79,6 +87,8 @@ public class MenuNagusiaErab extends JFrame{
 		panel_2.setLayout(new GridLayout(0, 1, 0, 0));
 		
 		JButton btnPartidaOnenak = new JButton("PARTIDA ONENAK");
+		btnPartidaOnenak.setBackground(new Color(204, 255, 255));
+		btnPartidaOnenak.setFont(new Font("Tahoma", Font.BOLD, 18));
 		panel_2.add(btnPartidaOnenak);
 		btnPartidaOnenak.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -101,6 +111,8 @@ public class MenuNagusiaErab extends JFrame{
 		panel_3.setLayout(new GridLayout(0, 1, 0, 0));
 		
 		JButton btnEgunekoPuntuazioOnenak = new JButton("EGUNEKO PUNTUAZIO ONENAK");
+		btnEgunekoPuntuazioOnenak.setBackground(new Color(204, 255, 255));
+		btnEgunekoPuntuazioOnenak.setFont(new Font("Tahoma", Font.BOLD, 18));
 		panel_3.add(btnEgunekoPuntuazioOnenak);
 		btnEgunekoPuntuazioOnenak.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -123,6 +135,8 @@ public class MenuNagusiaErab extends JFrame{
 		contentPane.add(panel_4);
 		
 		JButton btnBetikoPuntuazioOnenak = new JButton("BETIKO PUNTUAZIO ONENAK");
+		btnBetikoPuntuazioOnenak.setBackground(new Color(204, 255, 255));
+		btnBetikoPuntuazioOnenak.setFont(new Font("Tahoma", Font.BOLD, 18));
 		btnBetikoPuntuazioOnenak.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				try {
@@ -147,6 +161,8 @@ public class MenuNagusiaErab extends JFrame{
 		panel_5.setLayout(new GridLayout(0, 1, 0, 0));
 		
 		JButton btnIrten = new JButton("IRTEN");
+		btnIrten.setBackground(new Color(255, 153, 153));
+		btnIrten.setFont(new Font("Tahoma", Font.BOLD, 18));
 		btnIrten.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				System.exit(0);

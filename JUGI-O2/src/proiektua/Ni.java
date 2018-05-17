@@ -12,7 +12,7 @@ public class Ni extends Jokalaria {
 		super();
 	}
 	
-	public void txandaEgin(int kartazenb) throws ClassNotFoundException, SQLException{
+	public int txandaEgin(int kartazenb) throws ClassNotFoundException, SQLException{
 		
 		Tableroa.getTableroa().getMahaiKartak().gehituKarta(this.getEskuKartak().kenduKarta(kartazenb));
 		int tamaina = Tableroa.getTableroa().getMahaiKartak().getTamaina();
@@ -31,6 +31,7 @@ public class Ni extends Jokalaria {
 		}
 		
 	
-		
+		return 0;
 	}
+	
 }

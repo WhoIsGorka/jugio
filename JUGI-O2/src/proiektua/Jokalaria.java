@@ -82,5 +82,5 @@ public abstract class Jokalaria {
 	}
 
 	
-	public abstract void txandaEgin(int karta) throws ClassNotFoundException, SQLException;
+	public abstract int txandaEgin(int karta) throws ClassNotFoundException, SQLException;
 }

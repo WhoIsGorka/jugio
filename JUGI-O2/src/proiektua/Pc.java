@@ -16,7 +16,7 @@ public class Pc extends Jokalaria {
 		super.id = 0;
 	}
 	
-	public void txandaEgin(int kartazenb) throws ClassNotFoundException, SQLException{
+	public int txandaEgin(int kartazenb) throws ClassNotFoundException, SQLException{
 		
 		int randomNum = ThreadLocalRandom.current().nextInt(0,this.getEskuKartak().luzera());
 		Tableroa.getTableroa().getMahaiKartak().gehituKarta(this.getEskuKartak().kenduKarta(randomNum));
@@ -47,14 +47,15 @@ public class Pc extends Jokalaria {
 			int result = JOptionPane.showConfirmDialog(null, "Atzera bueltatu?", "JOKOA AMAITU DA",
                     JOptionPane.OK_OPTION);
             if (result == JOptionPane.OK_OPTION){
-            	   
             	   MenuLogin login = new MenuLogin();
             	   login.setVisible(true);
+            	   return 1;
             }
                
             
         }
 		this.hartuKarta();
-		
+		return 0;
 	}
+	
 }

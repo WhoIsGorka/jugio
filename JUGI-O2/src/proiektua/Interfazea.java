@@ -116,6 +116,8 @@ public class Interfazea extends JFrame implements Observer{
 		
 		
 		jarraitu = new JButton("");
+		jarraitu.setFont(new Font("Tahoma", Font.BOLD, 15));
+		jarraitu.setBackground(new Color(153, 102, 102));
 		jarraitu.setEnabled(false);
 		jarraitu.setText("JARRAITU");
 		jarraitu.setBounds(10, 11, 151, 40);
@@ -123,7 +125,10 @@ public class Interfazea extends JFrame implements Observer{
 		jarraitu.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				try {
-					Tableroa.getTableroa().getPc().txandaEgin(0);
+					int i=Tableroa.getTableroa().getPc().txandaEgin(0);
+					if (i==1){
+						leihoaItxi();
+					}
 				} catch (ClassNotFoundException e1) {
 					// TODO Auto-generated catch block
 					e1.printStackTrace();
@@ -132,28 +137,38 @@ public class Interfazea extends JFrame implements Observer{
 					e1.printStackTrace();
 				}
 				jarraitu.setEnabled(false);
-				mazoa.setIcon(resizeIcon(new ImageIcon(getClass().getResource("geziGorria.png")),mazoa.getWidth(),mazoa.getHeight()));
 				repaint();
 				karta1.setEnabled(true);
 				karta2.setEnabled(true);
 				karta3.setEnabled(true);
 				karta4.setEnabled(true);
-				mazoa.setEnabled(true);
+				if(Tableroa.getTableroa().getNi().getMazoa().tamaina()==0){
+					mazoa.setEnabled(false);
+					mazoa.setVisible(false);
+				}
+				else{
+					mazoa.setEnabled(true);
+					mazoa.setIcon(resizeIcon(new ImageIcon(getClass().getResource("geziGorria.png")),mazoa.getWidth(),mazoa.getHeight()));
+				}
 			}
 		});
 		score.setLayout(null);
 		score.add(jarraitu);
 		
 		jPuntuazioa = new JButton("ZURE PUNTUAZIOA: 0");
-		jPuntuazioa.setBounds(0, 105, 171, 94);
+		jPuntuazioa.setFont(new Font("Tahoma", Font.BOLD, 14));
+		jPuntuazioa.setForeground(new Color(51, 204, 0));
+		jPuntuazioa.setBounds(-14, 62, 197, 137);
 		score.add(jPuntuazioa);
 		
 		pcPuntuazioa = new JButton("PC PUNTUAZIOA: 0");
+		pcPuntuazioa.setFont(new Font("Tahoma", Font.BOLD, 14));
+		pcPuntuazioa.setForeground(new Color(51, 204, 255));
 		pcPuntuazioa.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 			}
 		});
-		pcPuntuazioa.setBounds(0, 205, 171, 94);
+		pcPuntuazioa.setBounds(-14, 218, 197, 148);
 		score.add(pcPuntuazioa);
 		
 		JPanel panel_1 = new JPanel();
@@ -164,11 +179,12 @@ public class Interfazea extends JFrame implements Observer{
 		panel_1.setLayout(null);
 		
 		final JButton kartak = new JButton("Kartak: 12");
+		kartak.setForeground(new Color(204, 0, 51));
 		kartak.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 			}
 		});
-		kartak.setBounds(0, 72, 171, 31);
+		kartak.setBounds(0, 68, 171, 46);
 		panel_1.add(kartak);
 		jarraitu.setVisible(true);
 		
@@ -195,7 +211,7 @@ public class Interfazea extends JFrame implements Observer{
 	
 		panel.setLayout(null);
 		this.karta1 = new JButton("");
-		karta1.setBounds(332, 0, 127, 218);
+		karta1.setBounds(270, 0, 127, 218);
 		panel.add(karta1); 
 		karta1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -217,7 +233,7 @@ public class Interfazea extends JFrame implements Observer{
 		});
 		
 		this.karta2 = new JButton("");
-		karta2.setBounds(559, 0, 127, 218);
+		karta2.setBounds(511, 0, 127, 218);
 		panel.add(karta2);	
 		karta2.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -239,7 +255,7 @@ public class Interfazea extends JFrame implements Observer{
 		});
 		
 		this.karta3 = new JButton("");
-		karta3.setBounds(787, 0, 127, 218);
+		karta3.setBounds(750, 0, 127, 218);
 		panel.add(karta3);
 		
 		karta3.addActionListener(new ActionListener() {
@@ -262,7 +278,7 @@ public class Interfazea extends JFrame implements Observer{
 		});
 		
 		this.karta4 = new JButton("");
-		karta4.setBounds(1007, 0, 127, 218);
+		karta4.setBounds(1001, 0, 127, 218);
 		panel.add(karta4);	
 		
 		karta4.addActionListener(new ActionListener() {
@@ -382,6 +398,12 @@ public class Interfazea extends JFrame implements Observer{
 					karta4.setEnabled(true);
 					mazoa.setEnabled(true);
 		}
+	}
+	public void leihoaItxi(){
+		this.dispose();
+	}
+	public Interfazea getInterfazea(){
+		return this;
 	}
 }
 

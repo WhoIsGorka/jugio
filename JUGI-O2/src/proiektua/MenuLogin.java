@@ -31,18 +31,46 @@ public class MenuLogin extends JFrame {
 	private Login login = new Login();
 
 	public MenuLogin() {
+		setTitle("                                                                                                                   BAR BESTIAL");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(500, 200, 600, 300);
+		setBounds(500, 200, 846, 800);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(0, 0, 0, 0));
 		setContentPane(contentPane);
-		contentPane.setLayout(new GridLayout(0, 2, 0, 0));
+		contentPane.setLayout(null);
 		
-		JPanel panel_1 = new JPanel();
-		contentPane.add(panel_1);
+
 		
-		JButton btnLogin = new JButton("Login");
-		btnLogin.setFont(new Font("Tahoma", Font.PLAIN, 18));
+		JButton btnIrten = new JButton("IRTEN");
+		btnIrten.setForeground(new Color(0, 0, 0));
+		btnIrten.setBackground(new Color(153, 102, 102));
+		btnIrten.setBounds(577, 671, 243, 79);
+		contentPane.add(btnIrten);
+		btnIrten.setFont(new Font("Tahoma", Font.BOLD, 24));
+		
+	
+		
+		
+		
+		JButton btnErregistratu = new JButton("ERREGISTRATU");
+		btnErregistratu.setForeground(new Color(0, 0, 0));
+		btnErregistratu.setBackground(new Color(0, 153, 204));
+		btnErregistratu.setBounds(280, 670, 287, 80);
+		contentPane.add(btnErregistratu);
+		btnErregistratu.setFont(new Font("Tahoma", Font.BOLD, 24));
+		
+		JButton btnLogin = new JButton("LOGIN");
+		btnLogin.setForeground(new Color(0, 0, 0));
+		btnLogin.setBackground(new Color(0, 153, 102));
+		btnLogin.setBounds(10, 671, 260, 79);
+		contentPane.add(btnLogin);
+		btnLogin.setFont(new Font("Tahoma", Font.BOLD, 25));
+		
+		JButton fotoBarDiegal = new JButton("");
+		fotoBarDiegal.setBounds(0, 0, 838, 660);
+		contentPane.add(fotoBarDiegal);
+		fotoBarDiegal.setBackground(new Color(255, 255, 255));
+		fotoBarDiegal.setIcon(resizeIcon(new ImageIcon(getClass().getResource("bar.png")),fotoBarDiegal.getWidth(),fotoBarDiegal.getHeight()));
 		btnLogin.addActionListener(new ActionListener(){
 			public void actionPerformed(ActionEvent arg0) {
 				leihoaItxi();
@@ -51,15 +79,6 @@ public class MenuLogin extends JFrame {
 				
 			}
 		});
-		panel_1.setLayout(new GridLayout(3, 0, 0, 0));
-		panel_1.add(btnLogin);
-		
-	
-		
-		
-		
-		JButton btnErregistratu = new JButton("Erregistratu");
-		btnErregistratu.setFont(new Font("Tahoma", Font.PLAIN, 18));
 		btnErregistratu.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				leihoaItxi();
@@ -69,31 +88,13 @@ public class MenuLogin extends JFrame {
 				
 			}
 		});
-		panel_1.add(btnErregistratu);
-		
-
-		
-		JButton btnIrten = new JButton("Irten");
-		btnIrten.setFont(new Font("Tahoma", Font.PLAIN, 18));
 		btnIrten.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				System.exit(0);
 			}
 		});
-		panel_1.add(btnIrten);
-		
-		JPanel panel_2 = new JPanel();
-		contentPane.add(panel_2);
-		
-		panel_2.setLayout(new GridLayout(1, 0, 0, 0));
-		
-		JButton fotoBarDiegal = new JButton("");
-		fotoBarDiegal.setBackground(new Color(255, 255, 255));
-		fotoBarDiegal.setBounds(10, 11, 200, 200);
-		fotoBarDiegal.setIcon(resizeIcon(new ImageIcon(getClass().getResource("barDiegal.PNG")),fotoBarDiegal.getWidth(),fotoBarDiegal.getHeight()));
-		panel_2.add(fotoBarDiegal);
 	}
-
+	
 	public void leihoaItxi(){
 		this.dispose();
 	}

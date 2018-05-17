@@ -23,6 +23,7 @@ public class PuntuazioInterfazea extends JFrame {
 	private JPanel contentPane;
 	private JTable table;
 	public PuntuazioInterfazea() {
+		setTitle("         PUNTUAZIOAK");
 		
 		setBounds(500, 200, 500, 471);
 		contentPane = new JPanel();
