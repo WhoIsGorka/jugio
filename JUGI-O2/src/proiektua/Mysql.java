@@ -10,6 +10,11 @@ import java.util.Calendar;
 import java.util.Random;
 import java.util.Scanner;
 
+import javax.swing.DefaultComboBoxModel;
+import javax.swing.JComboBox;
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+
 import com.mysql.jdbc.Connection;
 import com.mysql.jdbc.Statement;
 
@@ -76,38 +81,49 @@ public class Mysql {
 		String pData = formatter.format(todayDate);
 		s.executeUpdate("INSERT INTO partida VALUES('"+pKode+"','"+pEmail+"','"+pPuntuazioa+"','"+pPcPuntuazioa+"', '"+pKolorea+"','"+pData+"','"+pHOrdua+"','"+pBOrdua+"')");
 	}
-	public ArrayList<String> partidaOnenak() throws SQLException{
+	public ResultSet jokalariOnenak() throws SQLException{
+		Statement s = (Statement) konexioa.createStatement();	
+		ResultSet rs = s.executeQuery("SELECT distinct Izena,avg(NirePuntuak) FROM jokalaria as J INNER JOIN partida as P on J.Email=P.ErabiltzaileEmail GROUP BY Izena ORDER BY avg(NirePuntuak) DESC");
+		return rs;
+		}
+	public ResultSet partidaOnenak() throws SQLException{
 		Statement s = (Statement) konexioa.createStatement();	
 		ResultSet rs = s.executeQuery("SELECT Kode,Izena,NirePuntuak,HOrdua,BOrdua,Data FROM jokalaria as J INNER JOIN partida as P on J.Email=P.ErabiltzaileEmail ORDER BY NirePuntuak DESC");
-		ArrayList<String> arrayString = new ArrayList<String>();
-		while(rs.next()) {
-			String Kode = rs.getString("Kode");
-			String izena = rs.getString("Izena");
-			String puntuak = rs.getString("NirePuntuak");
-			SimpleDateFormat formatter1 = new SimpleDateFormat("HH:mm:ss");
-			String HOrdua  = formatter1.format(rs.getDate("HOrdua"));
-			SimpleDateFormat formatter2 = new SimpleDateFormat("HH:mm:ss");
-			String BOrdua  = formatter2.format(rs.getDate("BOrdua"));
-			SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd");
-			String data  = formatter.format(rs.getDate("Data"));
-			String em = Kode+" "+ izena +" --> "+puntuak+" "+HOrdua+" "+BOrdua+" "+data;
-			arrayString.add(em);
+	    return rs;
 		}
-		return arrayString;
-		}
-	public ArrayList<String> jokalaririkOnenak() throws SQLException{
+	public ResultSet puntuazioOnenak() throws SQLException{
 		Statement s = (Statement) konexioa.createStatement();	
 		ResultSet rs = s.executeQuery("SELECT Izena,NirePuntuak FROM jokalaria as J INNER JOIN partida as P on J.Email=P.ErabiltzaileEmail ORDER BY NirePuntuak DESC");
-		ArrayList<String> arrayString= new ArrayList<String>();
-		while(rs.next()) {
-			 String puntuak = rs.getString("NirePuntuak");
-			 String izena = rs.getString("Izena");
-			 String em = izena +" --> "+ puntuak;
-			 arrayString.add(em);
-		}
-		return arrayString;
-		}
-
+		return rs;
+	}
+	public ResultSet gaurkoPartidaOnenak() throws SQLException{
+		java.util.Date todayDate = Calendar.getInstance().getTime();
+		SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd");
+		String pData = formatter.format(todayDate);
+		
+		Statement s = (Statement) konexioa.createStatement();	
+		ResultSet rs = s.executeQuery("SELECT Kode,Izena,NirePuntuak,HOrdua,BOrdua,Data FROM jokalaria as J INNER JOIN partida as P on J.Email=P.ErabiltzaileEmail WHERE P.Data=('"+pData+"') ORDER BY NirePuntuak DESC ");
+	    return rs;
+	}
+	public void erregistratuAnimalia(String pIzena, int pZenbakia, String pAnimalada, int pPuntuak, String pOriginala)throws ClassNotFoundException, SQLException{
+		
+		Statement s = (Statement) konexioa.createStatement();	
+		s.executeUpdate("INSERT INTO animalia VALUES('"+pIzena+"','"+pZenbakia+"','"+pAnimalada+"','"+pPuntuak+"', '"+pOriginala+"')");
+	} 
+	public ResultSet getJokalariak(String pMota) throws SQLException{
+		Statement s = (Statement) konexioa.createStatement();	
+		ResultSet rs = s.executeQuery("SELECT Email FROM jokalaria WHERE Mota=('"+pMota+"')");
+		
+		return rs;
+	}
+	public void baimenakEman(String pEmail) throws SQLException{
+		Statement s = (Statement) konexioa.createStatement();	
+		s.executeUpdate("UPDATE jokalaria SET Mota='Administratzaile' WHERE Email=('"+pEmail+"')");
+	}
+	public void baimenakKendu(String pEmail) throws SQLException{
+		Statement s = (Statement) konexioa.createStatement();	
+		s.executeUpdate("UPDATE jokalaria SET Mota='Erabiltzaile' WHERE Email=('"+pEmail+"')");
+	}
 	public void konexioaZarratu()throws ClassNotFoundException, SQLException{
 		konexioa.close();
 	}

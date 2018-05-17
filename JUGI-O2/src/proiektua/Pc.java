@@ -5,6 +5,7 @@ import java.sql.SQLException;
 import java.util.concurrent.ThreadLocalRandom;
 import java.util.concurrent.TimeUnit;
 
+import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 
 public class Pc extends Jokalaria {
@@ -43,10 +44,15 @@ public class Pc extends Jokalaria {
 					Tableroa.getTableroa().norkIrabaziDu(), 
                     "AMAIERA", 
                     JOptionPane.DEFAULT_OPTION); 
-			int result = JOptionPane.showConfirmDialog(null, "IRTEN?", "JOKOA AMAITU DA",
+			int result = JOptionPane.showConfirmDialog(null, "Atzera bueltatu?", "JOKOA AMAITU DA",
                     JOptionPane.OK_OPTION);
-            if (result == JOptionPane.OK_OPTION)
-                System.exit(0);		
+            if (result == JOptionPane.OK_OPTION){
+            	   
+            	   MenuLogin login = new MenuLogin();
+            	   login.setVisible(true);
+            }
+               
+            
         }
 		this.hartuKarta();
 		

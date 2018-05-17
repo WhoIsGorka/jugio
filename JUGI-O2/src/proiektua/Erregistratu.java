@@ -204,12 +204,6 @@ public class Erregistratu extends JFrame {
 			}
 		});
 	
-		
-		
-		
-		
-	
-		
 	}
 	public void leihoaItxi(){
 		this.dispose();

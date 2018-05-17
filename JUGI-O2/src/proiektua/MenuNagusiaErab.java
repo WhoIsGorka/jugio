@@ -55,9 +55,20 @@ public class MenuNagusiaErab extends JFrame{
 		JPanel panel = new JPanel();
 		contentPane.add(panel);
 		
-		JButton btnJolastu = new JButton("JOKALARIRIK ONENAK");
+		JButton btnJolastu = new JButton("JOKALARI ONENAK");
 		btnJolastu.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
+				try {	
+					puntuazioInterfazea= new PuntuazioInterfazea();
+					puntuazioInterfazea.displayJokalariOnenak(Mysql.getMysql().jokalariOnenak());
+					puntuazioInterfazea.setVisible(true);
+				} catch (ClassNotFoundException e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
+				} catch (SQLException e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
+				}
 			}
 		});
 		panel.setLayout(new GridLayout(0, 1, 0, 0));
@@ -72,9 +83,8 @@ public class MenuNagusiaErab extends JFrame{
 		btnPartidaOnenak.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				try {
-					ArrayList<String> pString=Mysql.getMysql().partidaOnenak();
 					puntuazioInterfazea= new PuntuazioInterfazea();
-					puntuazioInterfazea.displayJokalariOnenak(pString);
+					puntuazioInterfazea.displayPartidaOnenak(Mysql.getMysql().partidaOnenak());
 					puntuazioInterfazea.setVisible(true);
 				} catch (ClassNotFoundException e1) {
 					// TODO Auto-generated catch block
@@ -92,7 +102,22 @@ public class MenuNagusiaErab extends JFrame{
 		
 		JButton btnEgunekoPuntuazioOnenak = new JButton("EGUNEKO PUNTUAZIO ONENAK");
 		panel_3.add(btnEgunekoPuntuazioOnenak);
-		
+		btnEgunekoPuntuazioOnenak.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				try {
+					
+					puntuazioInterfazea= new PuntuazioInterfazea();
+					puntuazioInterfazea.displayGaurkoPartidaOnenak(Mysql.getMysql().gaurkoPartidaOnenak());
+					puntuazioInterfazea.setVisible(true);
+				} catch (ClassNotFoundException e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
+				} catch (SQLException e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
+				}
+			}
+		});
 		
 		JPanel panel_4 = new JPanel();
 		contentPane.add(panel_4);
@@ -101,9 +126,9 @@ public class MenuNagusiaErab extends JFrame{
 		btnBetikoPuntuazioOnenak.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				try {
-					ArrayList<String> pString=Mysql.getMysql().jokalaririkOnenak();
+					
 					puntuazioInterfazea= new PuntuazioInterfazea();
-					puntuazioInterfazea.displayJokalariOnenak(pString);
+					puntuazioInterfazea.displayPuntuazioOnenak(Mysql.getMysql().puntuazioOnenak());
 					puntuazioInterfazea.setVisible(true);
 				} catch (ClassNotFoundException e1) {
 					// TODO Auto-generated catch block
@@ -141,7 +166,6 @@ public class MenuNagusiaErab extends JFrame{
 		Tableroa.getTableroa().hasieraketak();
 		Tableroa.getTableroa().setEmail(email);
 		Interfazea frame = new Interfazea();
-    	frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.getContentPane().setLayout(new BorderLayout());
 		frame.setSize(1280, 720);
 		frame.setLocationRelativeTo(null);
