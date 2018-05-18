@@ -31,9 +31,9 @@ public class MenuLogin extends JFrame {
 	private Login login = new Login();
 
 	public MenuLogin() {
-		setTitle("                                                                                                                   BAR BESTIAL");
+		setTitle("                                                                                                BAR BESTIAL");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(500, 200, 846, 800);
+		setBounds(500, 200, 718, 672);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(0, 0, 0, 0));
 		setContentPane(contentPane);
@@ -44,7 +44,7 @@ public class MenuLogin extends JFrame {
 		JButton btnIrten = new JButton("IRTEN");
 		btnIrten.setForeground(new Color(0, 0, 0));
 		btnIrten.setBackground(new Color(153, 102, 102));
-		btnIrten.setBounds(577, 671, 243, 79);
+		btnIrten.setBounds(466, 551, 232, 79);
 		contentPane.add(btnIrten);
 		btnIrten.setFont(new Font("Tahoma", Font.BOLD, 24));
 		
@@ -55,19 +55,19 @@ public class MenuLogin extends JFrame {
 		JButton btnErregistratu = new JButton("ERREGISTRATU");
 		btnErregistratu.setForeground(new Color(0, 0, 0));
 		btnErregistratu.setBackground(new Color(0, 153, 204));
-		btnErregistratu.setBounds(280, 670, 287, 80);
+		btnErregistratu.setBounds(224, 550, 232, 80);
 		contentPane.add(btnErregistratu);
 		btnErregistratu.setFont(new Font("Tahoma", Font.BOLD, 24));
 		
 		JButton btnLogin = new JButton("LOGIN");
 		btnLogin.setForeground(new Color(0, 0, 0));
 		btnLogin.setBackground(new Color(0, 153, 102));
-		btnLogin.setBounds(10, 671, 260, 79);
+		btnLogin.setBounds(10, 551, 204, 79);
 		contentPane.add(btnLogin);
 		btnLogin.setFont(new Font("Tahoma", Font.BOLD, 25));
 		
 		JButton fotoBarDiegal = new JButton("");
-		fotoBarDiegal.setBounds(0, 0, 838, 660);
+		fotoBarDiegal.setBounds(0, 0, 698, 540);
 		contentPane.add(fotoBarDiegal);
 		fotoBarDiegal.setBackground(new Color(255, 255, 255));
 		fotoBarDiegal.setIcon(resizeIcon(new ImageIcon(getClass().getResource("bar.png")),fotoBarDiegal.getWidth(),fotoBarDiegal.getHeight()));
