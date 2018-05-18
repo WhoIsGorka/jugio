@@ -56,4 +56,8 @@ public class EskuKartakProba {
 	public void testHutsaDa() {
 		assertTrue(ek.hutsaDa());
 	}
+	@Test
+	public void testLuzera() {
+		assertEquals(0,ek.luzera());
+	}
 }

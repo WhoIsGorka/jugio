@@ -4,6 +4,6 @@
 	<classpathentry kind="src" path="probak"/>
 	<classpathentry exported="true" kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.junit.JUNIT_CONTAINER/4"/>
-	<classpathentry kind="lib" path="C:/Users/bisbino/Desktop/mysql-connector-java-5.1.46-bin.jar"/>
+	<classpathentry kind="lib" path="F:/Gorka/mysql-connector-java-5.1.46/driver/mysql-connector-java-5.1.46-bin.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

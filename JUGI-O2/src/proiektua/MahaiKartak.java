@@ -31,13 +31,7 @@ public class MahaiKartak extends Observable{
 	public ArrayList<String> getPaths(){
 		return this.paths;
 	}
-	
-//	public void aurreraJoan(Karta pKarta) {
-//		int i = this.getPosizioa(pKarta.getIzena());
-//		Karta aux = this.kenduKarta(pKarta);
-//		this.gehituKartaPos(aux, i-1);
-//	}
-	
+		
 	public int getPosizioa(String pI, String pK) {				// *Devuelve la posición de esa carta, y si no esta -1												
 		Iterator<Karta> itr = this.getIterator();
 		boolean aurkituta=false;
@@ -169,22 +163,6 @@ public class MahaiKartak extends Observable{
 	
 		
 	public void ezabatuGuztiak(String pS){                 	            
-//		Iterator<Karta> itr = this.getIterator();
-//		Karta aux = null;
-//		int pos = -1;
-//		boolean kendu = false;
-//		while(itr.hasNext()) {
-//					
-//			aux = itr.next();		
-//			pos++;
-//		
-//			
-//			if (aux.getIzena()==pS) {			
-//					lista.remove(pos);
-//					ezabatuGuztiak(pS);
-//			}		
-//		}
-		
 		this.ezabatuBat(pS, "Urdina");
 		this.ezabatuBat(pS, "Berdea");
 		
@@ -195,23 +173,6 @@ public class MahaiKartak extends Observable{
 		return this.lista.iterator();
 	}
 	
-	/*
-	public int bilatu(String pI, String pK) {									
-		Iterator<Karta> itr = this.getIterator();
-		boolean aurkituta=false;
-		int pos = -1;
-		Karta aux=null;
-		while(!aurkituta && itr.hasNext()) {
-			pos++;
-			if ((aux.getClass().getName().equals(pI))&&(aux.getKolorea().equals(pK))) {
-				aurkituta=true;
-			}
-			aux=itr.next();
-		}
-		return pos;
-	}
-	*/
-
 	public void tabernanSartu() {
 		
 		this.kenduKartaPos(4);   // beti 4

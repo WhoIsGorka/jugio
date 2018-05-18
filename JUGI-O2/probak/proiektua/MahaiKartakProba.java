@@ -13,6 +13,9 @@ public class MahaiKartakProba {
 	Karta k3 = new Tximinoa(4,"Tximinoa"," ",false,3,"berdea","Berdea");
 	Karta k4 = new Loroa(2,"Loroa"," ",false,3,"berdea","Berdea");
 	Karta k5 = new Lehoia(12,"Lehoia"," ",false,2,"berdea","Berdea");
+	Karta k6= new Jirafa(8,"Jirafa"," ",true,3,"jirafa8Berde.PNG","Berdea");
+	Karta k7 = new Kokodriloa(10,"Kokodriloa"," ",true,3,"cocodrilo10Berde.PNG","Berdea");
+	Karta k8 = new Hipopotamoa(11,"Hipopotamoa"," ",true,2,"11hipopotamoAzul.PNG","Urdina");
 	@Before
 	public void setUp() throws Exception {
 		mk = new MahaiKartak();
@@ -42,6 +45,27 @@ public class MahaiKartakProba {
 		assertEquals(k3, mk.getKarta(2));
 		assertEquals(k4, mk.getKarta(3));
 				
+	}
+	
+	@Test
+	public void testGehituHasieran() {
+		mk.gehituKarta(k1);
+		mk.gehituKarta(k3);
+		mk.gehituKarta(k4);
+		mk.gehituHasieran(k2);
+		
+		assertSame(0, mk.getPosizioa(k2.getIzena(), k2.getKolorea()));
+	}
+	
+	@Test
+	public void testGehituKartaPos() {
+		mk.gehituKarta(k1);
+		mk.gehituKartaPos(k2, 0);
+		mk.gehituKarta(k3);
+		mk.gehituKartaPos(k4, 2);
+		
+		assertSame(0, mk.getPosizioa(k2.getIzena(), k2.getKolorea()));
+		assertSame(2,mk.getPosizioa(k4.getIzena(), k4.getKolorea()));
 	}
 	
 	@Test
@@ -121,6 +145,5 @@ public class MahaiKartakProba {
 		assertSame(1,mk.getPosizioa(k4.getIzena(), k4.getKolorea()));
 		assertSame(-1,mk.getPosizioa(k5.getIzena(), k5.getKolorea()));		
 		
-	}
-	
+	}	
 }
