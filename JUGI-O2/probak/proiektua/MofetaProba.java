@@ -29,7 +29,7 @@ public class MofetaProba {
 	}
 	
 	@Test
-	public void testJokalaria() {
+	public void testMofeta() {
 		assertNotNull(Mofeta);
 	}
 	
@@ -40,22 +40,22 @@ public class MofetaProba {
 		mk.gehituKarta(Mofeta);
 		Mofeta.animaladaEgin();
 		
-//		assertSame(-1,mk.getPosizioa(kanguru.getIzena(), kanguru.getKolorea()));
+		assertSame(-1,mk.getPosizioa(kanguru.getIzena(), kanguru.getKolorea()));
 		
 		mk.gehituKarta(Mofeta2);
 		Mofeta.animaladaEgin();
 
-//		assertSame(2,mk.getTamaina());
+		assertSame(2,mk.getTamaina());
 		
 		mk.gehituKarta(lehoia);
 		mk.gehituKarta(zebra);
 		mk.gehituKarta(loro);
 		
 		Mofeta.animaladaEgin();
-//		assertSame(-1,mk.getPosizioa(lehoia.getIzena(), lehoia.getKolorea()));
-//		assertSame(-1,mk.getPosizioa(zebra.getIzena(), zebra.getKolorea()));
-//		assertSame(2,mk.getPosizioa(loro.getIzena(), loro.getKolorea()));
-//		assertSame(3,mk.getTamaina());
+		assertSame(-1,mk.getPosizioa(lehoia.getIzena(), lehoia.getKolorea()));
+		assertSame(-1,mk.getPosizioa(zebra.getIzena(), zebra.getKolorea()));
+		assertSame(2,mk.getPosizioa(loro.getIzena(), loro.getKolorea()));
+		assertSame(3,mk.getTamaina());
 		
 		mk.gehituKarta(zebra2);
 		mk.gehituKarta(lehoia);

@@ -28,7 +28,7 @@ public class JirafaProba {
 	}
 	
 	@Test
-	public void testJokalaria() {
+	public void testJirafa() {
 		assertNotNull(Jirafa);
 	}
 	

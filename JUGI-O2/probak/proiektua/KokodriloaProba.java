@@ -29,7 +29,7 @@ public class KokodriloaProba {
 	}
 	
 	@Test
-	public void testJokalaria() {
+	public void testKokodriloa() {
 		assertNotNull(koko);
 	}
 	

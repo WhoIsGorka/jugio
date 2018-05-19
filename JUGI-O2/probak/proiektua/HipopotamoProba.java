@@ -29,7 +29,7 @@ public class HipopotamoProba {
 	}
 	
 	@Test
-	public void testJokalaria() {
+	public void testHipopotamoa() {
 		assertNotNull(hipo);
 	}
 	

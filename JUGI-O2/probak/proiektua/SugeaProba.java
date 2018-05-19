@@ -27,7 +27,7 @@ public class SugeaProba {
 	}
 	
 	@Test
-	public void testJokalaria() {
+	public void testSugea() {
 		assertNotNull(sugea);
 	}
 	

@@ -29,7 +29,7 @@ public class TximinoProba {
 	}
 	
 	@Test
-	public void testJokalaria() {
+	public void testTximinoa() {
 		assertNotNull(tximinourdin);
 		assertNotNull(tximinoberde);
 	}

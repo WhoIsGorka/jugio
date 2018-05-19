@@ -28,7 +28,7 @@ public class ItsaslehoiaProba {
 	}
 	
 	@Test
-	public void testJokalaria() {
+	public void testItsaslehoia() {
 		assertNotNull(itsaslehoia);
 	}
 	

@@ -28,13 +28,13 @@ public class LehoiaProba {
 	}
 	
 	@Test
-	public void testJokalaria() {
+	public void testLehoia() {
 		assertNotNull(lehoi);
 	}
 	
 	@Test
 	public void testAnimaladaEgin() {
-		// beste lehoia bat
+		// beste lehoi bat
 		mk.gehituKarta(lehoia2);
 		mk.gehituKarta(tximino);
 		mk.gehituKarta(loro);
