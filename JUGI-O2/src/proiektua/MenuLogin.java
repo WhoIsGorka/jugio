@@ -33,7 +33,7 @@ public class MenuLogin extends JFrame {
 	public MenuLogin() {
 		setTitle("                                                                                                BAR BESTIAL");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(500, 200, 718, 672);
+		setBounds(300, 50, 718, 672);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(0, 0, 0, 0));
 		setContentPane(contentPane);
