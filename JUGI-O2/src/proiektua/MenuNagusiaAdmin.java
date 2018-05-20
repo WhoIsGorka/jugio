@@ -292,7 +292,9 @@ public class MenuNagusiaAdmin extends JFrame{
 		JButton btnIrten = new JButton("IRTEN");
 		btnIrten.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				System.exit(0);
+				MenuLogin menua = new MenuLogin();
+				menua.setVisible(true);
+				leihoaItxi();
 			}
 		});
 		panel_8.add(btnIrten);

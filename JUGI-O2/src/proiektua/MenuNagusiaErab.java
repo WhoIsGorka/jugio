@@ -152,7 +152,9 @@ public class MenuNagusiaErab extends JFrame{
 		btnIrten.setFont(new Font("Tahoma", Font.BOLD, 18));
 		btnIrten.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				System.exit(0);
+				MenuLogin menua = new MenuLogin();
+				menua.setVisible(true);
+				leihoaItxi();
 			}
 		});
 		panel_5.add(btnIrten);
