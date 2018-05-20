@@ -17,7 +17,7 @@ public class Tximinoa extends Karta {
 		
 			if (this.getKolorea().equals("Urdina")) {
 				kol = "Berdea";
-			}else {
+			}else if(this.getKolorea().equals("Berdea")){
 				kol = "Urdina";
 			}
 				

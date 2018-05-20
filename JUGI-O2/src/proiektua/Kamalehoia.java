@@ -16,12 +16,11 @@ public class Kamalehoia extends Karta {
  		String kolorea;
  		int zenb = 0;
  		
- 		
- 		
 		boolean ondo = false;
 		do {
 			try {	
 				if(this.getKolorea()=="Urdina"){   //Jokalariak erabiltzen dauanean
+					kolorea = "Urdina";
 					int aukeragarriZenbMaximoa=mk.getTamaina();
 					zenb =  Integer.parseInt(JOptionPane.showInputDialog(null, "Aukeratu mahiko animali bat (1-"+(aukeragarriZenbMaximoa-1)+"):"));
 					if (zenb <= 0 || zenb > (Tableroa.getTableroa().getMahaiKartak().getTamaina()-1)) {
@@ -29,7 +28,8 @@ public class Kamalehoia extends Karta {
 					}else {
 						ondo=true;
 					}
-					Karta animaliKopia= mk.getKarta(zenb-1);								// kopia		
+					Karta animaliKopia= mk.getKarta(zenb-1);								// kopia	
+					kolorea= animaliKopia.getKolorea();
 					Karta berria = null;
 					String s = animaliKopia.getIzena();
 					if(!s.equals("Kamalehoia")){
@@ -59,6 +59,8 @@ public class Kamalehoia extends Karta {
 						
 						int pos = mk.getPosizioa(this.getIzena(), this.getKolorea());		
 						mk.ordezkatuKarta(pos, berria);
+						
+						berria.setKolorea(kolorea);
 						
 						mk.getKarta(pos).animaladaEgin();
 						
@@ -78,8 +80,9 @@ public class Kamalehoia extends Karta {
 				
 						
 				}else if(this.getKolorea()=="Berdea"){   //PC-ak erabiltzen dauanean
+					kolorea = "Berdea";
 					zenb = ThreadLocalRandom.current().nextInt(1,mk.getTamaina()+1);
-					Karta animaliKopia= mk.getKarta(zenb-1);								// kopia		
+					Karta animaliKopia= mk.getKarta(zenb-1);								// kopia	
 					Karta berria = null;
 					String s = animaliKopia.getIzena();
 					if(!s.equals("Kamalehoia")){
@@ -108,6 +111,8 @@ public class Kamalehoia extends Karta {
 						}
 						int pos = mk.getPosizioa(this.getIzena(), this.getKolorea());		
 						mk.ordezkatuKarta(pos, berria);
+						
+						berria.setKolorea(kolorea);
 						
 						mk.getKarta(pos).animaladaEgin();
 						
