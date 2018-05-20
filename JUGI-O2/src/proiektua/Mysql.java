@@ -75,17 +75,17 @@ public class Mysql {
 	}
 	public ResultSet jokalariOnenak() throws SQLException{
 		Statement s = (Statement) konexioa.createStatement();	
-		ResultSet rs = s.executeQuery("SELECT distinct Izena,avg(NirePuntuak) FROM jokalaria as J INNER JOIN partida as P on J.Email=P.ErabiltzaileEmail GROUP BY Izena ORDER BY avg(NirePuntuak) DESC");
+		ResultSet rs = s.executeQuery("SELECT distinct Email,avg(NirePuntuak) FROM jokalaria as J INNER JOIN partida as P on J.Email=P.ErabiltzaileEmail GROUP BY Izena ORDER BY avg(NirePuntuak) DESC");
 		return rs;
 		}
 	public ResultSet partidaOnenak() throws SQLException{
 		Statement s = (Statement) konexioa.createStatement();	
-		ResultSet rs = s.executeQuery("SELECT Kode,Izena,NirePuntuak,HOrdua,BOrdua,Data FROM jokalaria as J INNER JOIN partida as P on J.Email=P.ErabiltzaileEmail ORDER BY NirePuntuak DESC");
+		ResultSet rs = s.executeQuery("SELECT Kode,Email,NirePuntuak,HOrdua,BOrdua,Data FROM jokalaria as J INNER JOIN partida as P on J.Email=P.ErabiltzaileEmail ORDER BY NirePuntuak DESC");
 	    return rs;
 		}
 	public ResultSet puntuazioOnenak() throws SQLException{
 		Statement s = (Statement) konexioa.createStatement();	
-		ResultSet rs = s.executeQuery("SELECT Izena,NirePuntuak FROM jokalaria as J INNER JOIN partida as P on J.Email=P.ErabiltzaileEmail ORDER BY NirePuntuak DESC");
+		ResultSet rs = s.executeQuery("SELECT Email,NirePuntuak FROM jokalaria as J INNER JOIN partida as P on J.Email=P.ErabiltzaileEmail ORDER BY NirePuntuak DESC");
 		return rs;
 	}
 	public ResultSet gaurkoPartidaOnenak() throws SQLException{
@@ -94,7 +94,7 @@ public class Mysql {
 		String pData = formatter.format(todayDate);
 		
 		Statement s = (Statement) konexioa.createStatement();	
-		ResultSet rs = s.executeQuery("SELECT Kode,Izena,NirePuntuak,HOrdua,BOrdua,Data FROM jokalaria as J INNER JOIN partida as P on J.Email=P.ErabiltzaileEmail WHERE P.Data=('"+pData+"') ORDER BY NirePuntuak DESC ");
+		ResultSet rs = s.executeQuery("SELECT Kode,Email,NirePuntuak,HOrdua,BOrdua,Data FROM jokalaria as J INNER JOIN partida as P on J.Email=P.ErabiltzaileEmail WHERE P.Data=('"+pData+"') ORDER BY NirePuntuak DESC ");
 	    return rs;
 	}
 	public void erregistratuAnimalia(String pIzena, int pZenbakia, String pAnimalada, int pPuntuak, String pOriginala)throws ClassNotFoundException, SQLException{

@@ -37,11 +37,11 @@ public class PuntuazioInterfazea extends JFrame {
 	}
 	public void displayJokalariOnenak(ResultSet rs){		
 		DefaultTableModel modelo = new DefaultTableModel();
-		modelo.setColumnIdentifiers(new Object[]{"Posizioa","Izena","Batazbestekoa"});
+		modelo.setColumnIdentifiers(new Object[]{"Posizioa","Email","Batazbestekoa"});
 		try{
 			int pos=1;
 			while(rs.next()){	
-				modelo.addRow(new Object[]{pos,rs.getString("Izena"),rs.getString("avg(NirePuntuak)")});
+				modelo.addRow(new Object[]{pos,rs.getString("Email"),rs.getString("avg(NirePuntuak)")});
 				pos++;	
 			}
 			table.setModel(modelo);
@@ -54,7 +54,7 @@ public class PuntuazioInterfazea extends JFrame {
 		modelo.setColumnIdentifiers(new Object[]{"Jokalaria","Puntuazioa"});
 		try{
 			while(rs.next()){
-				modelo.addRow(new Object[]{rs.getString("Izena"),rs.getString("NirePuntuak")});
+				modelo.addRow(new Object[]{rs.getString("Email"),rs.getString("NirePuntuak")});
 			}
 			table.setModel(modelo);
 		}catch(Exception e){
@@ -64,10 +64,10 @@ public class PuntuazioInterfazea extends JFrame {
 	}
 	public void displayPartidaOnenak(ResultSet rs){		
 		DefaultTableModel modelo = new DefaultTableModel();
-		modelo.setColumnIdentifiers(new Object[]{"Kode","Izena","NirePuntuak","HOrdua","BOrdua","Data"});
+		modelo.setColumnIdentifiers(new Object[]{"Kode","Email","NirePuntuak","HOrdua","BOrdua","Data"});
 		try{
 			while(rs.next()){	
-				modelo.addRow(new Object[]{rs.getInt("Kode"),rs.getString("Izena"),rs.getString("NirePuntuak"),rs.getTime("HOrdua"),rs.getTime("BOrdua"),rs.getDate("Data")});
+				modelo.addRow(new Object[]{rs.getInt("Kode"),rs.getString("Email"),rs.getString("NirePuntuak"),rs.getTime("HOrdua"),rs.getTime("BOrdua"),rs.getDate("Data")});
 			}
 			table.setModel(modelo);
 		}catch(Exception e){
@@ -77,10 +77,10 @@ public class PuntuazioInterfazea extends JFrame {
 	}
 	public void displayGaurkoPartidaOnenak(ResultSet rs){		
 		DefaultTableModel modelo = new DefaultTableModel();
-		modelo.setColumnIdentifiers(new Object[]{"Kode","Izena","NirePuntuak","HOrdua","BOrdua","Data"});
+		modelo.setColumnIdentifiers(new Object[]{"Kode","Email","NirePuntuak","HOrdua","BOrdua","Data"});
 		try{
 			while(rs.next()){
-				modelo.addRow(new Object[]{rs.getInt("Kode"),rs.getString("Izena"),rs.getString("NirePuntuak"),rs.getTime("HOrdua"),rs.getTime("BOrdua"),rs.getDate("Data")});
+				modelo.addRow(new Object[]{rs.getInt("Kode"),rs.getString("Email"),rs.getString("NirePuntuak"),rs.getTime("HOrdua"),rs.getTime("BOrdua"),rs.getDate("Data")});
 			}
 			table.setModel(modelo);
 		}catch(Exception e){
