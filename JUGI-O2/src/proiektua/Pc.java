@@ -36,7 +36,7 @@ public class Pc extends Jokalaria {
 		
 		if (this.getEskuKartak().luzera()==0){
 			String pBOrdua = Tableroa.getTableroa().orduaLortu();
-			Mysql.getMysql().erregistratuPartida(Tableroa.getTableroa().getEmail(), this.getKontKartak(), Tableroa.getTableroa().getPc().getKontKartak(), "Urdina", Tableroa.getTableroa().getHOrdua(), pBOrdua);
+			Mysql.getMysql().erregistratuPartida(Tableroa.getTableroa().getEmail(), Tableroa.getTableroa().getNi().getKontKartak(), this.getKontKartak(), "Urdina", Tableroa.getTableroa().getHOrdua(), pBOrdua);
 			JOptionPane.showMessageDialog(null, 
 					Tableroa.getTableroa().norkIrabaziDu(), 
                     "AMAIERA", 

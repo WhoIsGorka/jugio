@@ -24,7 +24,7 @@ public abstract class Jokalaria {
 		return this.kontKartak;
 	}
 	public void setKontKartak(){
-		kontKartak++;
+		this.kontKartak++;
 	}
 	
 	public int getId() {
