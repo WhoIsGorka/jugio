@@ -3,25 +3,13 @@ package proiektua;
 import javax.swing.JPanel;
 
 import java.awt.BorderLayout;
-import java.awt.EventQueue;
-
 import javax.swing.JFrame;
-import javax.swing.JLabel;
-import javax.swing.JOptionPane;
-import javax.swing.JPanel;
-import javax.swing.JPasswordField;
-import javax.swing.JTextField;
-import javax.swing.SwingConstants;
 import javax.swing.border.EmptyBorder;
-
 import java.awt.GridLayout;
-
 import javax.swing.JButton;
-
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import java.sql.SQLException;
-import java.util.ArrayList;
 import java.awt.Font;
 import java.awt.Color;
 
@@ -29,7 +17,6 @@ import java.awt.Color;
 public class MenuNagusiaErab extends JFrame{
 
 	private JPanel contentPane;
-	private boolean hasi = false;
 	private PuntuazioInterfazea puntuazioInterfazea;
 	private String email;
 	

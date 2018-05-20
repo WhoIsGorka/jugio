@@ -32,7 +32,7 @@ public class Kamalehoia extends Karta {
 					Karta animaliKopia= mk.getKarta(zenb-1);								// kopia		
 					Karta berria = null;
 					String s = animaliKopia.getIzena();
-					if(!s.equals("Kamalehoia"))
+					if(!s.equals("Kamalehoia")){
 						if (s.equals("Lehoia")) {
 							berria = new Lehoia(12,"Lehoia"," ",false,2,"12leonAzul.PNG","Gorria");
 						}else if(s.equals("Hipopotamoa")) {
@@ -56,7 +56,7 @@ public class Kamalehoia extends Karta {
 						}else if(s.equals("Mofeta")) {
 							berria = new Mofeta(1,"Mofeta"," ",false,4,"1mofetaAzul.PNG","Gorria");
 						}
-							
+						
 						int pos = mk.getPosizioa(this.getIzena(), this.getKolorea());		
 						mk.ordezkatuKarta(pos, berria);
 						
@@ -66,6 +66,17 @@ public class Kamalehoia extends Karta {
 						mk.ordezkatuKarta(aux2, this);
 						
 						ondo= true;
+					}else{
+						if(mk.getTamaina()==1){
+							mk.gehituKarta(this);   //Mahian bakarrik kamalehoi bat dagoenean eta jokalariak kamaleohian transformatu nahi duenean bere kamalehoia
+							ondo=true; 
+						}else{
+							JOptionPane.showMessageDialog(null, "Ezin da kamalehoi bat aukeratu");
+							ondo=false;
+						}
+					}
+				
+						
 				}else if(this.getKolorea()=="Berdea"){   //PC-ak erabiltzen dauanean
 					zenb = ThreadLocalRandom.current().nextInt(1,mk.getTamaina()+1);
 					Karta animaliKopia= mk.getKarta(zenb-1);								// kopia		
@@ -108,7 +119,9 @@ public class Kamalehoia extends Karta {
 						if(mk.getTamaina()==1){
 							mk.gehituKarta(this);   //Mahian bakarrik kamalehoi bat dagoenean eta PC-ak kamaleohian transformatu nahi duenean bere kamalehoia
 							ondo=true; 
-						}	
+						}else{
+							ondo= false;
+						}
 					}
 						
 						

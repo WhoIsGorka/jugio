@@ -3,9 +3,6 @@ package proiektua;
 
 import java.sql.SQLException;
 import java.util.concurrent.ThreadLocalRandom;
-import java.util.concurrent.TimeUnit;
-
-import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 
 public class Pc extends Jokalaria {

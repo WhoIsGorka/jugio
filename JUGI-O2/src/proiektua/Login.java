@@ -1,15 +1,10 @@
 package proiektua;
 
 
-import java.awt.BorderLayout;
-import java.awt.GridLayout;
+
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.sql.SQLException;
-import java.util.Hashtable;
-
-import javafx.scene.control.PasswordField;
-
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
@@ -19,18 +14,8 @@ import javax.swing.JPasswordField;
 import javax.swing.JTextField;
 import javax.swing.SwingConstants;
 import javax.swing.border.EmptyBorder;
-import javax.swing.JComboBox;
-
-import java.awt.TextField;
-
-import javax.swing.JCheckBox;
-import javax.swing.JRadioButton;
-import javax.swing.UIManager;
-
-import java.awt.Color;
-import java.awt.FlowLayout;
 import java.awt.Font;
-import java.awt.Window.Type;
+
 
 public class Login extends JFrame {
 	private JPanel contentPane;
@@ -108,7 +93,7 @@ public class Login extends JFrame {
 							JOptionPane.showMessageDialog(frame,"Email-a ez dago logeatuta.");
 						}else if(Mysql.getMysql().pasahitzaEgokia(email, pasahitza)) {
 							leihoaItxi();
-							JFrame frame = new JFrame();
+							
 							System.out.println("logged");
 							if(Mysql.getMysql().erabiltzaileEdoAdmin(email).equals("Erabiltzaile")) {
 								leihoaItxi();

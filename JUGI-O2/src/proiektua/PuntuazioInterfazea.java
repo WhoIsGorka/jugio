@@ -1,22 +1,13 @@
 package proiektua;
 
 import java.awt.GridLayout;
-import java.awt.TextArea;
 import java.sql.ResultSet;
-import java.text.SimpleDateFormat;
-import java.util.ArrayList;
-
 import javax.swing.JFrame;
 import javax.swing.JPanel;
-import javax.swing.JScrollBar;
-import javax.swing.JTextPane;
-import javax.swing.JTextArea;
 import javax.swing.border.EmptyBorder;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.JScrollPane;
-import javax.swing.JComboBox;
-import javax.swing.JList;
-import javax.swing.JLabel;
+
 import javax.swing.JTable;
 
 public class PuntuazioInterfazea extends JFrame {

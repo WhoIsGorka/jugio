@@ -1,13 +1,12 @@
 package proiektua;
+
 import javax.swing.*;
-
-import javafx.beans.Observable;
-
 import java.awt.*;
 import java.awt.event.*;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.Observer;
+
 public class Interfazea extends JFrame implements Observer{
 	
 	private JPanel panel;
@@ -22,7 +21,6 @@ public class Interfazea extends JFrame implements Observer{
 	private JButton mahaiKarta4;
 	private JButton mahaiKarta5;
 	private JButton jarraitu ;
-	private JTextField txtJokalariarenPuntuazioa;
 	private JButton jPuntuazioa;
 	private JButton pcPuntuazioa;
 	
@@ -89,10 +87,9 @@ public class Interfazea extends JFrame implements Observer{
 			 Image img = icon.getImage();
 			 Image resizedImage = img.getScaledInstance(resizedWidth, resizedHeight,  java.awt.Image.SCALE_DEFAULT);  
 			 return new ImageIcon(resizedImage);
-		
 	}
 	public Interfazea() {
-		Tableroa.getTableroa().leihoaErregistratu(this);
+		Tableroa.getTableroa().leihoaErregistratu(this); 
 		
 		setResizable(false);
 		getContentPane().setBackground(Color.GRAY);
@@ -157,13 +154,13 @@ public class Interfazea extends JFrame implements Observer{
 		
 		jPuntuazioa = new JButton("ZURE PUNTUAZIOA: 0");
 		jPuntuazioa.setFont(new Font("Tahoma", Font.BOLD, 14));
-		jPuntuazioa.setForeground(new Color(51, 204, 0));
+		jPuntuazioa.setForeground(new Color(51, 204, 255));
 		jPuntuazioa.setBounds(-14, 62, 197, 137);
 		score.add(jPuntuazioa);
 		
 		pcPuntuazioa = new JButton("PC PUNTUAZIOA: 0");
 		pcPuntuazioa.setFont(new Font("Tahoma", Font.BOLD, 14));
-		pcPuntuazioa.setForeground(new Color(51, 204, 255));
+		pcPuntuazioa.setForeground(new Color(51, 204, 0));
 		pcPuntuazioa.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 			}
@@ -196,12 +193,12 @@ public class Interfazea extends JFrame implements Observer{
 		panel.add(mazoa);
 		mazoa.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				if (Tableroa.getTableroa().getJokalaria().getEskuKartak().luzera()==4){
+				if (Tableroa.getTableroa().getNi().getEskuKartak().luzera()==4){
 					JOptionPane.showMessageDialog(null, 
                             "Jada lau karta dauzkazu eskuan", 
                             "Errorea!", 
                             JOptionPane.WARNING_MESSAGE);				}
-				Tableroa.getTableroa().getJokalaria().hartuKarta();
+				Tableroa.getTableroa().getNi().hartuKarta();
 				kartak.setText("Kartak: "+Tableroa.getTableroa().getNi().getMazoa().tamaina());
 				mazoa.setIcon(resizeIcon(new ImageIcon(getClass().getResource("yugioReverso.png")),mazoa.getWidth(),mazoa.getHeight()));
 

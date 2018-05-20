@@ -1,26 +1,15 @@
 package proiektua;
 
 
-import java.awt.BorderLayout;
-import java.awt.EventQueue;
+
 import java.awt.Image;
 import java.awt.*;
-import java.awt.event.*;
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
 import javax.swing.JFrame;
-import javax.swing.JLabel;
-import javax.swing.JOptionPane;
 import javax.swing.JPanel;
-import javax.swing.JPasswordField;
-import javax.swing.JTextField;
-import javax.swing.SwingConstants;
 import javax.swing.border.EmptyBorder;
-
-import java.awt.GridLayout;
-
 import javax.swing.JButton;
-
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 

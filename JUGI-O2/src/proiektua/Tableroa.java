@@ -1,16 +1,13 @@
 package proiektua;
 
 
-import java.awt.BorderLayout;
+
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.GregorianCalendar;
 import java.util.Observable;
 import java.util.Observer;
-import java.util.Scanner;
-
-import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 
 public class Tableroa extends Observable{
@@ -46,9 +43,7 @@ public class Tableroa extends Observable{
 		return nTableroa;
 	}
 	
-	public Jokalaria getJokalaria(){
-		return this.j1;
-	}
+
 	public MahaiKartak getMahaiKartak(){
 		return this.ilara;
 	}

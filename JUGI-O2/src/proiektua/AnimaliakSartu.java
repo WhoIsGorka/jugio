@@ -4,16 +4,11 @@ import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.sql.SQLException;
-import java.text.SimpleDateFormat;
-import java.util.Calendar;
-
-import javax.swing.ButtonGroup;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
-import javax.swing.JRadioButton;
 import javax.swing.JTextField;
 import javax.swing.SwingConstants;
 import javax.swing.border.EmptyBorder;
@@ -21,13 +16,6 @@ import javax.swing.border.EmptyBorder;
 public class AnimaliakSartu extends JFrame{
 	
 	private JPanel contentPane;
-	
-	private MenuNagusiaAdmin mn = new MenuNagusiaAdmin();
-	
-	private JTextField textField;
-	private JTextField textField_1;
-	private JTextField textField_2;
-	private JTextField textField_3;
 	
 	private JTextField izenaSartu;
 	private JTextField zenbakiaSartu;

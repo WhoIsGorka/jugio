@@ -2,9 +2,7 @@ package proiektua;
 
 
 import java.sql.SQLException;
-import java.util.concurrent.TimeUnit;
 
-import javax.swing.JOptionPane;
 
 public class Ni extends Jokalaria {
 

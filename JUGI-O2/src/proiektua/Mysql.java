@@ -1,20 +1,12 @@
 package proiektua;
 
-import java.sql.Date;
+
 import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.text.SimpleDateFormat;
-import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Random;
-import java.util.Scanner;
-
-import javax.swing.DefaultComboBoxModel;
-import javax.swing.JComboBox;
-import javax.swing.JFrame;
-import javax.swing.JPanel;
-
 import com.mysql.jdbc.Connection;
 import com.mysql.jdbc.Statement;
 

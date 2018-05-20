@@ -1,6 +1,6 @@
 package proiektua;
+
 import java.util.concurrent.ThreadLocalRandom;
-import java.util.ArrayList;
 import java.util.Stack;
 
 public class MazoKartak {

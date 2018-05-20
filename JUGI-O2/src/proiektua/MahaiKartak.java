@@ -5,8 +5,6 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Iterator;
 import java.util.Observable;
-import java.util.concurrent.TimeUnit;
-
 import javax.swing.JOptionPane;
 
 
@@ -132,7 +130,6 @@ public class MahaiKartak extends Observable{
 	
 	public void ordenatuTxikHand() {
 		ArrayList<Karta> listaaux = new ArrayList<Karta>();
-		ArrayList<String> pathsaux = new ArrayList<String>();
 		Karta max=null;
 		int i;
 		int j = lista.size()-1;
