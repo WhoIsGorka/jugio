@@ -44,8 +44,13 @@ public class Pc extends Jokalaria {
 			int result = JOptionPane.showConfirmDialog(null, "Atzera bueltatu?", "JOKOA AMAITU DA",
                     JOptionPane.OK_OPTION);
             if (result == JOptionPane.OK_OPTION){
-            	   MenuLogin login = new MenuLogin();
-            	   login.setVisible(true);
+            	   if(Mysql.getMysql().erabiltzaileEdoAdmin(Tableroa.getTableroa().getEmail())=="Erabiltzaile"){
+            		   MenuNagusiaErab menu = new MenuNagusiaErab();
+            		   menu.setVisible(true);
+            	   }else{
+            		   MenuNagusiaAdmin menu = new MenuNagusiaAdmin();
+            		   menu.setVisible(true);
+            	   }
             	   return 1;
             }
                

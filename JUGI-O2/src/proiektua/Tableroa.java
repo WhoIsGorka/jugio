@@ -28,12 +28,7 @@ public class Tableroa extends Observable{
 	
 	
 	public Tableroa() {
-		this.ilara = new MahaiKartak();
-		this.j1 =  new Ni(0, null, m1, null, 0);
-		this.pc = new Pc();
-		this.eskuMahaiPaths = new ArrayList[2];
-		eskuMahaiPaths[0]= new ArrayList<String>();
-		eskuMahaiPaths[1]= new ArrayList<String>();
+		
 	}
 	
 	public static Tableroa getTableroa() {
@@ -130,6 +125,12 @@ public class Tableroa extends Observable{
 		this.m2.gehituKarta(lehoia2);
 	}
 	public void hasieraketak(){
+		this.ilara = new MahaiKartak();
+		this.j1 =  new Ni(0, null, m1, null, 0);
+		this.pc = new Pc();
+		this.eskuMahaiPaths = new ArrayList[2];
+		eskuMahaiPaths[0]= new ArrayList<String>();
+		eskuMahaiPaths[1]= new ArrayList<String>();
 		
 		this.KartakSortu();
 		
